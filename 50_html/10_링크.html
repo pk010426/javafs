@@ -8,34 +8,57 @@
 </head>
 <body>
     <h1>링크</h1>
+    
     <!-- 
         URL(Uniform Resourse Locator)
         프로토콜://도메인(IP):포트/경로/파일명
         https://www.naver.com
         http://127.0.0.1:5500/50_html/10_링크.html
     -->
+    <!-- mailto : 메일주소
+    tel : 전화번호 -->
+    <a href="url"></a>
     
-
     <!-- 현재 페이지(임시 페이지): # -->
+        <a href="#">임시 링크</a>
+
+
 
     <!-- 현재 창: _self -->
-    
+    <!-- www = world wide web -->
+    <a href="https://www.google.com" target="_self"> 구글</a>
     <!-- 새 창: _blank -->
-    
+    <a href="https://naver.com" target="_blank">네이버</a>
     <!-- 전화번호: tel -->
-
+    <a href="tel:010-3794-4329">010-3794-4329</a>
     <!-- 이메일: mailto -->
-    
+    <a href="mailto:puini1234@naver.com">박건우 네이버 메일</a>
     <!-- N메일: https://mail.naver.com/write/popup?srvid=note&to=id@naver.com -->
-
-
+    <a href="https://mail.naver.com/write/popup?srvid=note&to=puini1234@naver.com"> n메일 </a>
+    <!-- 내 메일주소가 써지면서 바로 메일 보낼 수 있도록 해줌      ^ 이 부분-->
     <hr>
 
+
+    <!-- 구글 메일 설정
+    크롬 설정 > handlers 쓰고
+    프로토콜 체크 되어있으면 됌
+    윈도우 기본 메일 크롬 설정
+    그러면 잘 됌
+-->
+
+    <a href="mailto:puini1234@naver.com">g메일</a>
+
+
+
     <!-- 같은 폴더: 파일명만 기록한다. -->
-    <a href="09_이미지.html">09_이미지.html</a>
+    <a href="09_이미지.html"> 09_이미지.html</a>
     <!-- 하위 폴더: 폴더/파일명 -->
-    <a href="assets/pic_trulli.jpg">트룰리</a>
+    <a href="assets/pic_trulli.jpg" target="_blank"> 트룰리</a>
     <!-- 상위 폴더: ../파일명 -->
-    <a href="../workplace.jpg">작업</a>
+    <a href="../workplace.jpg"> 작업</a>
+    <a href="/50_html/09_이미지.html"> <img src="coffeebeans.jpg" alt="커피"></a>
+
+
+    
 </body>
 </html>
