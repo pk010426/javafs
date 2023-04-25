@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML</title>
 </head>
+
 <body>
     <h1>블록과 인라인</h1>
 
     <!-- 
         요소
-        1. 블록 레벨 요소 : h1~h6, p, hr, ul, ol, li, dl, dt, dd, blockquote, adress
 
-        2. 인라인 요소 : b, strong, i, em, mark, small, sup, sub, ins, del, img, br
+        1. 블록 레벨 요소 - 와이어 프레임 설계
+        1) 사이트 출력시, 위에서 아래로 배치(세로 배치)
+        2) 와이어 프레임 구현은 블록 레벨 요소로 한다.
+        3) 블록레벨 요소는 블록레벨 요소와 인라인 요소를 자식(하위 태그)을 가질 수 있다.
+
+        : div, header, nav, main, section, article, aside, footer, address, h1~h6, p, hr, ul, ol, li, dl, dt, dd, blockquote, adress, form, fieldset, 
+
+        2. 인라인 요소
+        1) 사이트 출력시, 왼쪽에서 오른쪽으로 배치(가로 배치)
+        2) 인라인 요소는 블록레벨 요소를 자식(하위 태그)으로 가질 수 없다.
+            (단, a 태그는 예외)
+
+        : span, b, strong, i, em, mark, small, sup, sub, ins, del, img, a, br, input, q, abbr, cite, label, select, textarea, table, thead, tbody, tfoot, button
 
 
      -->
 
     <h2>블록 레벨 요소</h2>
-    <div>div1</div>
-    <div>div2</div>
-    <div>div3</div>
+    
+    <div>
+        <div>div1</div>
+        <head>header</head>
+        <nav>nav</nav>
+        <main>main</main>
+        <section>
+            <h2>제목</h2>
+        </section>
+        <footer>footer</footer>
+    </div>
+    
 
-    <h2>인라인 요소</h2>
-    <span>span1</span>
-    <span>span2</span>
-    <span>span3</span>
+
+    <div>
+        <h2>인라인 요소</h2>
+        <span>span1</span>
+        <a href="#"></a>
+        <b>b</b>
+        <i>i</i>
+        <input type="text" id="ab">
+        <label for="ab">label</label>
+    </div>
+
+
 </body>
+
 </html>
