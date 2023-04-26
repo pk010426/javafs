@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,25 +24,55 @@
             짝수: 2n 또는 even
             홀수: 2n-1 또는 odd
         */
+        h2:first-child{
+            color: red;
+        }
+        p:nth-child(2n){
+            color: blue;
+        }
+        /* n : 숫자, odd홀, even짝 */
+        /* 2n = 2 4 6 8 ... */
+        /* 3n = 3 6 9 12... */
+        /* 2n-1 = 홀수 ... */
+        p:last-child {
+            color: orange;
+        }
+        p:nth-child(12){
+            color: rgb(40, 156, 38);
+        }
+
+            /* 순번 거꾸로 세는 거 */
+
+            /*body의 last는 적용 안 됌 */
+        p:nth-last-child(1){
+            color: violet;
+        }
+
+
+        div p:nth-child(2){
+            background: #bf0c0c;
+        }
 
     </style>
 </head>
+
 <body>
     <h1>의사 클래스 선택자</h1>
-    <h2>~child</h2>
-    <div>
-        <p>1 번째 요소입니다.</p>
-        <p>2 번째 요소입니다.</p>
-        <p>3 번째 요소입니다.</p>
-        <p>4 번째 요소입니다.</p>
-        <p>5 번째 요소입니다.</p>
-        <p>6 번째 요소입니다.</p>
-        <p>7 번째 요소입니다.</p>
-        <p>8 번째 요소입니다.</p>
-        <p>9 번째 요소입니다.</p>
-        <p>10 번째 요소입니다.</p>
-        <p>11 번째 요소입니다.</p>
-        <p>12 번째 요소입니다.</p>
-    </div>
+
+        <div>
+            <h2>1 번째~of-type</h2>
+            <p>2 번째 요소입니다.</p>
+            <p>3 번째 요소입니다.</p>
+            <p>4 번째 요소입니다.</p>
+            <p>5 번째 요소입니다.</p>
+        </div>
+        <div>
+            <h2>~of-type</h2>
+            <p>5 번째 요소입니다.</p>
+            <p>6 번째 요소입니다.</p>
+            <p>7 번째 요소입니다.</p>
+            <p>8 번째 요소입니다.</p>
+        </div>
 </body>
+
 </html>

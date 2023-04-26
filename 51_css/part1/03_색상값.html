@@ -8,16 +8,88 @@
     <style>
         /* 140개 영문 키워드: https://www.w3schools.com/colors/colors_names.asp */
 
+        /* 
+            2진수 : 0, 1
+            8진수 : 0~7
+            16진수: 0~9, A~F
+            10진수 : 0~9
+        */
+
+            /* 
+            #000
+            #fff
+            #123456
+            #234
+            #ff0000 > red
+            #0000ff >blue
+            #00ff00 > green
+            #ffff00 > yello
+            #ff00ff > magenta
+            #00ffff > cyon
+
+            */
+
         /* HEX: 16진수 -> 0~9, A~F */
         /* #RRGGBB 또는 #RGB */
 
-        /* rgb(0~255, 0~255, 0~255) */  
+        /* rgb(0~255, 0~255, 0~255) */ 
+         /*
+                rgb(0, 0, 0)
+                rgb(255, 255, 255)
+                rgb(255, 0, 0)
+                rgb(0, 255, 0)
+                rgb(0, 0, 255)
+                rgb(255, 255, 0)
+                rgb(255, 0, 255)
+                rgb(0, 255, 255)
+         */
 
         /* rgba(0~255, 0~255, 0~255, 0~1) */
+                /* 
+                        r, g, b, alpha
+                    rgba(0, 0, 0, 0)
+                    rgba(0, 0, 0, 1)
+                    rgba(255, 0, 0, 1)
+                    rgba(0, 255, 0, 1)
+                    rgba(0, 0, 255, 1)
+                    rgba(255, 0, 255, 1)
+                    rgba(0, 255, 255, 1)
+                    rgba(255, 255, 0, 1)
+
+                */
 
         /* hsl(0~359, 0~100%, 0~100%) */
+        /* hsl(hue, saturation, lightness) 
+        
+            hsl(0, 100%, 50%)
+            hsl(0, 100%, 100%)
+            hsl(0, 100%, 100%)
+        
+        */
         
         /* hsla(0~359, 0~100%, 0~100%, 0~1) */
+        /* 카멜(낙타) 케이스: 띄어쓰기 대문자 표시
+            스네이크 케이스 : 띄어쓰기 _표시    
+           */
+        .colorName {
+            color: red;
+        }
+        .colorHex {
+            color: #ff0000;
+        }
+        .colorRgb {
+            color: rgb(255, 0, 0);
+        }
+        .colorRgba {
+            color: rgba(255, 0, 0, 1);
+        }
+        .colorHsl {
+            color: hsl(0, 100%, 50%);
+        }
+        .colorHsla {
+            color: hsla(0, 100%, 50%, 1);
+        }
+       
 
     </style>
 </head>
@@ -26,8 +98,8 @@
     <p class="colorName">red</p>
     <p class="colorHex">#ff0000</p>
     <p class="colorRgb">rgb(255, 0, 0)</p>
-    <p class="colorRgba">rgba(255, 0, 0, 0.5)</p>
+    <p class="colorRgba">rgba(255, 0, 0, 1)</p>
     <p class="colorHsl">hsl(0, 100%, 50%)</p>
-    <p class="colorHsla">hsla(0, 100%, 50%, 0.5)</p>
+    <p class="colorHsla">hsla(0, 100%, 50%, 1)</p>
 </body>
 </html>
