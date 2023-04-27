@@ -12,6 +12,7 @@
             width: 500px;
             height: 150px;
             padding: 20px;
+            margin: 100px;
             border: 10px solid black;
         }
 
@@ -23,15 +24,24 @@
             = height + padding*2 + border*2
             = 150 + 20*2 + 10*2 
         */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         /* (1) .div1의 box-sizing은 content-box로 지정하시오. */
-
-
-
-        /* width:500px; height:150px; */
-        /* width와 height에 border와 padding 크기가 포함된다. */
+                .div1 {
+                    box-sizing: content-box;
+                }
+                /* 콘텐츠를 기준으로 패딩이 생김 */
+       
         /* (2) .div2의 box-sizing은 border-box로 지정하시오. */
-
-
+                .div2 {
+                    box-sizing:  border-box;
+                }
+                /* 보더 기준으로 패딩이 생김 */
 
         
     </style>
