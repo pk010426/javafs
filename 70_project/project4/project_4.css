@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .clearfix::after {
+    content:'';
+    clear:both;
+    display: block;
+} 
+ 필요한 곳에 class-clearfix로 붙여 넣기
+*/
+/* 
+header
+
+*/
+
+* {
+    list-style: no;
+}
+
+li {
+    display: inline-block;
+}
+
+/* 공통 */
+#wrap {
+    width: 1200px;
+    margin: 0 auto;
+    /* width 지정 후, margin: 0 auto  - 가운데 정렬하는 방법*/
+}
+.logo, nav, #contents div, footer div {
+    float: left;
+}
+
+/* 헤더 */
+header {
+    background: aqua;
+}
+
+/* 로고 */
+.logo {
+    width: 200px;
+    height: 100px;
+    background: brown;
+}
+
+/* 네비게이션 */
+nav {
+    width: 1000px;
+    height: 100px;
+    background: wheat;
+}
+
+
+/* 슬라이드 */
+#slide {
+    height: 300px;
+    background: blueviolet;
+}
+
+/* 메인 컨텐츠 */
+#contents {
+    background: red;
+}
+#contents div {
+    width: 400px;
+    height: 200px;
+}
+.tabs {
+    background: rosybrown;
+}
+.banner {
+    background: aquamarine;
+}
+.shortcut {
+    background: khaki;
+}
+
+/* 푸터 */
+footer {
+    background: violet;
+}
+
+.b_logo {
+    width: 200px;
+    height: 100px;
+    background: rebeccapurple;
+}
+.addr {
+    width: 800px;
+    height: 100px;
+    background: magenta;
+}
+.sns {
+    width: 200px;
+    height: 100px;
+    background: skyblue;
+}

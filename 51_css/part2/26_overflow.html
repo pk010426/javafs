@@ -6,9 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
+        /* 
+            overflow: visible; - 넘친 부분 그대로 표시
+            overflow: hidden; - 넘친 내용은 숨김
+            overflow-x: scroll; -무조건 스크롤 생김
+            overflow-y: scroll; -무조건 스크롤 생김
+            overflow: auto; - 내용 넘치면 스크롤 생김, 아니면 그냥 표시
+        */
+        /* 
+            자식이 float 처리되면, 부모의 height: 0;
+            자식 크기 만큼 높이를 갖는 방법이 overflow:hidden
+        */
         .container {
             background: red;
-            overflow:hidden;
+            /* overflow:hidden; */
+        }
+        .container::after{
+            content: "";
+            clear: both;
+            display: block;
         }
         .container div {
             float:left;
@@ -19,15 +35,28 @@
         }
 
         /* (1) .ovf1에 overflow 속성을 visible로 지정하시오. */
-
+            .ovf1 {
+                overflow: visible;
+            }
+            /* 기본값, 있는 그대로 표시 */
 
         /* (2) .ovf2에 overflow-y 속성을 scroll로 지정하시오. */
-
+            .ovf2 {
+                overflow-x: scroll;
+            }
+            /* 스크롤 방식으로 볼 수 있음 */
 
         /* (3) .ovf3에 overflow 속성을 hidden으로 지정하시오. */
-
+            .ovf3 {
+                overflow: hidden;
+            }
+            /* 벗어난 텍스트는 숨겨짐 */
 
         /* (4) .ovf4에 overflow 속성을 auto로 지정하시오. */
+            .ovf4 {
+                overflow: auto;
+            /* 공간이 충분하면 보임, 불충분하면 스크롤 */
+            }
 
 
     </style>

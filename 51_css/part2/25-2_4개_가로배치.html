@@ -6,16 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
+        ul {
+            margin: 0;
+            padding-left: 0;
+            list-style: none;
+            /* ul의 마커 제거 */
+        }
         .wrap {
             width: 1500px;
-            height: 300px;
+            /* 부모 높이가 0
+            
+                자식이 float가 되면 부모의 높이가 0이 됨
+            */
+            overflow: hidden;
             background: blueviolet;
-            margin: auto; 
+            margin: 0 auto; 
             /* 가운데로 보내는 방법 */
         }
-        div {
+        li {
+            float: left;
             width:360px;
             height:240px;
+            background: red;
+           margin-right: 20px;
+        }
+
+        .mr0 {
+            margin-right: 0;
         }
 
         /* 
@@ -24,35 +41,24 @@
 
         */
 
-        /* (1) .div1의 float를 left로 지정하시오. */
-        .div1 {
-            background:lightblue;
-            float: left;
-        
-            /* width의 기본값이 콘텐츠크기로 바뀐다. */
-        }
-
-        /* (2) .div2의 float를 right로 지정하시오. */
-        .div2 {
-            background: lightcoral;
-            float: right;
-        }
-
-        /* (3) .div3의 clear 속성을 both로 지정하시오. */
-        .div3 {
-            background: lightgoldenrodyellow;
-            /* float: left; */
-            clear: both;
+       
             /* 상위 요소의 float 효과를 받지 않게 한다 */
-        }
+    
     </style>
 </head>
 <body>
     <h1>플로트</h1>
     <div class="wrap">
-        <div class="div1">박스1</div>
-        <div class="div2">박스2</div>
-        <div class="div3">박스3</div>
+       <ul>
+        <li>박스1</li>
+        <li>박스2</li>
+        <li>박스3</li>
+        <li class="mr0">박스4</li>
+        <li class="">박스5</li>
+        <li>박스6</li>
+        <li>박스7</li>
+        <li class="mr0">박스8</li>
+       </ul>
     </div>
 </body>
 </html>

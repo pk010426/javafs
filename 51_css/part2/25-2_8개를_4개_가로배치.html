@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        /* ul의 마커 제거 */
+
+        .wrap {
+            width: 1500px;
+            /* 부모 높이가 0
+            
+                자식이 float가 되면 부모의 높이가 0이 됨
+            */
+            overflow: hidden;
+            background: blueviolet;
+            margin: 0 auto;
+            /* 가운데로 보내는 방법 */
+        }
+
+        ul {
+            
+            margin: 0;
+            padding-left:0;
+            padding-right: 0;
+            list-style: none;
+        }
+
+        li {
+            float: left;
+            width: 360px;
+            height: 240px;
+            background: red;
+            /* margin-right: 20px; */
+            /* margin-bottom: 20px; */
+        }
+        /* li:nth-of-type(4n) {
+            margin-right: 0;
+        } */
+
+        /* 4n 번째 li를 제외한 나머지에 마진 라이트 20px를 줘라 */
+        li:not(:nth-of-type(4n)) {
+            margin-right:20px;            
+        }
+
+        /* 4번째 lr 뒤에 있는 모든 li들을 선택해 - 마진 탑 20px를 줘라 */
+        li:nth-of-type(4)~li {
+            margin-top: 20px;
+        }
+        /*  li:not(li:nth-of-type(1)~:nth-of-type(4)) {
+            margin-top: 20px;
+        } */
+
+        /* 
+            float: left | right | none;
+            clear: left | right | both; > float 제거(float에 영향을 받지 않게 한다.)
+
+        */
+
+
+        /* 상위 요소의 float 효과를 받지 않게 한다 */
+    </style>
+</head>
+
+<body>
+    <h1>플로트</h1>
+    <div class="wrap">
+        <ul>
+            <li>박스1</li>
+            <li>박스2</li>
+            <li>박스3</li>
+            <li>박스4</li>
+            <li>박스5</li>
+            <li>박스6</li>
+            <li>박스7</li>
+            <li>박스8</li>
+        </ul>
+    </div>
+</body>
+
+</html>
