@@ -19,26 +19,41 @@
 
             부모: 플렉스 컨테이너
                 1. display:flex;
+
                 2. flex-direction: 방향;
                 3. flex-wrap: 줄바꿈;
-                4. flex-flow: direction wrap
+                4. flex-flow: direction wrap (2 + 3을 결합한 속기형)
                 5. justify-content: 주축 정렬
                 6. align-items: 교차축 정렬
                 7. align-content: 교차축 블록 방향 정렬 (2개의 라인)
 
+                동시에 쓸 때, 우선순위
+                align-self(1) > align-content(2) >align-items(3)
+
+
             자식: 플렉스 아이템
                 8. align-self: 교차축 정렬, align-items 보다 우선 적용된다.
                 9. flex-grow: 커진다.
+                        flex-grow:0; (기본값) > 성장하지 않는다.
+                        flex-grow: 1; 성장한다. (커진다)
                 10. flex-shrink: 작아진다.
+                        flex-shrink: 1;(기본값) > 수축된다. (작아진다.)
+                        flex-shrink: 0; >수축되지 않는다.
+
+
                 11. flex-basis: 처음 크기
-                12. flex: grow shrink basis
-                13. order: 순서, 숫자가 작을수록 앞에 배치
+                12. flex: grow shrink basis (속기형 9 + 10 + 11)
+                13. order: 숫자;  순서, 숫자가 작을수록 앞에 배치
         */
 
+        /* 부모한테 플랙스를 지정하면, 자식만 플렉스 아이템이 된다. 손자는 포함 안 됌 
+         */
 
         /* 부모 요소인 .container의 display를 flex로 적용해 보세요. */
         .container {
+            display: flex;
             outline: 1px solid red;
+
         }
 
         .container div {
@@ -46,7 +61,6 @@
             height: 100px;
             background-color: gray;
         }
-
     </style>
 </head>
 

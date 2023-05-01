@@ -4,36 +4,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
-
-/* .clearfix::after {
-    content:'';
-    clear:both;
-    display: block;
-} 
- 필요한 곳에 class-clearfix로 붙여 넣기
-*/
-/* 
-header
-
-*/
-
-* {
-    list-style: no;
-}
-
-li {
-    display: inline-block;
-}
-
 /* 공통 */
 #wrap {
     width: 1200px;
     margin: 0 auto;
     /* width 지정 후, margin: 0 auto  - 가운데 정렬하는 방법*/
 }
-.logo, nav, #contents div, footer div {
-    float: left;
+/* header*/
+li {
+    display: inline-block;
+}
+
+
+header, #contents, footer {
+    display: flex;
 }
 
 /* 헤더 */

@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
+        /* 부모를 display:flex; 하면, 프렉스 아이템의 가로/세로 크기는 컨텐츠의 크기로 지정된다. */
         .container {
             display: flex;
             border: 1px solid orange;
@@ -16,6 +17,9 @@
             width: 100px;
             height: 100px;
             background-color: gray;
+            /* flex-grow: 0;
+            flex-shrink: 1;
+            flex-basis: auto; */
         }
         
         /* 
@@ -25,26 +29,54 @@
 
             flex: [성장] [수축] [초기값];
 
+            flex-grow:0 > 페이지 늘려도 안 커짐 (기본값)
+            flex-grow:1 > 페이지 늘리면 따라서 커짐 (0이외의 양의 실수여야 함.)
+            flex-shrink:0 > 페이지 줄여도 안 작아짐
+            flex-shrink:1 > 페이지 줄이면 작아짐 (0이외의 양의 실수여야 함.) (기본값)
+
+
             0이면 성장/수축하지 않음.
             1이면 성장/수축함.
 
-            생략하면 flex: 0 1 auto;
+            (기본값)
+            flex-grow:0
+            flex-shrink:1
+            flex-basis: auto;
+
+            (속기형)
+            flex: 0 1 auto;
+            
             flex: auto; -> flex: 1 1 auto;
             flex: 1; -> flex: 1 1 auto;
         */
 
-        /* .fl1의 플렛스 아이템의 flex를 0 0 150px로 지정해 보세요. */
-        
+        /* .fl1의 플랙스 아이템의 flex 속성을 0 0 150px로 지정해 보세요. */
+        .fl1 div {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 150px;
 
+            flex: 0 0 150px
+        }
+
+        .fl2 div {
+            width: auto;
+        }
 
         /* (1) .fli1에 flex 속성을 1로 지정하시오. */
-
+        .fli1 {
+            flex: 1;
+        }
         
         /* (2) .fli2에 flex 속성을 2로 지정하시오. */
-
+        .fli2 {
+            flex: 2;
+        }
 
         /* (3) .fli3에 flex 속성을 3로 지정하시오. */
-
+        .fli3 {
+            flex: 3;
+        }
         
     </style>
 </head>
@@ -52,7 +84,6 @@
 <body>
     <h1>flexible(플렉서블)</h1>
     <h2>플렉스 아이템의 성장/수축/초기값</h2>
-    <div class="wrap1">
         <div class="container fl1">
             <div>1</div>
             <div>2</div>
@@ -68,8 +99,6 @@
             <div class="fli2">2</div>
             <div class="fli3">3</div>
         </div>
-    </div> <!-- //.wrap1 -->
-
 </body>
 
 </html>
