@@ -6,29 +6,73 @@
     list-style: none;
 }
 
-ul li {
-    display: inline-block;
-}
-#wrap {
+.wrap {
     width: 1500px;
     margin: 0 auto;
 }
 
 header {
-    border: 1px solid black;
+    position: sticky;
+    top:0;
+    height: 55px;
+    background: white;
+    box-shadow: 0px 1px  rgba(136, 136, 136, 0.5);
 }
 .logo {
-    border: 1px solid blue;
-    float: left;
+    display: flex;
+    width: 200px;
+    padding: 8px;
+    
 }
-nav li {
-    float: left;
+nav {
+    display: flex;
+    width: 1500px;
+    height: 55px;
+    margin: 0 auto;
+
 }
 
-.sec2 {
-    border-bottom: 1px solid rgba(76, 76, 76, 0.607);
-    margin-bottom: 50px;
+nav ul {
+    display: flex;
+    margin-left: auto;
+    padding: 10px;
+
+    
+
 }
-#camera {
-    border: 1px solid black;
+
+#camera ul {
+    
+    border: 1px solid;
+    display: flex;
+    width: 1500px;
+    /* height: 700px; */
+    flex-wrap: wrap;
+    margin: 0 auto;
+    
+}
+
+#camera li {
+    padding: 0px 0px;
+    display: flex;
+    width: 365px;
+    height: 244px;  
+
+}
+li:not(:nth-of-type(4n)) {
+    margin-right:10px;            
+}
+#camera div {
+    position: absolute;
+    background: black;
+    width: 135px;
+    height: 40px;
+    color: white;
+    /* padding-top: 15px; */
+    /* padding-left: 10px; */
+    text-align: center;
+    line-height: 40px;
+}
+#camera img {
+    border: 5px solid;
 }
