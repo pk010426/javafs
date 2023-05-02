@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        body * {
+            outline: 1px solid aqua;
+        }
+        .carousel {
+            position: relative;
+            height: 700px;
+            background-color: rosybrown;
+        }
+        /* position: absolute; 로 지정하면 width:콘텐츠 크기 */
+        /* position: relative; 로 지정하면 width:100%; */
+        /* position:relative는 이동해도 원래 자리는 남아서 차지하고 있음 */
+        /* absolute와 fixd는 그렇지 않음 */
+        .controls {
+            position: relative;
+            /* width: 100%; */
+            height: 78px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .controls a {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /* calc (값 1 연산자 값 2) 
+           산술 연산자: +, - , *, /
+           연술자와 피연산자(값1, 값2) 사이는 한 칸 공백으로 띄운다.
+        */
+        #prew {
+            left: calc(50% - 500px);
+        }
+        #next {
+            left: calc(50% + 500px);
+        }
+        .pager {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .pager a {
+            background-color: whitesmoke;
+            display: inline-block;
+            border-radius: 12px;
+            width: 12px;
+            height: 12px;
+            margin: 0 8px;
+            text-indent: -9999px;
+
+        }
+        .pager a.active {
+            background-color: blue;            
+        }
+    </style>
+</head>
+
+<body>
+    <h1>carousel의 좌우버튼 배치</h1>
+    <div class="carousel">
+        <div class="controls">
+            <a href="#" id="prew"><img src="/51_css/assets/left.png" alt=""></a>
+            <a href="#" id="next"><img src="/51_css/assets/right.png" alt=""></a>
+        </div>
+        <div class="pager">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+        </div>
+    </div>
+</body>
+
+</html>

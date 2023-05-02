@@ -14,15 +14,28 @@
 
         /* .parent의 자식 div를 부모를 기준으로 정중앙 배치하시오. */
         .parent div {
+            position: absolute;
             width:200px;
-            /* height:50px; */
+            /* display: inline-block; */
+            /* padding: 8px 16px; */
+            margin: -25px 0 0 -100px;
+            /* margin-left: -100px; */
+            /* margin-top: -25px; */
+            height:50px;
             background: red;
+            left: 50%;
+            top: 50%;
             /* width의 절반의 음수 값으로 지정한다. */
             /* height의 절반의 음수 값으로 지정한다. */
 
             /* 텍스트 중앙 배치 */
             text-align: center;
             line-height: 50px;
+            transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
         }
     </style>
 </head>
