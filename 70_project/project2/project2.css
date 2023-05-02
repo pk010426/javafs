@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* 모든 마커 제거 */
+li {
+    list-style: none;
+}
+/* 편의상 전체 너비 고정 */
+.wrap {
+    width: 1496px;
+    margin: 0 auto;
+}
+/* 헤더 */
+header {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    height: 56px;
+    background: white;
+    box-shadow: 0px 1px  rgba(136, 136, 136, 0.5);
+    box-shadow: 0px 2px  rgba(136, 136, 136, 0.5);
+
+}
+/* 네비게이션 */
+nav {   
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-self: center;
+    padding: 0px 48px 8px;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+}
+
+nav li {
+    margin-right: 32px;
+}
+/* 메인 이미지 슬로건 배치 */
+.slogan_box{
+    position: relative;
+}
+
+.slogan {
+    font-size: 64px;
+    color: rgba(220, 0, 12, 1);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.slogan span {
+    color: black;
+}
+/* 모든 h2와 이전 섹션 사이 마진 설정, 다음 콘텐츠와 마진 설정 */
+#camera h2, #print h2, #head_office_location h2 {
+    height: 48px;
+    box-shadow: 0px 1px  rgba(136, 136, 136, 0.5);
+    margin-top: 32px;
+    margin-bottom: 24px;
+}
+/* section2 카메라 사진 플렉스 배치 */
+#camera ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#camera li {
+    margin-top: 8px;
+}
+/* 카메라 사진 안에 모델명 기입 */
+#camera div {
+    position: absolute;
+    background: black;
+    width: 135px;
+    height: 40px;
+    color: white;
+    text-align: center;
+    padding-top: 8px;
+}
+/* 카메라 사진 크기 설정 및 선 */
+#camera img {
+    width: 365px;
+    height: 244px;
+    border: 5px solid rgb(0, 0, 0);
+}
+
+/* sec 프린트 */
+#print ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#print li {
+    margin-top: 8px;
+}
+
+/* 카메라 사진 크기 설정 및 선 */
+#print img {
+    width: 365px;
+    height: 244px;
+    border: 5px solid rgb(0, 0, 0);
+}
