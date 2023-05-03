@@ -19,41 +19,75 @@
         .wrap {
             width: 1496px;
             height: auto;
-            background-color: aqua;
         }
 
         /* header */
         header {
             border: solid red;
-            width: 1496px;
-            height: 192px;
+            width: 100%;
+            height: 128px;
             background-color: rosybrown;
+            /* display: flex; */
+            /* justify-content: space-between; */
+            /* flex-wrap: wrap; */
+        }
+
+        nav {
+            width: 1496px;
+            height: 100px;
             display: flex;
+            justify-content: space-between;
             flex-wrap: wrap;
         }
 
-        header span {
-            border: solid;
-        }
-
-        nav>div {
+        .part1 {
+            margin: 0;
+            width: 1496px;
             display: flex;
-            width: 100%;
             justify-content: space-between;
-            align-self: center;
-            padding: 8px 16px;
+            border: solid orange;
         }
-
-        nav ul {
+        ul {margin: 0;
+            border: solid;
             display: flex;
-    flex-wrap: wrap;
-    align-self: center;
+        }
+        li {
+            margin: 0;
+            
+            /* width: 200px; */
+        }
+        .part2 {
+            border: solid blue;
+            width: 1496px;
+            display: flex;
+            justify-content: space-between;
         }
 
-        nav li {
-            width: auto;
-    padding: 8px 16px;
-    height: 40px;
+        h1, .part2 div {
+            margin: 0;
+            border: 3px solid red;
+            width: 200px;
+            height: 80px;
+        }
+
+
+    
+
+        .sticky {
+            display: flex;
+            position: sticky;
+            top: 0;
+            height: 50px;
+            border: solid;
+            width: 1496px;
+            height: 64px;
+            padding-top: 20px;
+        }
+
+        .search {
+            width: 1248px;
+            height: 72px;
+            border: solid;
         }
 
         .section1_img {
@@ -69,7 +103,7 @@
     <header>
         <nav>
             <!-- header part 1 -->
-            <div class="service">
+            <div class="part1">
 
                 <ul>
                     <li>사서 지원 서비스</li>
@@ -92,30 +126,37 @@
                     <p>운영 시간 : 09:00 ~ 18:00</p>
                 </div>
             </div>
-            <!-- header part 3 / navigation-->
 
-            <div>
-                <span>자료 검색</span>
-                <span>디지털 컬렉션</span>
-                <span>신청.참여</span>
-                <span>도서관 이용</span>
-                <span>도서관 소개</span>
-            </div>
         </nav>
+
+
+
     </header>
 
     <div class="wrap">
+
+        <!-- header part 3 / navigation-->
+        <div class="sticky">
+            <span>자료 검색</span>
+            <span>디지털 컬렉션</span>
+            <span>신청.참여</span>
+            <span>도서관 이용</span>
+            <span>도서관 소개</span>
+        </div>
+
         <!-- section1 -->
         <section>
-            <input type="checkbox" id="chk1" checked required>
-            <label for="chk1">도서 이름</label>
-            <input type="checkbox" id="chk2">
-            <label for="chk2">도서 장르</label>
-            <input type="checkbox" id="chk3">
-            <label for="chk3">홈페이지</label>
-            <input type="search" placeholder="검색어를 입력하세요.">
-            <button>검색</button>
-            <span>도서 순위</span>
+            <div class="search">
+                <input type="checkbox" id="chk1" checked required>
+                <label for="chk1">도서 이름</label>
+                <input type="checkbox" id="chk2">
+                <label for="chk2">도서 장르</label>
+                <input type="checkbox" id="chk3">
+                <label for="chk3">홈페이지</label>
+                <input type="search" placeholder="검색어를 입력하세요.">
+                <button>검색</button>
+                <span>도서 순위</span>
+            </div>
             <div class="section1_img">
                 <img src="https://dummyimage.com/482x450/&text=calendar" alt="도서관 달력">
                 <img src="https://dummyimage.com/532x450/000/fff&text=closed_days" alt="휴관일">
