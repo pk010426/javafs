@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>국립중앙도서관_박건우</title>
     <style>
+
+        /* 선생님이 봐주실 문제의 css */
+        /* Q. 지금 현 상태는 코드가 잘 해결 되었으나, ' h1, .part2 div(가장 큰 문제 요소) ' 코드에 margin 0; 을 주지 않으면, around-between처럼 정렬됩니다. 그 이유가 궁금합니다.
+            
+        */
+
         /* 초기화 */
         * {
             margin: 0 auto;
@@ -15,7 +21,7 @@
             list-style: none;
         }
 
-        /* 가로 크기 지정 */
+        /* 본문 가로 크기 지정 */
         .wrap {
             width: 1496px;
             height: auto;
@@ -27,16 +33,12 @@
             width: 100%;
             height: 128px;
             background-color: rosybrown;
-            /* display: flex; */
-            /* justify-content: space-between; */
-            /* flex-wrap: wrap; */
         }
 
         nav {
             width: 1496px;
             height: 100px;
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
         }
 
@@ -54,7 +56,6 @@
         li {
             margin: 0;
             
-            /* width: 200px; */
         }
         .part2 {
             border: solid blue;
@@ -63,14 +64,15 @@
             justify-content: space-between;
         }
 
+        /* 가장 큰 문제 요소 */
         h1, .part2 div {
             margin: 0;
-            border: 3px solid red;
+            border: 3px solid yellow;
             width: 200px;
             height: 80px;
         }
-
-
+        /*  / 선생님이 봐주실 문제의 css */
+            
     
 
         .sticky {
@@ -98,6 +100,8 @@
 </head>
 
 <body>
+
+    <!-- 선생님이 봐주실 문제의 html -->
 
     <!-- header -->
     <header>
@@ -129,9 +133,9 @@
 
         </nav>
 
-
-
     </header>
+<!-- /선생님이 봐주실 문제의 html -->
+
 
     <div class="wrap">
 

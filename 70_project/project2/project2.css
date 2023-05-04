@@ -87,6 +87,10 @@ nav a {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+.slogan_box img {
+    width: 1496px;
+    height: 750px;
+}
 
 .slogan span {
     color: black;

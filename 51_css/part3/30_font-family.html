@@ -8,12 +8,22 @@
     <style>
         /* 글꼴 이름에 공백이 있을 경우 ''으로 묶는다. */
         /* .ff의 글꼴을  'Courier New', Courier, monospace로 지정해 보세요.*/
-        
+        /* 글꼴 지정 시, 2~3개 정도 그룹으로 지정한다.
+         선택자 {
+            속성: 값1, 값2, ...;
+            본문 내용 서체는 sans-serif를 주로 쓰자
+         }
+        */
+
+        .ff {
+            font-family: sans-serif;
+
+        }
     </style>
 </head>
 <body>
     <h1>글꼴 종류</h1>
     <p>serif, sans-serif, monospace, cursive, fantasy의 다섯 가지 일반 글꼴 모음이 있다.</p>
-    <p class="ff">serif, sans-serif, monospace, cursive, fantasy의 다섯 가지 일반 글꼴 모음이 있다.</p>
+    <p class="ff">serif, Fsans-serif, monospace, cursive, fantasy의 다섯 가지 일반 글꼴 모음이 있다.</p>
 </body>
 </html>

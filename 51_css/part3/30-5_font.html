@@ -12,12 +12,28 @@
             font-weight: bold;
             font-size: 16px;
             line-height: 1.6;
-            font-family: 'Courier New', Courier, monospace;
+            /* 글자 크기의 1.6배 */
+            font-family: 'Courier New'
         }
 
-        /* font: [스타일] [굵기] 크기[/줄간격] 글꼴; */
+        /* 
+            font-style: 기울임
+            font-weight: 굵기
+            font-size: 크기
+            font-family: 글꼴
 
-        
+            속기형 쓰는 법
+            font: [스타일] [굵기] 크기[/줄간격] 글꼴; 
+            단, 크기와 글꼴의 종류는 반드시 들어가야 함.
+        */
+
+        .font2 {
+            font: italic bolder 16px 'Couier New', Courier, monospace;
+        }
+        .font2 {
+            font: italic bolder 16px/1.6 'Couier New', Courier, monospace;
+        }
+
     </style>
 </head>
 
