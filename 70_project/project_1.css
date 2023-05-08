@@ -5,10 +5,9 @@
 
 /* reset */
 * {
-    list-style: none;
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box;
     text-decoration: none;
 }
 
@@ -17,19 +16,19 @@ html {
 }
 
 body {
-    color: blue;
-    font-size: 1.5rem/1.8 'Noto Sans KR', sans-serif;
+    color: black;
+    font: 1.6rem/1.8 'Noto Sans KR', sans-serif;
 
+}
+
+li {
+    list-style: none;
 }
 
 /* a태그와 버튼 글자 색은 body 태그의 글자 색을 상속 받지 않는다. */
 a {
     color: #333;
-}
-
-img {
-    width: 100%;
-
+    text-decoration: none;
 }
 
 /* header */
@@ -46,28 +45,42 @@ nav {
 }
 
 header ul {
-    padding: 0 32px;
+    padding: 0 16px;
     display: flex;
     align-items: center;
     height: 100%;
-
 }
 
 header li {
-    margin: 0 24px;
+    margin: 0 8px;
 }
+
+header i {
+    margin-right: 8px;
+}
+
 header a {
-   padding: 4px 16px;
+    padding: 4px 8px;
 }
 
 header a:hover {
-    
+
     background-color: #ccc;
 }
 
 /* section1 */
 #home {
     position: relative;
+    background: url(images/pk_profile.png) no-repeat 50% 50%/cover fixed;
+    height: 100vh;
+    /* 
+    background img: url
+    background repeat:no-repeat;
+    background position: 50% 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    */
 }
 
 .logo {
@@ -86,6 +99,36 @@ header a:hover {
 
 
 /* section2 */
+#about {
+    margin: 88px auto 0;
+    border: 1px solid;
+    width: 952px;
+    height: 760px;
+}
+
+#about h2 {
+    text-align: center;
+}
+
+#about image {
+    display: inline;
+
+}
+
+.name {
+    text-align: center;
+}
+#about img {
+    text-align: center;
+    margin-left: 50%;
+}
+
 /* section3 */
+#parallax {
+    position: relative;
+    background: url(images/pk_camera.png) no-repeat 50% 50%/cover fixed;
+    height: 100vh;
+}
+
 /* section4 */
 /* footer */

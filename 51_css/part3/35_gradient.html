@@ -1,6 +1,6 @@
-08_gradient.html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,22 +10,34 @@
         div {
             width: 200px;
             height: 100px;
-            border: 1px solid red;
+            /* border: 1px solid red; */
             margin: 20px;
         }
 
         /* 
+            사파리, 크롬 : -webkit-inear-gradient
+            오페라: -o-
+        */
+        /* 
+            그라데이션
+
+            background: 값;
+                값: linear-gradient, radial-gradient, conic-gradient
+        */
+
+
+        /* 
             선형(linear) 그라디언트
-            1) linear-gradient([to 방향1], 색1, 색2, [색3, ...]) 
+            1) linear-gradient([to 방향1 방향2], 색1, 색2, [색3, ...]) 
                 - 방향: left, right, top, bottom
             
             2) linear-gradient([각도], 색1, 색2, [색3, ...])
-                - 각도: 0~360deg 
+                - 각도: 0~360deg(단위: deg)
         */
 
         /* .lg1에 위 blue, 아래 white의 선형 그라디언트를 지정해 보세요. */
-        
-        
+
+
         /* .lg2에 왼쪽 아래 #ff0000, 오른쪽 위 #ffffff의 선형 그라디언트를 지정해 보세요. */
 
 
@@ -39,18 +51,51 @@
         */
         /* .rg에 중심은 white, 바깥쪽은 blue인 원형 모양의 그라디언트를 지정해 보세요. */
 
-        
+        .lg1 {
+            background: linear-gradient(125deg, rgb(91, 62, 173), #1E9373)
+        }
+
+        .lg2 {
+            background: linear-gradient(to right top, red, white);
+        }
+
+        .lg3 {
+            background: linear-gradient(135deg, blue, white, yellow);
+        }
+
+        .lg4 {
+            background: linear-gradient(0deg, skyblue, brown);
+        }
+
+        .rg {
+            background: radial-gradient(circle, skyblue, pink);
+        }
+        /* 
+        원뿔형(conic) 그라디언트
+        conic-gradient(from 각도, 색, 색2, 색3,...)
+        */
+        .cg {
+            background: conic-gradient(from 270deg, orange, white, green)
+        }
     </style>
 </head>
+
 <body>
     <h1>그라디언트</h1>
     <h2>선형</h2>
     <div class="lg1">1</div>
     <div class="lg2">2</div>
     <div class="lg3">3</div>
+    <div class="lg4">4</div>
 
     <h2>원형</h2>
     <div class="rg">4</div>
 
+    <h2>원뿔형</h2>
+    <div class="cg">
+        5
+    </div>
+    <div>고양이</div>
 </body>
+
 </html>

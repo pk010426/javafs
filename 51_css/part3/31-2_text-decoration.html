@@ -8,15 +8,63 @@
     <style>
         /* .tdn에 텍스트 장식을 제거해 보세요. */
 
+        a {
+            color: rgb(7, 247, 235);
+        }
+        a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+        /* 
+            
+            text-decoration-line: 라인종류;
+                값: none, underline, overline, line-through
+            text-decoration-thickness: 두께;
+                값: auto, px(em, rem), %
+            text-decoration-style: 스타일;
+                값: solid, dotted, dashed, double, wavy
+            text-decoration-color: 현재색;
+
+            속기형
+            text-decoration: line [thickness style color < 생략가능];
+        */
+
+        .tdn {
+
+            text-decoration: none;
+            text-decoration: solid;
+            text-decoration-color: black;
+            text-decoration-thickness: auto; 
+            
+            /* color: black; */
+        }
 
         /* .tdu에 텍스트 밑줄을 지정해 보세요. */
-
+        .tdu {
+            text-decoration: underline;
+            text-decoration-style: dashed;
+            text-decoration-thickness: 10px;
+            text-decoration-color: blue;
+            text-underline-offset: 70px;
+        }
 
         /* .tdo에 텍스트 윗줄을 지정해 보세요. */
-
+        .tdo {
+            text-decoration: overline;
+            text-decoration-style: dotted;
+            text-decoration: overline 8px dotted red;
+            
+        }
 
         /* .tdl에 텍스트 취소선을 지정해 보세요. */
-
+        .tdl {
+            
+            text-decoration: line-through;
+            text-decoration-style: wavy;
+            
+        
+        }
         
     </style>
 </head>
