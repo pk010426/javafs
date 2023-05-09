@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        /* html {
+            height: 100%;
+        }
+        body {
+            height: 100%;
+        } */
+
+        .wrap {
+
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: red;
+        }
+
+        .news {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -755px;
+            width: 820px;
+            height: 210px;
+            border: 2px solid darkgreen;
+            /* background-color: aqua; */
+
+        }
+
+        .news div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: skyblue;
+            left: 755;
+            top: 0;
+            transition: 0.5s ease-in;
+        }
+
+        .news a:hover {
+            left: 0;
+        }
+
+        .news a:hover + .news div {
+            left: 0;
+        }
+
+        a {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 65px;
+            height: 100%;
+            z-index: 1;
+            background-color: antiquewhite;
+
+            /* right: 10px; */
+        }
+
+        /* a에 마우스를 올리면, 형제선택자인 .new에 right 0; 값을 줘라 */
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <h1>
+            사이드 메뉴
+        </h1>
+        <p>
+            https://www.daewooenc.com/
+        </p>
+
+        <div class="news">
+            <a href="#"> 뉴스룸</a>
+            <div>
+                뉴스룸 내용
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        html {
+            font-size: 10px;
+        }
+
+        * {
+            box-sizing: border-box;
+            color: #888;
+        }
+
+        img {
+            width: 100%;
+        }
+
+
+        .wrap1 {
+            overflow: hidden;
+            width: 342px;
+            height: 268px;
+        }
+
+        .inner {
+            /* transform: scale(1); */
+            transition: 0.3s;
+        }
+
+        .wrap1:hover .inner {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>
+        이미지 호버시, 확대하기
+    </h1>
+    <p>
+        https://www.honorsville.co.kr/
+    </p>
+
+    <nav class="wrap1">
+        <div class="inner">
+            <img src="/51_css/assets/20220511_1124.jpg" alt="경남아너스빌">
+        </div>
+    </nav>
+
+
+</body>
+
+</html>

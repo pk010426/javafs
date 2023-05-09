@@ -23,11 +23,20 @@
             width:100px;
             height:100px;
             background: red;
+
+            /* transition-property: all;
+            transition-duration: 0.3s; */ /* 0.3초 동안 움직임 */
+            /* 이거로 막대 올라가는 거 만들기 */
+            /* transition-timing-function: ease;
+            transition-delay: 0s; */ /* 마우스를 올린지 0 초만에 움직임 */
+
+            transition:all 3s ease 3s;
         }
         
         div:hover {
             width: 200px;
             background: blue;
+            transition: background 1s ease 0s;
         }
     </style>
 </head>

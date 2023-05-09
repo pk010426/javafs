@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        .box {
+            /* position: relative; */
+            /* perspective-origin: x축, y축 (기본값 50%, 50% 
+            관점의 기준) */
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            /* perspective는 관점 속성으로 부모 요소에 지정한다. */
+            perspective: 200px;
+            /* 작으면 가까이 있고, 값이 크면 멀리 있는 것
+            800 전 후로 보통 쓴다. */
+            /* 관점의 위치로 perspective 속성과 함께 사용해야 한다. */
+            /* perspective-origin: 50% 50%; */
+            margin: 20px;
+            perspective-origin: 50% 50%;
+
+        }
+        .box:hover {
+            transform: rotateY(190deg);
+        }
+
+        .box:hover .수박, .고양이 {
+            overflow: hidden;
+            transform: rotateY(180deg);
+        }
+
+        .box {
+            position: relative;
+        }
+
+        .고양이 {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            /* z-index: 1; */
+        }
+
+        .수박 {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            /* float:top; */
+            position: absolute;
+        
+            /* bottom: 100px; */
+        }
+
+        /* .outer에 마우스를 올렸을 때 .trfsk를 y축 기준으로 10도 기울이시오. */
+    </style>
+</head>
+
+<body>
+    <h1>변환</h1>
+    <h2>이동</h2>
+    <div class="wrap">
+        <div class="box">
+            <div class="고양이">고양이</div>
+            <div class="수박">수박</div>
+        </div>
+    </div>
+</body>
+
+</html>

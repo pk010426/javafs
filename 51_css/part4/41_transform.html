@@ -8,9 +8,15 @@
     <title>HTML+CSS</title>
     <style>
         .outer {
+            /* position: relative; */
+            /* perspective-origin: x축, y축 (기본값 50%, 50% 
+            관점의 기준) */
+            width: 1000px;
             border: 1px solid black;
             /* perspective는 관점 속성으로 부모 요소에 지정한다. */
-            perspective: 1000px;
+            perspective: 200px;
+            /* 작으면 가까이 있고, 값이 크면 멀리 있는 것
+            800 전 후로 보통 쓴다. */
             /* 관점의 위치로 perspective 속성과 함께 사용해야 한다. */
             perspective-origin: 50% 50%;
             margin: 20px;
@@ -18,41 +24,104 @@
 
         .trf {
             display: inline-block;
-            width:100px;
-            height:100px;
+            width: 100px;
+            height: 100px;
             background: red;
             transition: .5s;
         }
 
         /* 
+            변환
+            1. 2d 변환 x, y 축
+            2. 3d 변환 x, y, z 축
+
+            transform: translateX x위치
+            transform: translateY y위치
+            transform: translateZ z위치
+
+
+            1. 이동 (translate)
+            2. 크기 ()
+            3. 회전 (rotate)scale
+            4. 기울임 (skew)
+
             transform: translate(x, y);
-            transform: scale(w, h);
+            transform: scale(width, height);
             transform: rotate(각도); (단위: deg)
+            
             transform: skew(각도, 각도) (단위: deg);
+
+            trans form: perspective, translateX, scalex, rotate
+
+            z값이 있으면 3d 사용 가능 
+            ex) transform:scale3d
         */
 
         /* .outer에 마우스를 올렸을 때 .trftr의 위치를 가로로 100px 이동되게 하시오. */
 
+        .trftr {
+            /* 포지션 특징 
+            1. position:absolute; fixed;일 경우, 부모가 자식의 크기를 못 갖는다.
+             */
+            /* position: absolute; */
+            left: 0;
+            top: 0;
+
+        }
+        .outer:hover .trftr {
+            
+            transform: translate(100px, 0);
+        }
+
 
         /* .outer에 마우스를 올렸을 때 .trfsc의 크기를 너비/높이 모두 1.2로 지정하시오. */
-
-
-        .trfro {
-            /* 변환의 기준 */
+        .trfcs {
             transform-origin: 0 0;
         }
-        /* .outer에 마우스를 올렸을 때 .trfro를 60도 회전되도록 지정하시오. */
+        .outer:hover .trfsc {
+            width: 120px;
+            height: 120px;
+            /* transform: scale(1.2); */
+        }
 
+        .trfro {
+
+
+            /* 변환의 기준 */
+            /* transform-origin: x, y 
+
+                단위: px, % 가능
+                x축 : left, right, center
+                y축 : top, bottom, center
+            */
+
+            transform-origin: 0 50%;
+        }
+
+        /* .outer에 마우스를 올렸을 때 .trfro를 60도 회전되도록 지정하시오. */
+        .outer:hover .trfro {
+            transform: rotate(90deg);
+        }
 
         /* .outer에 마우스를 올렸을 때 .trfrox를 x축 기준으로 60도 회전되도록 지정하시오. */
+        .outer:hover .trfrox {
+            transform: rotateX(60deg);
+        }
 
-
+        .trfroy {
+            transform-origin: 0 0;
+        }
         /* .outer에 마우스를 올렸을 때 .trfroy를 y축 기준으로 90도 회전되도록 지정하시오. */
+        .outer:hover .trfroy {
 
+            transform: perspective(200px) rotateY(50deg);
+        }
 
         /* .outer에 마우스를 올렸을 때 .trfsk를 y축 기준으로 10도 기울이시오. */
-
-
+        .outer:hover .trfsk {
+            /* skew(x, y) 하나의 값만 기록하면 좌우로 기울어진다(x값만 적용)*/
+            transform: skew(40deg, 80deg)
+        }
     </style>
 </head>
 
@@ -60,18 +129,18 @@
     <h1>변환</h1>
     <h2>이동</h2>
     <div class="outer">
-        <span class="trf trftr">translate</span>transform
+        <span class="trf trftr">translate</span>
     </div>
     <h2>크기 조절</h2>
     <div class="outer">
-        <span class="trf trfsc">scale</span>transform
+        <span class="trf trfsc">scale</span>
     </div>
     <h2>회전</h2>
     <div class="outer">
-        <span class="trf trfro">rotate</span>transform
+        <span class="trf trfro">rotate</span>
     </div>
     <div class="outer">
-        <span class="trf trfrox">rotate</span>transform
+        <span class="trf trfrox">rotate</span>
     </div>
     <div class="outer">
         <span class="trf trfroy">rotate</span>transform
