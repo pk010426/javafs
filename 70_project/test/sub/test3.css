@@ -1,0 +1,111 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.about {
+    perspective: 1000px;
+
+    text-align: center;
+    width: 1920px;
+    height: 800px;
+    border: solid;
+    position: relative;
+}
+
+.about img:nth-of-type(2) {
+    position: absolute;
+    top: 28%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.hexagon {
+    font-style: italic;
+    position: absolute;
+    top: 90px;
+    left: 18%;
+    color: white;
+    background-color: black;
+    width: 342px;
+    height: 304px;
+    clip-path: polygon(0 0, 100% 5%, 100% 85%, 0% 100%);
+}
+.hexagon h3 {
+    font-size: 32px;
+    padding: 24px 0px;
+    border-bottom: 4px solid;
+}
+.hexagon h4 {
+    font-size: 24px;
+}
+.mtext {
+    margin-top: 24px;
+    display: flex;
+}
+
+.mtext div {
+    width: 180px;
+}
+.mtext p {
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+.hexagon2 {
+    perspective: 1000px;
+    font-style:italic;
+    position: relative;
+    position: absolute;
+    top: 89px;
+    right: 18%;
+    color: white;
+    background-color: black;
+    width: 342px;
+    height: 308px;
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 85%);
+}
+.hexagon2 h3 {
+    font-size: 20px;
+    padding: 24px 0px;
+    border-bottom: 4px solid;
+}
+.hexagon2 img {
+    position: absolute;
+    margin-top: 3px;
+    top: 80px;
+    right: 1px;
+    width: 270px;
+    height: 200px;
+    transform:rotateY(-35deg);
+    clip-path: polygon(0 1.5%, 100% 6%, 100% 99%, 0 95%);
+}
+.hexagon2 div {
+    position: absolute;
+    margin: 8px;
+    padding-top: 60px
+}
+.graph {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: 93px;
+    right: 46px;
+    background-color: #ff1010;
+    clip-path: polygon(45% 54%, 42% 55%, 36% 49%, 45% 41%, 77% 35%, 76% 71%);
+    transform: rotateY(-35deg);
+}
+
+.graph_in {
+    width: 145px;
+    height: 145px;
+    position: absolute;
+    top: 101px;
+    right: 53px;
+    background-color: #ffbbbbc4;
+    clip-path: polygon(44.5% 51.5%, 41% 53%, 37% 49%, 46% 42%, 77% 36%, 76% 69%);
+    transform: rotateY(-35deg);
+
+}
