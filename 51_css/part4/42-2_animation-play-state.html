@@ -23,8 +23,13 @@
         }
 
         /* 애니메이션 실행 여부 */
+        /* 
+            animation-play-state: 값;
+            값: running, paused
+        */
         .wrap:hover .anim {
             animation-play-state: running;
+            /* animation-direction: reverse; */
         }
         .anim {
             animation: rotate 1s infinite linear paused;

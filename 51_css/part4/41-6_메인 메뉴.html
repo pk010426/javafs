@@ -58,17 +58,27 @@
         .wrap3 a::after {
             content:'';
             display: block;
-            background-color: red;
+            background-color: blue;
             /* width: 60px; */
+            border: solid;
             height: 2px;
-            transition: 0.3s;
-            transform: scaleX(0);
+            transition: 1s;
+            /* transform: scaleX(0); */
             /* transform-origin: 0 0; */
         }
         .wrap3 a:hover::after {
             transform: scaleX(1);
         }
 
+        div {
+            width: 1000px;
+            height: 200px;
+            background-color: red;   
+            border: solid;
+
+            transition: 5s;
+            transform: scaleX(100px)
+        }
 
 
     </style>
@@ -95,6 +105,7 @@
     <nav class="wrap3">
         <a href="#">제품소개3</a>
     </nav>
+    <div></div>
 
 
 

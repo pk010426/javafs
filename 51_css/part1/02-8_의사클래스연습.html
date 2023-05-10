@@ -9,7 +9,17 @@
     <style>
         /* p가 타깃되었을 때 */
         
+        p:target {
+            background-color: royalblue;           
+        }
         /* input의 라디오 버튼이 체크되었을 때 */
+        input {
+            display: none;
+
+        }
+        input:checked + p{
+            background-color: red;
+        }
         /* h2의 3번째 자손 중 h2와 p를 제외하고 */
 
         /* 아래 내용을 확인한 후 지우고 지정해 보세요. */
@@ -27,27 +37,7 @@
             scroll-behavior: smooth;
         }
 
-        p:target {
-            background: yellow;
-        }
 
-        /* 체크된 요소의 형제 p의 배경색을 노랑으로 함 */
-        :checked+p {
-            background: red;
-        }
-
-        #tab3,
-        #tab4 {
-            display: none;
-        }
-
-        label {
-            cursor: pointer;
-        }
-
-        h2:nth-of-type(3)~ :not(h2, p) {
-            background: lightblue;
-        }
     </style>
 </head>
 
