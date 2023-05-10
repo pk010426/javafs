@@ -1,8 +1,13 @@
 @charset "utf-8";
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
 }
 
 .about {
@@ -15,7 +20,7 @@
     position: relative;
 }
 
-.about img:nth-of-type(2) {
+/* .about img:nth-of-type(2) {
     position: absolute;
     top: 28%;
     right: 50%;
@@ -33,14 +38,17 @@
     height: 304px;
     clip-path: polygon(0 0, 100% 5%, 100% 85%, 0% 100%);
 }
+
 .hexagon h3 {
     font-size: 32px;
     padding: 24px 0px;
     border-bottom: 4px solid;
 }
+
 .hexagon h4 {
     font-size: 24px;
 }
+
 .mtext {
     margin-top: 24px;
     display: flex;
@@ -49,6 +57,7 @@
 .mtext div {
     width: 180px;
 }
+
 .mtext p {
     font-size: 16px;
     margin-top: 16px;
@@ -56,7 +65,7 @@
 
 .hexagon2 {
     perspective: 1000px;
-    font-style:italic;
+    font-style: italic;
     position: relative;
     position: absolute;
     top: 89px;
@@ -67,6 +76,7 @@
     height: 308px;
     clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 85%);
 }
+
 .hexagon2 h3 {
     position: absolute;
     font-size: 20px;
@@ -75,18 +85,19 @@
     padding-bottom: 10px;
     border-bottom: 4px solid;
     /* transform: skewX(-15deg) */
-    
-}
-.hexagon2 img {
+/* } */
+
+/* .hexagon2 img {
     position: absolute;
     margin-top: 3px;
     top: 80px;
     right: 1px;
     width: 270px;
     height: 200px;
-    transform:rotateY(-35deg);
+    transform: rotateY(-35deg);
     clip-path: polygon(0 1.5%, 100% 6%, 100% 99%, 0 95%);
 }
+
 .hexagon2 div {
     position: absolute;
     margin: 8px;
@@ -102,19 +113,19 @@
     background-color: white;
     clip-path: polygon(47% 55%, 40% 56%, 36% 48%, 45% 41%, 78% 34%, 77% 73%);
     transform: rotateY(-35deg);
-}
-.graph {
-    /* width: 160px; */
-    /* height: 160px; */
+} */
+
+/* .graph {
+
     position: absolute;
     top: 93px;
     right: 46px;
     background-color: white;
     clip-path: polygon(45% 54%, 42% 55%, 36% 49%, 45% 41%, 77% 35%, 76% 71%);
     transform: rotateY(-35deg);
-    transition:all 0s .1s;
+    transition: all 0s .1s;
     transform: scale(0);
-    transition-timing-function: cubic-bezier(1, 0, 0,1);
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
     transition-timing-function: steps(20 start);
 
 }
@@ -126,9 +137,9 @@
     background-color: white;
     clip-path: polygon(44.5% 51.5%, 41% 53%, 37% 49%, 46% 42%, 77% 36%, 76% 69%);
     transform: rotateY(-35deg);
-    transition:all 0s .3s;
+    transition: all 0s .3s;
     transform: scale(0);
-    transition-timing-function: cubic-bezier(1, 0, 0,1);
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
     transition-timing-function: steps(20 start);
 }
 
@@ -137,37 +148,239 @@
     width: 46%;
     height: 52%;
     transform: scale(1);
-    transition:all 2.7s .3s;
+    transition: all 2.7s .3s;
 
 
 
 }
+
 .hexagon2:hover>.graph_in {
-    background-color:#ffbbbb ;
+    background-color: #ffbbbb;
     width: 42%;
     height: 47%;
     transform: scale(1);
-    transition:all 2.7s .3s;
-
-    
-
-
-}
+    transition: all 2.7s .3s;
+} */
 
 .about1 {
     perspective: 1000px;
     text-align: center;
     width: 1920px;
     height: 800px;
-    /* border: solid; */
+    border: solid;
     position: relative;
+    perspective: 800px;
 }
 
-.about1 img {
-    width: 100%;
+.name_card {
+    width: 520px;
+    height: 330px;
+    border: 5px solid black;
+    position: absolute;
+    top: 38%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px;
+    font-weight: bolder;
+    font-size: 1.6rem;
+}
+
+.name_card h2 {
+    font-size: 3rem;
+    margin-bottom: 36px;
+}
+
+.name_card div {
+    padding: 20px 10px 0px;
+    width: 200px;
+    height: 288px;
+}
+
+.name_card p {
+    margin-bottom: 24px;
 }
 
 .container {
     width: 1920px;
     margin: 0 auto;
+}
+
+.program_language {
+    width: 400px;
+    height: 380px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    top: 17%;
+    left: 9%;
+    font-weight: bolder;
+    font-size: 1.6rem;
+    transform: rotateY(10deg);
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 99%);
+    justify-content: space-around;
+    perspective: 800px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.program_language h2 {
+    font-size: 3rem;
+    border-bottom: 5px solid white;
+    width: 100%;
+    height: 80px;
+    padding: 16px;
+}
+
+.program_language h3 {
+    padding: 16px;
+    font-size: 2rem;
+    border-bottom: 5px solid white;
+}
+
+.program_language div {
+    border: 5px solid white;
+    transform: rotateY(30deg);
+}
+
+.program_language div:nth-of-type(1) {
+    width: 173px;
+    height: 200px;
+    margin-left: 16px;
+}
+
+.program_language div:nth-of-type(2) {
+    margin-top: 8px;
+    width: 180px;
+    height: 170px;
+}
+
+.program_language p {
+    background-color: white;
+    margin-top: 16px;
+    font-size: 1.8rem;
+}
+
+.front p:nth-of-type(1) {
+    color: #f1662a;
+}
+
+.front p:nth-of-type(2) {
+    color: #1978ba;
+}
+
+.front p:nth-of-type(3) {
+    color: #f2bf4f;
+}
+
+.back p:nth-of-type(1) {
+    color: #e32b2c;
+}
+
+.back p:nth-of-type(2) {
+    color: #3748a5;
+}
+
+.graph {
+    width: 410px;
+    height: 400px;
+    background-color: black;
+    color: white;
+    position: relative;
+    position: absolute;
+    top: 17%;
+    right: 8.5%;
+    font-weight: bolder;
+    font-size: 1.6rem;
+    transform: rotateY(-9deg);
+    clip-path: polygon(0 0, 100% 0, 100% 97%, 0% 85%);
+    perspective: 800px;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.graph img {
+    position: absolute;
+    top: 22%;
+    right: 3%;
+    width: 300px;
+    height: 280px;
+    clip-path: polygon(15% 1%, 98% 0, 98% 99%, 15% 90%);
+
+}
+
+.graph h2 {
+    font-size: 2.5rem;
+    border-bottom: 5px solid white;
+    width: 100%;
+    height: 70px;
+    padding-top: 16px;
+}
+
+.hidden {
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: 145px;
+    right: 64px;
+    background-color: white;
+    clip-path: polygon(46% 56%, 46% 59%, 38% 48%, 46% 38%, 77% 30%, 76% 79%);
+}
+
+.graph1 {
+
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: 145px;
+    right: 64px;
+    background-color: white;
+    clip-path: polygon(47% 55%, 45% 57%, 39% 48%, 47% 39%, 77% 30%, 76% 79%);
+    transition: all 0s .5s;
+    transform: scale(0);
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.graph2 {
+    width: 158px;
+    height: 160px;
+    position: absolute;
+    top: 145px;
+    right: 66px;
+    background-color: white;
+    clip-path: polygon(48% 53.5%, 45.5% 55.5%, 41% 48.5%, 48.5% 40%, 77% 32%, 76% 76.5%);
+    transition: all 0s .5s;
+    transform: scale(0);
+    transition-timing-function: cubic-bezier(1, 0, 0, 1);
+}
+
+.graph:hover>.graph1 {
+    background-color: red;
+    width: 160px;
+    height: 160px;
+    transform: scale(1);
+    transition: all 2.7s .3s;
+
+
+
+}
+
+.graph:hover>.graph2 {
+    background-color: #ffbbbb;
+    width: 158px;
+    height: 160px;
+    transform: scale(1);
+    transition: all 3s .3s;
+}
+
+.graph div:last-of-type {
+    padding: 8px;
+    border: 5px solid white;
+    position: absolute;
+    top: 40%;
+    left: 3%;
+    transform: rotateY(-25deg);
+    font-size: 2rem;
 }
