@@ -11,7 +11,7 @@
             프레임 수 : 35
             1프레임의 크기: 390*165
         */
-        div {
+        .anim {
             width: 390px;
             height: 168px;
             background: url(../assets/spriteimg.png);
@@ -20,6 +20,37 @@
             text-indent: -9990em;
             overflow: hidden;
         }
+
+        div .div1 {
+            top: 20%;
+            position: absolute;
+            transform: rotate(35deg);
+            transform: translateY(320deg);
+            border: solid;
+            margin-left: 300px;
+            width: 216px;
+            height: 216px;
+            background: url(/70_project/images/note.png);
+            background-repeat: no-repeat;
+            background-position: -20px -16px ;
+            text-indent: -1000px;
+        }
+        div .div2 {
+            top: 50%;
+            position: absolute;
+            transform: rotate(35deg);
+            transform: translateY(320deg);
+            border: solid;
+            margin-left: 300px;
+            width: 180px;
+            height: 216px;
+            background: url(/70_project/images/note.png);
+            background-repeat: no-repeat;
+            background-position: -240px -16px ;
+            text-indent: -1000px;
+        }
+
+
 
         .anim {
             animation-name: text;
@@ -46,6 +77,15 @@
 <body>
     <h1>애니메이션</h1>
     <div class="anim">구름
+    </div>
+<br>
+<br>
+<br>
+<br>
+
+    <div>
+        <div class="div1">스포트 라이트</div>
+        <div class="div2">스포트 라이트</div>
     </div>
     <!-- <img src="../assets/" alt=""> -->
 </body>
