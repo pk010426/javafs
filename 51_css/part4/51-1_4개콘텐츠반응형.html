@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD</title>
+    <style>
+        /* 
+            미디어쿼리 작성 형식
+            @meiae [not|only] [screen 생략 가능] [and] (expressions) {
+                 CSS-code;
+                 
+                 min width  최소 높이
+                 matxihte : 최대 높이
+                 matxihte : 최대 높이: min                 matxihte : 최대 높이
+            }
+
+            
+            mediatype: all, screen, tv, projection, print, ...
+            and: 그리고
+            , : 또는
+            expressions: 조건으로 min-width, max-width, orientation, ...
+        */
+
+        /*  @medra (조건) 조건에 만족하는 장치에 대해 css codtd를 적용 시킨다*/
+
+        /* 데스크탑의 배경색은 blue, 테블릿의 배경색은 green, 폰의 배경색은 red이 되도록 반응형 웹을 만들어 보세요. 미디어쿼리의 중단점은 768, 1200으로 지정합니다. */
+
+
+
+        /* 모바일 우선 제작 */
+        /* 767px 이하 */
+        /* phone */
+
+        /* phone */
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+            height: 100%;
+        }
+
+        section {
+            padding: 30px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        /* box size */
+        ul {
+            width: 100%;
+            /* margin: 0 auto; */
+            /* padding: 30px; */
+            display: flex;
+            /* flex-direction: column; */
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        li {
+            margin-top: 16px;
+            /* width: 362px; */
+            width: 100%;
+            /* height: 240px; */
+            background-color: yellow;
+        }
+
+
+        /* tablet 600이상 */
+        @media (min-width: 600px) {
+            body {
+                background-color: rosybrown;
+            }
+            li {
+                width: calc(50% - 8px);
+            }
+            
+        }
+
+        /* desktop 992이상*/
+        @media (min-width: 992px) {
+            body {
+                background-color: gray;
+                
+            }
+            ul {
+                width: 1496px;
+                margin: 0 auto;
+            }
+            li {
+                width: calc(25% - 8px);
+                max-width: 362px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section>
+        <h1>반응형 웹</h1>
+        <ul>
+            <li><img src="/70_project/images/cat.jpg" alt="고냥이"></li>
+            <li><img src="/70_project/images/cat.jpg" alt="고냥이"></li>
+            <li><img src="/70_project/images/cat.jpg" alt="고냥이"></li>
+            <li><img src="/70_project/images/cat.jpg" alt="고냥이"></li>
+        </ul>
+
+    </section>
+</body>
+
+</html>

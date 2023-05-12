@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,42 +10,74 @@
         .wrap {
             display: flex;
         }
+
         .outer {
             margin: 20px;
-            border:1px solid black;
+            border: 1px solid black;
             /* perspective: 1000px; */
         }
+
         .trf {
-            display:inline-block;
-            width:100px;
-            height:100px;
+            display: inline-block;
+            transform: scale(0, 0);
+            width: 200px;
+            height: 100px;
             background: red;
-            transition: .5s;
+            animation: scale 5s infinite;
+            transition: 5s;
+            a
         }
+
+        @keyframes scale {
+            0% {
+                scale: (0, 0);
+            }
+
+            25% {
+                scale: (0.25, 0.25);
+            }
+            50% {
+                scale: (0.5, 0.5);
+            }
+            75% {
+                scale: (0.75, 0.75);
+            }
+
+            100% {
+                scale: (1, 1);
+            }
+        }
+
         /* .outer에 마우스를 올리면 자식 .trftx를 오른쪽으로 100px 이동 */
         .outer:hover .trftx {
-            /* transform: translateX(x); */
-            transform: translateX(100px);
+            transform: scale(.5, 1);
+            /* animation: scale 3s infinite; */
         }
+
         .outer:hover .trfty {
             /* transform: translateY(y); */
             transform: translateY(100px);
         }
+
         .trftz {
             transform: perspective(1000px) translateZ(0px);
         }
+
         .outer:hover .trftz {
             /* 원근감(perspective)과 함께 사용해야 한다. */
             /* transform: translateZ(z); */
             transform: perspective(1000px) translateZ(100px);
         }
+
         .trftd {
-            transform: perspective(1000px) translate3d(0px,0px,0px);
+            transform: perspective(1000px) translate3d(0px, 0px, 0px);
         }
+
         .outer:hover .trftd {
             /* transform: translate3d(x,y,z); */
-            transform: perspective(1000px) translate3d(100px,100px,100px);
+            transform: perspective(1000px) translate3d(100px, 100px, 100px);
         }
+
         .outer:hover .trft {
             /* transform: translate(x[, y]); */
             transform: translate(100px, 100px);
@@ -52,6 +85,7 @@
         }
     </style>
 </head>
+
 <body>
     <h1>변환</h1>
     <h2>이동</h2>
@@ -73,4 +107,5 @@
         </div>
     </div>
 </body>
+
 </html>
