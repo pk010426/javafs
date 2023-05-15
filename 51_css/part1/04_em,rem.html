@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            font-size: 1.5em;
+        }
+
+        div {
+            font-size: 1.5em;
+        }
+
+        div>div {
+            font-size: 0.9em;
+        }
+
+        div>div>div {
+            font-size: 0.75em;
+        }
+
+        span {
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>단위: em, rem
+        <!-- 부모 글자 크기의 2배 -->
+
+    </h1>
+    바디의 글자
+    <!-- em과 rem 공통점
+    둘 다 배수 단위이다.
+    누구의 몇 배인가가 다름.
+    rem은 html 높이의 배수
+    em은 부모 높이의 배수
+-->
+    <div>
+        바디 기준 글자 크기 15px
+        <div>
+            글자 크기 30px
+            <div>
+                글자 크기 60px
+            </div>
+        </div>
+
+        <span> 글자 크기 60px</span>
+    </div>
+</body>
+
+</html>

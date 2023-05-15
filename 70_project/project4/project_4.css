@@ -1,11 +1,15 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;400;700;900&display=swap');
 
 /* 초기화 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    list-style: none;
+}
+
+html {
+    font-size: 10px;
 }
 
 /* 공통 */
@@ -15,18 +19,25 @@
     /* width 지정 후, margin: 0 auto  - 가운데 정렬하는 방법*/
 }
 
+body {
+    font: 1.5rem/1.8 'Gothic A1', sans-serif;
+    color: #333;
+}
+
 img {
     vertical-align: top;
 
 }
 
-/* header*/
 li {
-    display: inline-block;
+    list-style: none;
 }
 
+a {
+    text-decoration: none;
+    color: #777;
+}
 
-header,
 #contents,
 footer {
     display: flex;
@@ -34,27 +45,49 @@ footer {
 
 /* 헤더 */
 header {
-    background: aqua;
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    align-items: center;
 }
+
+header li {
+    display: inline-block;
+}
+
 
 /* 로고 */
 .logo {
     width: 200px;
-    height: 100px;
-    background: brown;
 }
 
 /* 네비게이션 */
-nav {
-    width: 1000px;
-    height: 100px;
-    background: wheat;
+/* nav {
+    width: 800px;
+} */
+
+nav ul {
+    display: flex;
 }
 
+nav li {
+    width: 150px;
+    margin-left: 8px;
+    text-align: center;
+}
+
+nav .main>li>a {
+    color: #854E2F;
+    font-size: 1.8rem;
+}
+
+nav .sub {
+    display: none;
+}
 
 /* 슬라이드 */
 #slide {
-    /* height: 300px; */
+   
     overflow: hidden;
 }
 
@@ -68,7 +101,7 @@ nav {
 
 @keyframes slide {
     0% {
-        left: 0
+        left: 0;
     }
 
     5% {
@@ -80,17 +113,19 @@ nav {
     }
 
     38% {
-        left: -200%
+        left: -200%;
     }
+
     66% {
-        left: -200%
+        left: -200%;
     }
 
     71% {
-        left: -300%
+        left: -300%;
     }
+
     99.999% {
-        left: -300%
+        left: -300%;
     }
 
     100% {
@@ -101,29 +136,95 @@ nav {
 
 #slide img {
     width: 100%;
-    /* height: 300px; */
 }
 
 /* 메인 컨텐츠 */
-#contents {
-    background: red;
-}
 
-#contents div {
+#contents>div {
     width: 400px;
     height: 200px;
 }
 
+/* 탭 메뉴 */
 .tabs {
-    background: rosybrown;
+    padding: 24px 24px 24px 0;
 }
 
-.banner {
-    background: aquamarine;
+.tabs input,
+.tabs #tab1, .tabs #tab2 {
+    display: none;
 }
 
-.shortcut {
-    background: khaki;
+#btn1:checked~#tab1,
+#btn2:checked~#tab2 {
+    display: block;
+}
+
+.tabs label {
+    display: inline-block;
+    background-color: #854E2F;
+    color: white;
+    padding: 4px 16px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+#btn1:checked+label,
+#btn2:checked+label {
+    background-color: orange;
+    color: black;
+    font-weight: 700;
+}
+
+/* 탭 메뉴 - 공지사항 */
+#tab1 li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted #ccc;
+    white-space: wrap;
+
+}
+
+#tab1 span {
+    display: inline-block;
+}
+
+#tab1 a {
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#tab1 a:hover {
+    color: #333;
+}
+
+/* 탭 메뉴 - 갤러리 */
+#btn2:checked ~ #tab2 {
+    display: flex;
+    justify-content: space-between;
+}
+#tab a {
+    display: inline-block;
+}
+#tab2 img {
+    width: 110px;
+
+}
+
+/* 배너 */
+.banner img {
+    width: 400px;
+    height: 200px;
+}
+
+/* 바로가기 */
+.shortcut img {
+    width: 400px;
+    height: 200px;
 }
 
 /* 푸터 */
