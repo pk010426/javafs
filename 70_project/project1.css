@@ -22,6 +22,7 @@ body {
     font: 1.6rem/1.8 'Noto Sans KR', sans-serif;
 }
 
+
 li {
     list-style: none;
 }
@@ -125,9 +126,7 @@ header a:hover {
     padding: 16px 24px;
     font-weight: bolder;
     font-size: 1.6rem;
-
     transform: scale(0, 0);
-    transition: 5s;
 }
 
 .name_card h2 {
@@ -167,9 +166,7 @@ header a:hover {
     perspective: 800px;
     display: flex;
     flex-wrap: wrap;
-
     transform: scale(0, 0);
-    transition: 5s;
 }
 
 .program_language h2 {
@@ -245,17 +242,17 @@ header a:hover {
     display: flex;
     flex-wrap: wrap;
     transform: scale(0, 0);
-    transition: 5s;
-
 }
 
 .graph img {
+
+    clip-path: polygon(15% 1%, 98% 0, 98% 99%, 15% 90%);
     position: absolute;
     top: 22%;
     right: 3%;
     width: 300px;
     height: 280px;
-    clip-path: polygon(15% 1%, 98% 0, 98% 99%, 15% 90%);
+    transform: scale(0.99, 0.99);
 }
 
 .graph span {
@@ -288,7 +285,7 @@ header a:hover {
 
 .graph span:nth-of-type(4) {
     position: absolute;
-    top: 81.7%;
+    top: 81.5%;
     left: 50%;
     transform: rotateY(-11deg);
     font-size: 12px;
@@ -333,7 +330,7 @@ header a:hover {
     right: 64px;
     background-color: white;
     clip-path: polygon(47% 55%, 45% 57%, 39% 48%, 47% 39%, 77% 30%, 76% 79%);
-    transition: all 0s .5s;
+    /* transition: all 0s .5s; */
     transform: scale(0);
     transition-timing-function: cubic-bezier(1, 0, 0, 1);
 }
@@ -346,7 +343,7 @@ header a:hover {
     right: 66px;
     background-color: white;
     clip-path: polygon(48% 53.5%, 45.5% 55.5%, 41% 48.5%, 48.5% 40%, 77% 32%, 76% 76.5%);
-    transition: all 0s .5s;
+    /* transition: all 0s .5s; */
     transform: scale(0);
     transition-timing-function: cubic-bezier(1, 0, 0, 1);
 }
@@ -357,9 +354,6 @@ header a:hover {
     height: 160px;
     transform: scale(1);
     transition: all 2.7s .3s;
-
-
-
 }
 
 .graph:hover>.graph2 {
@@ -458,6 +452,11 @@ header a:hover {
 .section2:hover .graph {
     transform: scale(1, 1);
 }
+.section2:hover .graph img {
+    transform: scale(1, 1);
+    transition: 0.1s;
+}
+
 
 
 /* section3 */
@@ -576,7 +575,7 @@ header a:hover {
 iframe {
     margin-top: 40px;
     margin-bottom: 24px;
-    width: 80%;
+    width: 1320px;
     height: 400px;
 }
 
@@ -585,16 +584,29 @@ iframe {
     margin-bottom: 8px;
 }
 
+form {
+    /* text-align: center; */
+    /* justify-content: center; */
+    width: 1320px;
+    align-items: center;
+    display: flex;
+    /* flex-direction: ; */
+    margin: 0 auto;
+    background-color: red;
+}
+
 input {
     margin: 16px 40px 16px 40px;
     width: 200px;
     height: 40px;
     padding-left: 16px;
+    display: block;
 }
 
 textarea {
+    display: flex;
     margin-top: 16px;
-    width: 80%;
+    width: 960px;
     padding-top: 16px;
     padding-left: 16px;
 }

@@ -38,11 +38,6 @@ a {
     color: #777;
 }
 
-#contents,
-footer {
-    display: flex;
-}
-
 /* 헤더 */
 header {
     display: flex;
@@ -68,12 +63,15 @@ header li {
 
 nav ul {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 nav li {
-    width: 150px;
-    margin-left: 8px;
-    text-align: center;
+    background-color: red;
+    width: 140px;
+    text-align: left;
+    align-items: center;
 }
 
 nav .main>li>a {
@@ -87,7 +85,7 @@ nav .sub {
 
 /* 슬라이드 */
 #slide {
-   
+
     overflow: hidden;
 }
 
@@ -140,6 +138,12 @@ nav .sub {
 
 /* 메인 컨텐츠 */
 
+
+#contents {
+    display: flex;
+    padding: 8px 0;
+}
+
 #contents>div {
     width: 400px;
     height: 200px;
@@ -151,7 +155,8 @@ nav .sub {
 }
 
 .tabs input,
-.tabs #tab1, .tabs #tab2 {
+.tabs #tab1,
+.tabs #tab2 {
     display: none;
 }
 
@@ -203,13 +208,15 @@ nav .sub {
 }
 
 /* 탭 메뉴 - 갤러리 */
-#btn2:checked ~ #tab2 {
+#btn2:checked~#tab2 {
     display: flex;
     justify-content: space-between;
 }
+
 #tab a {
     display: inline-block;
 }
+
 #tab2 img {
     width: 110px;
 
@@ -229,7 +236,12 @@ nav .sub {
 
 /* 푸터 */
 footer {
-    background: violet;
+    display: flex;
+    align-content: center;
+        background: rgba(165, 42, 42, 0.561) url(images4/logo2.jpg) no-repeat;
+        padding-left: 350px;
+
+    
 }
 
 .b_logo {
@@ -239,13 +251,39 @@ footer {
 }
 
 .addr {
-    width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1000px;
     height: 100px;
-    background: magenta;
 }
 
 .sns {
-    width: 200px;
+    align-items: center;
     height: 100px;
-    background: skyblue;
+    font-size: 3rem;
+    display: flex;
+    flex: 0 0 200px;
+    /* flex : glow shrink basis 순으로 입력 된다. */
+        /* 기본값 : 0 1 auto */
 }
+
+.sns a {
+    color: black;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.sns a:hover {
+    transform: scale(1.2);
+}
+.sns a:nth-of-type(1):hover {
+    color: magenta;
+}
+.sns a:nth-of-type(2):hover {
+    color: blue;
+}
+.sns a:nth-of-type(3):hover {
+    color: yellow;
+}
+

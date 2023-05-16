@@ -12,12 +12,34 @@
     <h1>데이터 유형</h1>
     <script>
         /* 
+            내장 객체
+            사용자 정의 객체
+            메서드
+            속성
+            이벤트
+
+            함수 란 객체가 필요없는 메서드
+            alert()
+            confirm()
+            prompt()
+
+
+            내장 함수 : number(문자열인데 숫자로 바뀔 수 있는 거.) "300"과 같은 거. 매개 변수라고도 함.
+            사용자 정의 함수
+        
+        
+        */
+
+
+        /* 
             데이터 유형
             1. string: '문자열' 또는 "문자열"
             2. number: 숫자
             3. boolean(부울): true 또는 false
             4. undefined
             5. object(객체): Array(배열), Date(날짜), Math(수학), String(문자열), null, ... 
+            BOM (Browser Object Model) : window, document, ..
+            DOM (Document Object Model) : document 하나 있다.
 
             undefined는 변수에 값이 등록되기 전의 기본값이고,
             null은 변수에 저장된 데이터를 비우고자할 때 사용된다.
@@ -25,32 +47,59 @@
         */
 
         // string
-
-
+        var s1 = "고양이";
+        var s2 = "<h1>고양이!</h1>";
+        var s3 = String("99999")
         // number
 
+        var n1 = 123;
+        //  숫자지만, 문자열("400")과 같은 걸 변환 (number)
+        //  nan 오류 : not a number 숫자가 아니다. 라는 의미.
+        var n2 = Number("500");
 
+
+        
         // boolean
+        // true , false > 논리값
+        // 비교 연산자 < > <= >= == != 등
+        // 논리 연산자 : &&(and), ||(or) !(not)
+        let b1 = true;
+        let b2 = 10 >= 100;
+        let b3 = Boolean("hello")
+        // 값을 false 0 null undefinde "" 는 false
+        let b4 = Boolean(0);
+        let b5 = Boolean(null);
+        let b6 = Boolean(undefined);
+        let b7 = Boolean(""); // 빈 문자
 
+        // undefined : 정의되지 않음. 할당하지 않았을 때 나옴
+        let u;
 
-        // undefined
-
-
-        // null
-
+        // null : 값을 비울 때, 값을 삭제할 때 사용하는 값
+        let n = null;
 
         // 출력
         document.write(s1, '<br>');
         document.write(s2, '<br>');
         document.write(s3, '<br>');
+
         document.write(n1, '<br>');
         document.write(n2, '<br>');
+
         document.write(b1, '<br>');
         document.write(b2, '<br>');
-        document.write(b3, '<br>');
+        document.write(b3, '<br><br>');
+    
         document.write(b4, '<br>');
+        document.write(b5, '<br>');
+        document.write(b6, '<br>');
+        document.write(b7, '<br><br>');
+
         document.write(u, '<br>');
         document.write(n, '<br>');
+
+        n1 = n1 + 8484;
+        document.write("답은 " + n1);
     </script>
 </body>
 
