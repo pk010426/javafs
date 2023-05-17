@@ -1,5 +1,4 @@
 @charset "utf-8";
-
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
 
 
@@ -12,24 +11,11 @@
 }
 
 html {
-    font-size: 10px;
     scroll-behavior: smooth;
 }
 
 body {
     overflow-x: hidden;
-    color: black;
-    font: 1.6rem/1.8 'Noto Sans KR', sans-serif;
-}
-
-
-li {
-    list-style: none;
-}
-
-a {
-    color: #333;
-    text-decoration: none;
 }
 
 /* header */
@@ -66,7 +52,6 @@ header a {
 }
 
 header a:hover {
-
     background-color: #ccc;
 }
 
@@ -85,14 +70,8 @@ header a:hover {
     top: 40%;
     transform: translate(-50%, -50%);
     background-color: black;
-    font-size: 36px;
-    font-style: italic;
     padding: 12px 24px;
     text-align: center;
-}
-
-.logo a {
-    color: white;
 }
 
 /* section2 */
@@ -114,8 +93,6 @@ header a:hover {
 .name_card {
     width: 520px;
     height: 330px;
-    border: 5px solid black;
-    border-radius: 3%;
     position: relative;
     position: absolute;
     top: 18%;
@@ -124,13 +101,10 @@ header a:hover {
     display: flex;
     justify-content: space-between;
     padding: 16px 24px;
-    font-weight: bolder;
-    font-size: 1.6rem;
     transform: scale(0, 0);
 }
 
 .name_card h2 {
-    font-size: 3rem;
     margin-bottom: 24px;
 }
 
@@ -153,13 +127,10 @@ header a:hover {
     width: 400px;
     height: 380px;
     background-color: black;
-    color: white;
     position: relative;
     position: absolute;
     top: 17%;
     left: 9%;
-    font-weight: bolder;
-    font-size: 1.6rem;
     transform: rotateY(10deg);
     clip-path: polygon(0 0, 100% 4%, 100% 87%, 0% 100%);
     justify-content: space-around;
@@ -170,7 +141,6 @@ header a:hover {
 }
 
 .program_language h2 {
-    font-size: 3rem;
     border-bottom: 5px solid white;
     width: 100%;
     height: 80px;
@@ -178,12 +148,10 @@ header a:hover {
 }
 
 .program_language h3 {
-    font-size: 2rem;
     border-bottom: 5px solid white;
 }
 
 .program_language div {
-    border: 5px solid white;
     transform: rotateY(30deg);
 }
 
@@ -202,40 +170,16 @@ header a:hover {
 .program_language p {
     background-color: white;
     margin-top: 16px;
-    font-size: 1.8rem;
-}
-
-.front p:nth-of-type(1) {
-    color: #f1662a;
-}
-
-.front p:nth-of-type(2) {
-    color: #1978ba;
-}
-
-.front p:nth-of-type(3) {
-    color: #f2bf4f;
-}
-
-.back p:nth-of-type(1) {
-    color: #e32b2c;
-}
-
-.back p:nth-of-type(2) {
-    color: #3748a5;
 }
 
 .graph {
     width: 410px;
     height: 400px;
     background-color: black;
-    color: white;
     position: relative;
     position: absolute;
     top: 17%;
     right: 8.5%;
-    font-weight: bolder;
-    font-size: 1.6rem;
     transform: rotateY(-9deg);
     clip-path: polygon(0 3%, 100% 0, 100% 97%, 0% 84%);
     perspective: 800px;
@@ -257,54 +201,44 @@ header a:hover {
 
 .graph span {
     background-color: white;
-    color: black;
     z-index: 1;
-    font-size: 11px;
-    font-weight: bolder;
+    position: absolute;
 }
 
 .graph span:nth-of-type(1) {
-    position: absolute;
     top: 28%;
     left: 48%;
-    font-size: 12px;
     transform: rotateY(-11deg);
 }
 
 .graph span:nth-of-type(2) {
-    position: absolute;
     top: 38%;
     left: 79%;
+
 }
 
 .graph span:nth-of-type(3) {
-    position: absolute;
     top: 66%;
     left: 79%;
 }
 
 .graph span:nth-of-type(4) {
-    position: absolute;
     top: 81.5%;
     left: 50%;
     transform: rotateY(-11deg);
-    font-size: 12px;
 }
 
 .graph span:nth-of-type(5) {
-    position: absolute;
     top: 64%;
     left: 37%;
 }
 
 .graph span:nth-of-type(6) {
-    position: absolute;
     top: 39%;
     left: 37%;
 }
 
 .graph h2 {
-    font-size: 2.5rem;
     border-bottom: 5px solid white;
     width: 100%;
     height: 70px;
@@ -322,7 +256,6 @@ header a:hover {
 }
 
 .graph1 {
-
     width: 160px;
     height: 160px;
     position: absolute;
@@ -330,7 +263,6 @@ header a:hover {
     right: 64px;
     background-color: white;
     clip-path: polygon(47% 55%, 45% 57%, 39% 48%, 47% 39%, 77% 30%, 76% 79%);
-    /* transition: all 0s .5s; */
     transform: scale(0);
     transition-timing-function: cubic-bezier(1, 0, 0, 1);
 }
@@ -343,7 +275,6 @@ header a:hover {
     right: 66px;
     background-color: white;
     clip-path: polygon(48% 53.5%, 45.5% 55.5%, 41% 48.5%, 48.5% 40%, 77% 32%, 76% 76.5%);
-    /* transition: all 0s .5s; */
     transform: scale(0);
     transition-timing-function: cubic-bezier(1, 0, 0, 1);
 }
@@ -366,12 +297,10 @@ header a:hover {
 
 .graph div:last-of-type {
     padding: 8px;
-    border: 5px solid white;
     position: absolute;
     top: 40%;
     left: 3%;
     transform: rotateY(-25deg);
-    font-size: 2rem;
 }
 
 .note1,
@@ -386,9 +315,6 @@ header a:hover {
 .note2 span,
 .note3 span {
     display: inline-block;
-    font-family: 'Nanum Pen Script', cursive;
-    font-size: 26px;
-    line-height: 1.6em;
 }
 
 .note1 {
@@ -439,25 +365,28 @@ header a:hover {
     height: 192px;
 }
 
-
-.name_card, .program_language, .graph {
+.name_card,
+.program_language,
+.graph {
     transition: 2s;
 }
+
 .section2:hover .name_card {
     transform: scale(1, 1);
 }
+
 .section2:hover .program_language {
     transform: scale(1, 1);
 }
+
 .section2:hover .graph {
     transform: scale(1, 1);
 }
+
 .section2:hover .graph img {
     transform: scale(1, 1);
     transition: 0.1s;
 }
-
-
 
 /* section3 */
 .parallax1 {
@@ -468,65 +397,57 @@ header a:hover {
 
 /* section4 */
 #portfolio {
-    margin: 0 auto;
-    padding-top: 80px;
-    margin-bottom: 80px;
+    margin: 80px auto;
+    padding-top: 72px;
     text-align: center;
     width: 1496px;
-    height: 1024px;
-    position: relative;
 }
 
 .portfolio_img {
+    width: 1320px;
     height: 700px;
-    margin-top: 100px;
+    margin: 80px auto 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
 .portfolio_img div:hover {
-    transform: scale(1.2, 1.2);
+    transform: scale(1.1, 1.1);
     transition: 0.3s;
 }
+
 #portfolio span:hover {
     background-color: #ccc;
-    color: black;
 }
 
 .portfolio_img div {
     display: inline-block;
-    width: 440px;
+    width: 413px;
     height: 264px;
-    border: 2px solid #333;
     overflow: hidden;
-
 }
 
 #portfolio h2 {
-    font-size: 5rem;
     border-bottom: 2px solid rgba(128, 128, 128, 0.494);
     padding-bottom: 24px;
 }
 
 #portfolio span {
-    font-size: 32px;
     background-color: black;
-    color: white;
     box-sizing: content-box;
     padding: 8px 24px;
 }
 
 .portfolio_img h3 {
-    font-size: 2.5rem;
     width: 100%;
     height: 43px;
     border-bottom: 2px solid rgba(128, 128, 128, 0.494);
 }
 
 .portfolio_img img {
-    width: 100%;
+    width: 413px;
     height: auto;
 }
 
@@ -543,108 +464,94 @@ header a:hover {
 }
 
 #contact {
+    margin: 80px auto 40px;
+    padding-top: 72px;
+    text-align: center;
     width: 1496px;
-    height: 1080px;
-    margin: 80px auto;
-    padding: 40px 0 40 0;
     text-align: center;
 }
 
 #contact h2 {
-    font-size: 5rem;
     border-bottom: 2px solid rgba(128, 128, 128, 0.494);
-    width: 100%;
-    height: 120px;
-}
-
-.work {
-    display: flex;
-    justify-content: space-around;
+    padding-bottom: 24px;
 }
 
 .map {
-    margin-top: 80px;
-    width: 100%;
-}
-
-.map h3 {
-    font-size: 3rem;
-    width: 100%;
+    padding-top: 40px;
 }
 
 iframe {
-    margin-top: 40px;
-    margin-bottom: 24px;
+    margin: 40px 0;
     width: 1320px;
     height: 400px;
 }
 
 #contact p {
-    font-size: 24px;
     margin-bottom: 8px;
 }
 
 form {
-    /* text-align: center; */
-    /* justify-content: center; */
-    width: 1320px;
-    align-items: center;
+    width: 960px;
+    justify-content: center;
     display: flex;
-    /* flex-direction: ; */
+    flex-wrap: wrap;
     margin: 0 auto;
-    background-color: red;
 }
 
 input {
-    margin: 16px 40px 16px 40px;
+    margin: 16px 40px 32px 40px;
+    padding-left: 8px;
     width: 200px;
     height: 40px;
-    padding-left: 16px;
-    display: block;
 }
 
 textarea {
-    display: flex;
-    margin-top: 16px;
     width: 960px;
     padding-top: 16px;
     padding-left: 16px;
 }
+
 form button {
-    margin-top: 8px;
-    margin-left: 50%;
-    transform: translate(-50%, 50%);
-    display: block;
+    margin-top: 40px;
     width: 200px;
     height: 40px;
 }
+
 form button:hover {
     background-color: black;
-    color: white;
 }
 
 /* footer */
 footer {
-    border-top: 5px solid black;
-    padding-top: 16px;
-    height: 120px;
     background-color: black;
     text-align: center;
+    padding: 40px 0 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 
-footer a {
-    margin: 0 8px;
-    padding: 8px;
-    background-color: white;
-    border-radius: 5px;
+.sns {
+    width: 960px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
 }
-footer a:hover {
-    background-color: #ccc;
+
+.sns a {
+    width: 120px;
 }
-footer p {
-    padding: 8px;
-    display: inline;
-    width: 600px;
-    background-color: white;
-    border-radius: 5px;
+
+footer button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 25%;
+    right: 5%;
+}
+
+footer button:hover {
+    transform: scale(1.2, 1.2);
 }

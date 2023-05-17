@@ -1,0 +1,156 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap');
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font: 1.6rem/1.8 'Noto Sans KR', sans-serif;
+    color: #333;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 36px;
+    font-style: italic;
+}
+
+.logo a {
+    color: white;
+}
+
+.name_card {
+    border: 5px solid black;
+    border-radius: 3%;
+    font-weight: bolder;
+    font-size: 1.6rem;
+}
+
+.name_card h2 {
+    font-size: 3rem;
+}
+
+.program_language {
+    color: white;
+    font-weight: bolder;
+    font-size: 1.6rem;
+}
+
+.program_language h2 {
+    font-size: 3rem;
+}
+
+.program_language h3 {
+    font-size: 2rem;
+}
+
+.program_language div {
+    border: 5px solid white;
+}
+
+.program_language p {
+    font-size: 1.8rem;
+}
+
+.front p:nth-of-type(1) {
+    color: #f1662a;
+}
+
+.front p:nth-of-type(2) {
+    color: #1978ba;
+}
+
+.front p:nth-of-type(3) {
+    color: #f2bf4f;
+}
+
+.back p:nth-of-type(1) {
+    color: #e32b2c;
+}
+
+.back p:nth-of-type(2) {
+    color: #3748a5;
+}
+
+.graph {
+    color: white;
+    font-weight: bolder;
+    font-size: 1.6rem;
+}
+.graph span {
+    color: black;
+    font-size: 11px;
+    font-weight: bolder;
+}
+.graph h2 {
+    font-size: 2.5rem;
+}
+.graph div:last-of-type {
+    border: 5px solid white;
+    font-size: 2rem;
+}
+.note1 span,
+.note2 span,
+.note3 span {
+    font-size: 26px;
+    font-family: 'Nanum Pen Script', cursive;
+    line-height: 1.6em;
+}
+#portfolio span:hover {
+    color: black;
+}
+.portfolio_img div {
+    border: 2px solid #333;   
+}
+#portfolio h2 {
+    font-size: 5rem;
+}
+#portfolio span {
+     color: white;
+    font-size: 32px;
+}
+.portfolio_img h3 {
+    font-size: 2.5rem;
+}
+#contact h2 {
+    font-size: 5rem;
+}
+.map h3 {
+    font-size: 3rem;
+}
+#contact p {
+    font-size: 24px;
+}
+form button:hover {
+    color: white;
+}
+footer {
+    color: white;
+}
+.sns a {
+    color: white;
+}
+.sns a:nth-of-type(1):hover {
+    color: #feeb00;
+}
+
+.sns a:nth-of-type(2):hover {
+    color: #0eff0a;
+}
+
+.sns a:nth-of-type(3):hover {
+    color: #622c8f;
+}
+footer button {
+    border: black;
+    border-radius: 20%;
+}
