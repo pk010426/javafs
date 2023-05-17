@@ -14,6 +14,13 @@
         /* 
             논리 연산자: ||(또는), &&(그리고), !(아니다)
             
+            1. ()
+            2. 산술
+            3. 비교 
+            4. 논리
+            5. 대입 (할당)
+
+
             연산자의 우선순위
             18. ()
             15. 산술(증감): ++, --
@@ -31,14 +38,35 @@
             * 왼쪽에서 오른쪽 방향으로 계산
 
             우선순위 참고: https://www.w3schools.com/js/js_precedence.asp 
+
+            false는 산술 연산에서 0으로 취급
+            true는 1로 취급
         */
 
+
+        /* 
+    
+        
+        */
         var a = 10;
         var b = 20;
-        var m = 30;
-        var n = 40;
+        var c = 30;
+        var d = 40;
         var result;
 
+        result = a > b || b >= c || c > d;
+        document.write(result, '<br>');
+
+        result = a > b || b >= c || c <= d;
+        document.write(result, '<br>');
+
+        result = a <= b && b >= c && c <= d;
+        document.write(result, '<br>');
+
+        result = a <= b || b <= c && c <= d;
+        document.write(result, '<br>');
+
+        result = !(a > b);
         document.write(result, '<br>');
         
     </script>

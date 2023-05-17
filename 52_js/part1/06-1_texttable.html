@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS+JS</title>
     <style>
-        table,td {
+        table,
+        td {
             border: 1px solid;
         }
     </style>
 </head>
-
 <body>
     <h1>연산자</h1>
     <script>
@@ -21,15 +21,17 @@
         */
 
         var str = '<table>';
-        
+
+        //  +=는 누적 역할
         str += '<tr>';
         str += '<td>1</td><td>2</td><td>3</td>';
         str += '</tr>';
         str += '</table>';
 
         // 출력
-        document.write(str);
-        
+        // <table> <tr> <td>1</td><td>2</td><td>3</td> </tr> </table>
+        document.write(str); 
+
     </script>
 </body>
 

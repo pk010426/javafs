@@ -12,6 +12,23 @@
     <h1>연산자</h1>
     <script>
         /* 
+        자바 스크립트
+        
+        객체 지향 언어
+        
+        1. 어디에?
+        2. 출력 - 객체, 메서드
+        3. 변수 - var > let, const
+        4. 데이터 유형
+        5. 연산자 
+        6. 제어문
+
+        7. 함수
+        8. 객체
+
+        9. 이벤트, 제이쿼리 라이브러리
+        10. 응용
+
         우선순위
         1. ()
         2. 산술
@@ -20,24 +37,38 @@
         5. 할당(대입 = 과 같은 거)
 
 
-
             산술 연산자: +(더하기), -(빼기), *(곱하기), /(나누기), %(나머지), **(거듭제곱)
+
+            
+            변수의 선언
+            var 변수;
+            let 변수;
+
+            변수의 값을 할당
+            변수 = 값;
+
+            변수 선언 및 할당
+            const 변수 = 값;
+
+            = 대입(할당) 연산자는
+            오른쪽을 왼쪽에 대입
         */
 
         let num1 = 15;
-        let num2 = 2*2;
+        let num2 = 2 * 2;
         let result;
 
         num1 = num1 + num2
-        document.write("나는 덧셈" + num1, '<br><br>');
-        document.write("나는 덧셈" + num1, '<br><br>');
-        document.write("나는 덧셈" + num1, '<br><br>');
-        document.write("나는 덧셈" + num1, '<br><br>');
-        document.write("나는 덧셈" + num1, '<br><br>');
-        document.write("나는 덧셈" + num1, '<br><br>');
-        document.write("나는 덧셈" + num1, '<br><br>');
-        document.write("나는 덧셈" + num1, '<br><br>');
-        
+        result = "고양이"
+
+        document.write("나는 덧셈 " + (num1 + num2), '<br><br>');
+        num1 =142;
+        document.write("나는 뺄셈 " + (num1 - num2), '<br><br>');
+        document.write("나는 곱셈 " + (num1 * num2), '<br><br>');
+        document.write("나는 나눗셈 " + (num1 / num2), '<br><br>');
+        document.write("나는 나머지 " + (num1 % num2), '<br><br>');
+        document.write("나는 거듭 제곱 " + (num1 ** num2), '<br><br>');
+
         document.write(result, '<br>');
 
     </script>

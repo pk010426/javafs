@@ -13,14 +13,26 @@
     <script>
         /* 
             산술 연산자: +(문자열 결합)
+
+            연술자의 우선순위가 같으면, 왼쪽에서 오른 쪽으로 계산
+
+            문자열은 나열 된다.
         */
 
-        var t1 = '학교종이';
-        var t2 = ' 땡땡땡';
-        var t3 = 8282;
-        var t4 = ' 어서 모이자';
-        var result;
+        let t1 = '학교종이';
+        let t2 = ' 땡땡땡';
+        let t3 = 8282;
+        let t4 = ' 어서 모이자';
+        let result;
 
+        
+        result = t1 + t2 +t3 + t4;
+        document.write(result);
+        result = t3 * t3;
+        document.write(result);
+        result = t4 + t2;
+        document.write(result);
+        result = t4 + t2;
         document.write(result);
         
     </script>
