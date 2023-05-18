@@ -12,21 +12,33 @@
     <h1>if</h1>
     <script>
         /* 
+            제어문
+            1. 조건문 : if
+            2. 선택문 : switch
+            3. 반복문 : for, do, while
+
+            // 조건식이 true면 실행, 아니면 다음으로 넘어감
             if (조건식) {
                 코드;
             }
         */
 
         var num = 10;
-
+        if (!(num < 3)) {
+            document.write("3보다 크다!");
+        }
 
         // 조건식에 0, null, ''(빈 문자), undefined를 사용하면 false, 그 밖의 값은 true
         var num2 = 3;
+        if (num2) {
+            document.write(" 참인가?")
+        }
 
+        var num3 = 1;
+        if (num3) {
+            document.write ("졸리다.")
+        }
 
-        var num3 = 0;
-
-        
     </script>
 </body>
 

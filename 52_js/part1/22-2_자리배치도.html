@@ -20,10 +20,16 @@
         */
 
         // 입력
-
-
+        let stu = Number(prompt("총 학생 수는 몇 명인가요?, 숫자만 기록"));
+        let com = Number(prompt("한 줄에 몇 명이 앉나요?, 숫자만 기록"));
+        let row = stu / com;
         // 처리
-
+        if (stu % com == 0) {
+            document.write(row + "줄이 필요합니다.");
+        }
+        else {
+            document.write(parseInt(row+1) + "줄이 필요합니다.")
+        }
 
         // 출력
 

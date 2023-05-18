@@ -22,19 +22,30 @@
         */
 
         // 입력
-        var userName;
-        var userHeight;
-        var userWeight;
-
+        // prompt를 받은 값은 문자
+        let name = prompt("이름 입력!");
+        let height = Number (prompt("키 숫자만 입력!"));
+        let weight = Number (prompt("몸무계 숫자만 입력!"));
+        let mWeight;
+        let result;
         // 처리
         // 적정 체중 = (신장 - 100) * 0.9
+        mWeight = (height - 100) * 0.9;
 
-        
+        if (mWeight - 5 > weight) {
+            result = "적정 체중에서" + (mWeight - weight) + "kg 미달입니다.";
+        }
+        if (mWeight - 5 <= weight <= mWeight + 5) {
+            result = " 정상입니다.";
+        }
+        if (mWeight + 5 < weight) {
+            result = "적정 체중에서" + (weight - mWeight) + "kg 초과입니다.";
+        }
+
         // 오차 범위 ±5
 
-
         // 출력
-        document.write(userName + '님은 ' + result);
+        document.write(name + "님의 키는 " + height + "cm, 체중은 " + weight + "kg, 적정 체중은" + mWeight + "kg," + result);
     </script>
 </body>
 
