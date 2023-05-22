@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS+JS</title>
     <style>
-        table, td {
+        table,
+        td {
             border: 1px solid #ccc;
             border-collapse: collapse;
         }
+
         td {
             padding: 5px;
             font-size: 0.9rem;
@@ -20,6 +22,18 @@
 
 <body>
     <h1>자리 배치도</h1>
+
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <br>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
     <script>
         // 입력
         let stuNum = prompt("학생은 몇 명인가요?");
@@ -35,7 +49,7 @@
         document.write("<table>");
         for (let i = 0; i < rowNum; i++) {
             document.write("<tr>");
-            for (let j = 0; j <= colNum; j++) {
+            for (let j = 1; j <= colNum; j++) {
                 seatNo = i * colNum + j;
                 if (seatNo > stuNum) break;
                 document.write("<td> 좌석 " + seatNo + " </td>");

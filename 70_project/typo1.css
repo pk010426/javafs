@@ -101,10 +101,11 @@ a {
 .note1 span,
 .note2 span,
 .note3 span {
-    font-size: 26px;
+    font-size: 27px;
     font-family: 'Nanum Pen Script', cursive;
     line-height: 1.6em;
 }
+
 #portfolio span:hover {
     color: black;
 }

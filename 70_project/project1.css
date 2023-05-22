@@ -32,26 +32,26 @@ nav {
     height: 100%;
 }
 
-header ul {
+nav ul {
     padding: 0 16px;
     display: flex;
     align-items: center;
     height: 100%;
 }
 
-header li {
+nav li {
     margin: 0 8px;
 }
 
-header i {
+nav i {
     margin-right: 8px;
 }
 
-header a {
+nav a {
     padding: 4px 8px;
 }
 
-header a:hover {
+nav a:hover {
     background-color: #ccc;
 }
 
@@ -70,18 +70,13 @@ header a:hover {
     top: 40%;
     transform: translate(-50%, -50%);
     background-color: black;
-    padding: 12px 24px;
+    padding: 12px;
     text-align: center;
 }
 
 /* section2 */
-.wrap {
-    width: 100%;
-    margin: 0 auto;
-}
 
 #about {
-    perspective: 1000px;
     text-align: center;
     width: 1920px;
     height: 800px;
@@ -89,7 +84,7 @@ header a:hover {
     position: relative;
     perspective: 800px;
 }
-
+/* 가운데 이름 카드 */
 .name_card {
     width: 520px;
     height: 330px;
@@ -104,25 +99,22 @@ header a:hover {
     transform: scale(0, 0);
 }
 
-.name_card h2 {
-    margin-bottom: 24px;
-}
-
 .name_card div {
     padding: 8px 10px 0px;
     width: 200px;
     height: 288px;
 }
 
+.name_card h2 {
+    margin-bottom: 24px;
+}
+
+
+
 .name_card p {
     margin-bottom: 16px;
 }
-
-.container {
-    width: 1920px;
-    margin: 0 auto;
-}
-
+/* 왼쪽 언어 카드 */
 .program_language {
     width: 400px;
     height: 380px;
@@ -171,7 +163,7 @@ header a:hover {
     background-color: white;
     margin-top: 16px;
 }
-
+/* 오른쪽 그래프 */
 .graph {
     width: 410px;
     height: 400px;
@@ -371,19 +363,19 @@ header a:hover {
     transition: 2s;
 }
 
-.section2:hover .name_card {
+#about:hover .name_card {
     transform: scale(1, 1);
 }
 
-.section2:hover .program_language {
+#about:hover .program_language {
     transform: scale(1, 1);
 }
 
-.section2:hover .graph {
+#about:hover .graph {
     transform: scale(1, 1);
 }
 
-.section2:hover .graph img {
+#about:hover .graph img {
     transform: scale(1, 1);
     transition: 0.1s;
 }
@@ -406,7 +398,7 @@ header a:hover {
 .portfolio_img {
     width: 1320px;
     height: 700px;
-    margin: 80px auto 0;
+    margin: 80px auto 8px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -448,7 +440,6 @@ header a:hover {
 
 .portfolio_img img {
     width: 413px;
-    height: auto;
 }
 
 /* section5 */
@@ -477,13 +468,19 @@ header a:hover {
 }
 
 .map {
-    padding-top: 40px;
+    padding-top: 24px;
 }
 
 iframe {
     margin: 40px 0;
     width: 1320px;
     height: 400px;
+    border-radius: 8px;
+}
+
+address {
+    width: 720px;
+    margin: 0 auto;
 }
 
 #contact p {
@@ -515,6 +512,7 @@ form button {
     margin-top: 40px;
     width: 200px;
     height: 40px;
+    cursor: pointer;
 }
 
 form button:hover {
@@ -550,6 +548,7 @@ footer button {
     position: absolute;
     top: 25%;
     right: 5%;
+    cursor: pointer;
 }
 
 footer button:hover {

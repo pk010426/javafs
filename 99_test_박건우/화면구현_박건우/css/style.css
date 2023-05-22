@@ -118,6 +118,7 @@ nav span:hover+ul {
 }
 
 nav ul {
+    white-space: nowrap;
     margin-top: 40px;
     display: none;
 }
@@ -232,13 +233,16 @@ section:not(:nth-of-type(1)) h2 {
 }
 
 /* section4 */
+#print p {
+    word-break: break-all;
+}
 #print>p {
     margin-bottom: 40px;
 }
 
-
 #print li div {
-    margin: 16px 0;
+    margin: 40px 0;
+    overflow: hidden;
 }
 
 #print img {
@@ -267,7 +271,8 @@ form input {
     display: block;
     margin: 16px 0;
     padding: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.5)
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
 }
 
 form textarea {
@@ -275,6 +280,7 @@ form textarea {
     height: 100%;
     padding: 12px;
     border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
 }
 
 form button {
@@ -436,9 +442,12 @@ footer p {
     #login span:first-of-type {
         border-right: 1px solid #ccc;
     }
+    
+
 
     #login span:hover {
         color: black;
+        transform: scale(1.1);
     }
 
     /* nav */
@@ -488,7 +497,6 @@ footer p {
     }
 
     section {
-        max-width: 100%;
         width: 1496px;
         margin: 0 auto 64px;
     }

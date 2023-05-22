@@ -12,6 +12,19 @@
     <h1>switch</h1>
     <script>
         /* 
+        
+
+            if (변수 == 값1) {
+                코드1;
+            } else if (변수 == 값2) {
+                코드2;
+            }
+            } else if (변수 == 값3) {
+                코드3;
+            } else {
+                코드4;
+            }
+
             var 변수 = 초깃값;
 
             switch (변수) {
@@ -30,19 +43,36 @@
 
         switch (site) {
             case '구글': url = 'www.google.com';
-            break;
+                break;
             case '다음': url = 'www.daum.net';
-            break;
+                break;
             case '네이버': url = 'www.naver.com';
-            break;
+                break;
             case '네이트': url = 'www.nate.com';
-            break;
+                break;
             default: alert('보기 중에 없는 사이트입니다.');
         }
 
+
+
+        /* 객체 : window, document 
+            -메서드(기능) : prompt(), reload()
+            - 속성
+        
+                BOM 객체 : window, location, document
+        
+            내장 함수 : Number()
+        
+            
+            객체.메서드();
+            객체.속성 = "url";
+        */
+
         // window.location.href = 'url'
         // 현재 위치에서 url에 저장된 주소로 이동된다.
-        if (url) location.href = 'https://' + url;
+        if (url) {
+            location.href = 'https://' + url;
+        }
     </script>
 </body>
 
