@@ -19,7 +19,15 @@
             전역 변수(Global Variables)
                 - 자바스크립트 모든 영역에서 사용할 수 있는 변수
         */
+        let a = 10;
+        a = 14;
+        function cat() {
+            let a = 5;
+            document.write(a);
+        }
 
+        document.write(a, '<br>');
+        cat();
 
 
     </script>

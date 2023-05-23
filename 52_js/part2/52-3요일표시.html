@@ -48,13 +48,77 @@
         document.write(d.getDate(), '<br>');
         // 일요일 0 화요일 2 ,,,,
         document.write(d.getDay(), '<br>');
-        document.write(d.getHours(), '<br>');
-        document.write(d.getMinutes(), '<br>');
-        document.write(d.getSeconds(), '<br>');
-        document.write(d.gettimes(), '<br>');
 
-        var d2 = new Date(2020, 5, 29);
-        console.log(d2);
+        function dw() {
+            let a = d.getDay();
+            if (a == 0) {
+                document.write('일요일', '<br>');
+            }
+            if (a == 1) {
+                document.write('월요일', '<br>');
+            }
+            if (a == 2) {
+                document.write('화요일', '<br>');
+            }
+            if (a == 3) {
+                document.write('수요일', '<br>');
+            }
+            if (a == 4) {
+                document.write('목요일', '<br>');
+            }
+            if (a == 5) {
+                document.write('금요일', '<br>');
+            }
+            if (a == 6) {
+                document.write('토요일', '<br>');
+            }
+        }
+        dw();
+
+        document.write(d.getHours(), '<br>');
+
+        let h = d.getHours();
+        if (h < 13) {
+            if (h >= 1 || h <= 9) {
+                document.write('오전' + '0' + h + '시 입니다.')
+            }
+            else {
+                document.write('오전' + h + '시 입니다.')
+            }
+        }
+        else {
+            document.write('오후' + (h - 12) + '시 입니다.')
+        }
+
+
+        document.write(d.getMinutes(), '<br>');
+
+        let m = d.getMinutes();
+        if (m >= 0 && m <= 9) {
+            document.write ('0' + m,'<br>');
+        }
+        else {
+            document.write(m,'<br>');
+        }
+
+    
+
+
+
+        document.write(d.getSeconds(), '<br>');
+
+
+        let s = d.getSeconds();
+        
+            if (s >= 0 && s <= 9) {
+                document.write ('0' + s);
+            }
+            else {
+                document.write(s);
+            }
+               
+
+
 
     </script>
 </body>

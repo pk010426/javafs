@@ -23,7 +23,21 @@
             함수 호출
                 var 변수 = 함수명();
         */
+        //    지역변수 ~ 매개변수
+        /*
+                    지역변수 : 함수 내에서 사용하는 변수
+                    전역변수 : 함수 내외에서 모두 사용 가능한 변수
+        */
+        function plus(a, b) {
+            let sum = a + b;
+            // document.write(sum);
+            // return;
+            // document.write(sum);
+            return sum;
+        }
 
+        let cat = plus(1, 4);
+        document.write(cat);
 
     </script>
 </body>
