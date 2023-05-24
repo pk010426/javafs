@@ -11,16 +11,37 @@
 <body>
     <h1>배열 객체</h1>
     <script>
-       /* 
-            join(연결문자): 연결문자 기준으로 1개의 문자열 데이터로 반환
-            concat(): 2개의 배열 객체를 하나로 결합하여 반환
-            sort(): 오름차순 정렬하여 반환
+        /* 
+             join(연결문자): 연결문자 기준으로 1개의 문자열 데이터로 반환
+             A.concat(B): 2개의 배열 객체를 하나로 결합하여 반환
+                          A에 B를 결합하여 반환
+
             reverse(): 데이터 순서를 거꾸로 바꾼 후 반환
             slice(index1, index2): 인덱스1에서 인덱스2 이전까지 반환
-       */
+            sort(): 오름차순 정렬하여 반환
+        */
 
-        var arr_1 = ['사당', '교대', '방배', '강남'];
-        var arr_2 = ['신사', '압구정', '옥수'];
+        let ar1 = ['사당', '교대', '방배', '강남'];
+        let ar2 = ['신사', '압구정', '옥수'];
+        let ar3 = ['b', 'c', 'ad'];
+        document.write(ar1.join('-'), '<br>')
+        document.write(ar1, '<br>')
+        document.write(ar1.concat(ar2), '<br>')
+
+        // 0번 배열 부터 ~ 3번 배열 전까지
+        //  0 <= x < 3
+        document.write(ar1.slice(0, 3), '<br>')
+
+        // 한글은 가나다순, 영어는 abc순
+        document.write(ar3.sort(), '<br>')
+        // sort는 기존 배열 값들을 오름차순으로 바꿔버림
+        document.write(ar3, '<br>')
+        // 역순
+        document.write(ar3.reverse(), '<br>')
+        // reverse도 기존 배열 값들을 (내림차순으로) 바꿔버림
+        document.write(ar3, '<br>')
+
+
 
 
 
