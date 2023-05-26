@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+JS</title>
     <style>
-
+       
     </style>
 </head>
 
@@ -34,13 +34,15 @@
         var i = 0;
 
         function changeimg() {
+            
             i++;
             if (i >= backimg.length) {
                 i = 0;
             }
 
             var imgTag = document.querySelector('div');
-            imgTag.innerHTML = ' <img src="../assets/' + backimg[i] + '" alt="pic1">'
+            imgTag.innerHTML = ' <img src="../assets/' + backimg[i] + '" alt="' + backimg[i] + '">'
+
         }
     </script>
 
