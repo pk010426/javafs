@@ -62,13 +62,14 @@
         let num = 1;
         function gallery(direct) {
             if (direct) {
-                if (num === 10) num = 1;
+                if (num === 10) num = 0;
                 num++;
                 console.log(num);
 
             } else {
                 if (num === 1) num = 10;
                 num--;
+                console.log(num);
             }
 
             var imgTag = document.getElementById('photo');

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캐논</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/typo.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- https://www.frisbeekorea.com/shop/main/main.do -->
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="nav_bottom_border">
+            <div class="login">
+                <ul>
+                    <li>회사소개</li>
+                    <li>&nbsp; | &nbsp;</li>
+                    <li>다운로드센터</li>
+                    <li>&nbsp; | &nbsp;</li>
+                    <li>정품등록</li>
+                    <li>&nbsp; | &nbsp;</li>
+                    <li>매장안내</li>
+                </ul>
+                <ul>
+                    <li><i class="fa-regular fa-user" style="color: #6e7683;"></i> 마이페이지</li>
+                    <li>&nbsp; | &nbsp;</li>
+                    <li><i class="fa-solid fa-user-plus" style="color: #6e7683;"></i> 회원가입</li>
+                    <li>&nbsp; | &nbsp;</li>
+                    <li><i class="fa-solid fa-right-to-bracket fa-rotate-180" style="color: #6e7683;"></i> 로그인</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="nav_bottom_border">
+            <nav>
+                <div class="nav_inner">
+                    <div class="logo">CaNon</div>
+                    <i class="fa-solid fa-bars" style="color: #7d7d7d;"></i>
+                    <ul>
+                        <li>Event</li>
+                        <li>Camera</li>
+                        <li>Lens</li>
+                        <li>Printer</li>
+                        <li>Customer Support</li>
+                    </ul>
+                </div>
+                <span><i class="fa-solid fa-magnifying-glass" style="color: #7d7d7d;"></i></span>
+            </nav>
+        </div>
+    </header>
+    <!-- section1 -->
+    <section id="main">
+        <div class="main_img">
+             <button onclick="click_img(0)"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
+            <button onclick="click_img(1)"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
+            <img src="images/main1.jpg" alt="" id="photo">
+           
+            <script>
+                let num = 1;
+                function click_img(direct) {
+                    if (direct) {
+                        if (num === 4) num = 0;
+                        num++;
+                        console.log(num);
+
+                    } else {
+                        if (num === 1) num = 5;
+                        num--;
+                        console.log(num);
+                    }
+                    let imgTag = document.getElementById('photo');
+                    imgTag.setAttribute('src', 'images/main' + num + '.jpg');
+                }
+
+            </script>
+        </div>
+    </section>
+</body>
+
+</html>
