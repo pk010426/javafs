@@ -42,11 +42,11 @@
                     <div class="logo">CaNon</div>
                     <i class="fa-solid fa-bars" style="color: #7d7d7d;"></i>
                     <ul>
-                        <li>Event</li>
-                        <li>Camera</li>
-                        <li>Lens</li>
-                        <li>Printer</li>
-                        <li>Customer Support</li>
+                        <li><a href="#camera">Camera</a></li>
+                        <li><a href="#lens">Lens</a></li>
+                        <li><a href="#event">Event</a></li>
+                        <li><a href="#printer">Printer</a></li>
+                        <li><a href="#customer_support">Customer Support</a></li>
                     </ul>
                 </div>
                 <span><i class="fa-solid fa-magnifying-glass" style="color: #7d7d7d;"></i></span>
@@ -56,10 +56,10 @@
     <!-- section1 -->
     <section id="main">
         <div class="main_img">
-             <button onclick="click_img(0)"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
+            <button onclick="click_img(0)"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
             <button onclick="click_img(1)"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
             <img src="images/main1.jpg" alt="" id="photo">
-           
+            <!-- slide_img_button_script -->
             <script>
                 let num = 1;
                 function click_img(direct) {
@@ -76,10 +76,115 @@
                     let imgTag = document.getElementById('photo');
                     imgTag.setAttribute('src', 'images/main' + num + '.jpg');
                 }
-
             </script>
         </div>
     </section>
+    <!-- section2 -->
+    <section id="camera">
+        <div class="section2_inner">
+            <button><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
+            <button><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
+            <div class="camera_page"></div>
+            <div class="camera_page"></div>
+            <div class="camera_page"></div>
+            <div class="camera_page"></div>
+        </div>
+    </section>
+    <!-- section3 -->
+    <section id="lens">
+        <div class="section3_title">
+
+        </div>
+        <div class="section3_inner">
+            <button><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
+            <button><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
+            <div class="lens_page"></div>
+            <div class="lens_page"></div>
+            <div class="lens_page"></div>
+            <div class="lens_page"></div>
+        </div>
+    </section>
+    <!-- section4 -->
+    <section id="event">
+        <div class="ad">
+
+        </div>
+        <div class="section4_inner">
+            <div class="event_wrap">
+                <div class="event_page"></div>
+                <h3>title</h3>
+                <p>내용</p>
+            </div>
+            <div class="event_wrap">
+                <div class="event_page"></div>
+                <h3>title</h3>
+                <p>내용</p>
+            </div>
+            <div class="event_wrap">
+                <div class="event_page"></div>
+                <h3>title</h3>
+                <p>내용</p>
+            </div>
+            <div class="event_wrap">
+                <div class="event_page"></div>
+                <h3>title</h3>
+                <p>내용</p>
+            </div>
+        </div>
+    </section>
+    <!-- section5 -->
+    <section id="printer">
+        <div class="section5_title">
+
+        </div>
+        <div class="section5_inner">
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+        </div>
+    </section>
+    <!-- section6 -->
+    <section id="customer_support">
+        <div class="section6_title">
+
+        </div>
+        <div class="section6_inner">
+            <div id="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1881.893554136018!2d127.06227233359915!3d37.50897742815602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca44054201203%3A0xd71388edba01e49d!2z7LqQ64W87L2U66as7JWEIOyjvOyLne2ajOyCrA!5e0!3m2!1sko!2skr!4v1682408009345!5m2!1sko!2skr">
+                </iframe>
+            </div>
+            <form action="message.php" method="post">
+                <h3>고객센터 문의</h3>
+                <input type="text" name="user_name" placeholder="이름">
+                <input type="email" name="user_email" placeholder="이메일">
+                <input type="text" name="user_subject" placeholder="제목">
+                <textarea name="user_commet" cols="88" rows="5" placeholder="문의사항을 적어주세요."></textarea>
+                <button type="submit"> <i class="fa-sharp fa-solid fa-paper-plane"></i> SEND MESSAGE</button>
+            </form>
+            <div class="ask">
+                <div>
+                    <i class="fa-solid fa-headset fa-8x" style="color: #ffffff;"></i>
+                    <h3>1 : 1 문의</h3>
+                    <p>고객님의 제품에 대한 궁금한 내용을 확인 후 <br> 빠른 시간 안에 답변해 드립니다.</p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-phone fa-8x" style="color: #ffffff;"></i>
+                    <h3>고객 상담실 안내</h3>
+                    <p>운영시간 09:00 ~ 18:00 <br> (점심 12:00 ~ 13:00) <br>토,일요일, 공휴일 휴무</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer>
+        
+    </footer>
 </body>
 
 </html>
