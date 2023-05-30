@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+JS</title>
+</head>
+<style>
+    html {
+        border: 1px solid orange;
+    }
+</style>
+
+<body>
+    <p><span class="txt1">텍스트</span></p>
+    <p><span class="txt2">텍스트</span></p>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        /* 
+            document.documentElement ~ <html>
+            document.body ~ <body>
+            parentElement ~ 부모 요소 노드 선택
+            children[nodenumber] ~ 자식 요소 노드 선택
+            nextElementSibling ~ 다음 형제 요소 노드 선택
+            previousElementSibling ~ 이전 형제 요소 노드 선택
+
+            $("선택자").parent()
+            $("선택자").children()
+            $("선택자").next()
+            $("선택자").prev()
+        */
+        // document.querySelector("body").parentElement.style.border = "1px solid blue";
+        // document.querySelector("body").parentElement.style.backgroundColor = "aqua";
+        // document.documentElement.style.fontSize = "100px";
+        // const t1 = document.querySelector(".txt1");
+        // const t2 = document.querySelector(".txt2");
+        // t1.parentElement.style.border = "1px solid red";
+        // t1.parentElement.nextElementSibling.style.border = "10px solid red";
+
+
+        $("body").parent().css({ border: "1px solid blue" });
+        $("html").css({ fontSize: "50px" });
+        $(".txt1").parent().css({ border: "1px solid orange" });
+        $(".txt1").parent().next().css({ backgroundColor: "green" });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style>
+        div {
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+        }
+
+        .box1 {
+            background: blue;
+        }
+
+        .box2 {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        /* 
+            객체.style.속성 = 값;
+        */
+        let b1 = document.querySelector(".box1");
+        let b2 = document.querySelector(".box2");
+        b1.style.backgroundColor = "#89d8d8";
+        b2.style.width = 300 + "px";
+        b2.style.height = "300px";
+
+
+        // 속성 따로
+        // $(".box1").css({ width: "400px" });
+        // $(".box1").css({ height: "400px" }); 
+
+        // 위에 꺼를 묶어 쓸 수 있음
+        $(".box1").css({ width: "400px", height: "400px" });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style>
+        li {
+            font-size: 30px;
+            margin-left: 50px;
+        }
+
+        div {
+            width: 400px;
+            height: 400px;
+            margin: 50px;
+            background: #555;
+            font-size: 50px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>HTML 내용 바꾸기</h1>
+    <ul>
+        <li><b>red</b></li>
+        <li><i>blue</i></li>
+    </ul>
+
+    <div></div>
+
+    <script>
+        /* 
+            요소.innerText; - 문자열 반환(HTML 태그도 문자열처리)
+            요소.innerHTML; - 문자열 반환(HTML 태그로 인식)
+
+            요소.innerText = "문자열"; ~ 문자열 설정 (HTML 태그도 문자열 처리)
+            요소.innerHTML = "문자열"; ~ 문자열 설정 (HTML 태그로인식)
+        */
+        let div1 = document.querySelector("div");
+
+
+        let li1 = document.querySelectorAll("li")[0];
+        let tx1 = li1.innerText;
+
+
+        let li2 = document.querySelectorAll("li")[1];
+        let tx2 = li1.innerText + "<br>" + li2.innerHTML;
+
+        div1.innerText = tx1;
+                
+        div1.innerHTML = tx2;
+
+
+    </script>
+</body>
+
+</html>

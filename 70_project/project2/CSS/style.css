@@ -5,9 +5,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 body {
     background-color: #fff;
     color: #000;
@@ -109,7 +111,7 @@ nav>span {
 #main button {
     border: 2px solid black;
     bottom: 32px;
-    background-color: #b8b8b979;
+    background-color: rgba(184, 184, 185, 0.475);
 }
 
 #main button:nth-of-type(1) {
@@ -119,7 +121,13 @@ nav>span {
 #main button:nth-of-type(2) {
     right: 64px;
 }
-
+/* 문제 섹션 */
+.main_img div {
+    display: none;
+    position: absolute;
+    top: 300px;
+    font-size: 32px;
+}
 /* section2 */
 #camera {
     background-color: #F5F5F7;
@@ -138,7 +146,7 @@ nav>span {
 .section2_inner button {
     top: 222px;
     border: 2px solid #6b6b6b;
-    background-color: #ffffff00;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .section2_inner button:nth-of-type(1) {
@@ -179,7 +187,7 @@ nav>span {
 .section3_inner button {
     top: 252px;
     border: 2px solid #6b6b6b;
-    background-color: #ffffff00;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .section3_inner button:nth-of-type(1) {
@@ -271,7 +279,7 @@ nav>span {
     border-right: 1px solid #E5E8EA;
 }
 
-.printer_page:not(:nth-of-type(4)~div) {
+.printer_page:not(:nth-of-type(4) ~ div) {
     border-top: 1px solid #E5E8EA;
 }
 
@@ -297,24 +305,30 @@ nav>span {
     display: flex;
     flex-wrap: wrap;
 }
+
 .section6_inner iframe {
     width: 1280px;
     height: 600px;
 }
-.section6_inner form, .ask {
+
+.section6_inner form,
+.ask {
     margin-top: 50px;
     background-color: red;
     height: 304px;
 }
+
 .section6_inner form {
     width: 640px;
 
 }
+
 .ask {
     width: 640px;
     display: flex;
     justify-content: right;
 }
+
 .ask i {
     padding: 32px;
     margin-bottom: 32px;

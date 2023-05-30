@@ -29,12 +29,6 @@
                 - 사용중인 브라우저의 엔진 이름
                 - 사용 중인 브라우저 이름
                 - 같은 엔진을 사용 중이며 호환 가능한 다른 브라우저
-
-            적응형
-            www.naver.com
-            반응형
-            m.naver.com
-        
         */
 
         var info = navigator.userAgent.toLowerCase();
@@ -42,7 +36,9 @@
         var osImg = null;
         console.log(navigator.userAgent);
         document.write(info);
+        // 요소.indexOF(문자열) ~ 색인번호 // 요소 안에 문자열이 있는지 찾음. 없으면 -1
         if (info.indexOf('windows') >= 0) {
+            // window 문자열이 있으면 출력
             osImg = 'windows.png';
         } else if (info.indexOf('macintoch') >= 0) {
             osImg = 'macintosh.png';

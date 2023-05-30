@@ -58,11 +58,16 @@
         <div class="main_img">
             <button onclick="click_img(0)"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
             <button onclick="click_img(1)"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
+            <div class="section1_title1">글자 1</div>
+            <div class="section1_title2">글자 2</div>
+            <div class="section1_title3">글자 3</div>
+            <div class="section1_title4">글자 4</div>
             <img src="images/main1.jpg" alt="" id="photo">
             <!-- slide_img_button_script -->
             <script>
                 let num = 1;
                 function click_img(direct) {
+
                     if (direct) {
                         if (num === 4) num = 0;
                         num++;
@@ -75,6 +80,9 @@
                     }
                     let imgTag = document.getElementById('photo');
                     imgTag.setAttribute('src', 'images/main' + num + '.jpg');
+                    // 배열 사용해보기
+                    let title = document.querySelector(".section1_title" + num)
+                    title.style.display = "block";
                 }
             </script>
         </div>
@@ -183,7 +191,7 @@
     </section>
     <!-- footer -->
     <footer>
-        
+
     </footer>
 </body>
 

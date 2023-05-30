@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+JS</title>
+</head>
+
+<style>
+
+</style>
+
+<body>
+    <p><span>나는</span> 단락</p>
+    <ul>
+        <li><span>목록1</span></li>
+        <li><b>목록2</b></li>
+        <li>목록3</li>
+        <li>목록4</li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        /*
+            요소.children[index] ~ 자식 요소 선택
+        */
+        // 첫번째 li span 선택, 색깔 빨강
+        $("li:first-child > span").css({ color: "red" });
+        // li 자식 모두 선택, 선색낄 오랜지
+        $("li").children().css({ border: " 1px solid orange" });
+        // eq(n), n = 0.. 1... 2... jquary 선택자 eq
+        // 첫번째 li 자식 선택, 색깔 파랑
+        $("li").eq(0).children().css({border: "10px solid blue"});
+
+    </script>
+</body>
+
+</html>

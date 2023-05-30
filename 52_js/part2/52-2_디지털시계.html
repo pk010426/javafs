@@ -21,6 +21,43 @@
     </div>
     <script>
 
+        let time = new Date;
+        
+        setInterval(timer, 1000);
+        // document.write(time);
+        document.querySelector(".yy").innerHTML = time.getFullYear() + " 년";
+        document.querySelector(".mm").innerHTML = time.getMonth() + 1 + " 월";
+        document.querySelector(".dd").innerHTML = time.getDate() + " 일";
+        // 요일 표시 함수
+        function day() {
+            let t = time.getDay();
+            if (t == 0) {
+                return "일";
+            }
+            else if (t == 1) {
+                return "월";
+            }
+            else if (t == 2) {
+                return "화";
+            }
+            else if (t == 3) {
+                return "수";
+            }
+            else if (t == 4) {
+                return "목";
+            }
+            else if (t == 5) {
+                return "금";
+            }
+            else if (t == 6) {
+                return "토";
+            }
+        }
+        document.querySelector(".we").innerHTML = day() + "요일";
+        document.querySelector(".hh").innerHTML = time.getHours() + " 시";
+        document.querySelector(".mi").innerHTML = time.getMinutes() + " 분";
+        document.querySelector(".ss").innerHTML = time.getSeconds() + " 초";
+
 
     </script>
 </body>

@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>브라우저와 운영체제 정보</h1>
+    <!-- <h1>브라우저와 운영체제 정보</h1> -->
 
     <script>
         /* 
@@ -38,28 +38,17 @@
         */
 
         var info = navigator.userAgent.toLowerCase();
-        
-        var osImg = null;
-        console.log(navigator.userAgent);
-        document.write(info);
+    
         if (info.indexOf('windows') >= 0) {
-            osImg = 'windows.png';
+            location.href = 'https://www.naver.com/';
         } else if (info.indexOf('macintoch') >= 0) {
-            osImg = 'macintosh.png';
-        } else if (info.indexOf('iphone') >= 0 ) {
-            osImg = 'iphone.png';
+            location.href = 'https://www.naver.com/';
+        } else if (info.indexOf('iphone') >= 0) {
+            location.href = 'https://m.naver.com/';
         } else if (info.indexOf('android') >= 0) {
-            osImg = 'android.png';
+            location.href = 'https://m.naver.com/';
         }
 
-        document.write('<img src=\'../assets/' + osImg + '\'>', '<br>');
-
-
-        var sc_w = screen.width;
-        var sc_h = screen.height;
-
-        document.write('모니터 해상도 너비:' + sc_w + 'px', '<br>');
-        document.write('모니터 해상도 높이:' + sc_h + 'px', '<br>');
 
     </script>
 </body>
