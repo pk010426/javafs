@@ -21,27 +21,31 @@
         <li>목록3</li>
         <li>목록4</li>
     </ul>
-
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script>
         /* 
             this ~ 이벤트를 발생시킨 주체
         */
-        const c = document.querySelectorAll("li");
+        // const c = document.querySelectorAll("li");
 
-        console.log(c[length]);
+        // console.log(c[length]);
         // let a = c[0];
 
-        for (let i = 0; i < c.length; i++) {
-            c[i].onclick = function () {
-            
-                c[0].style.color = "blue";
-                c[1].style.color = "blue";
-                c[2].style.color = "blue";
-                c[3].style.color = "blue";
 
-                this.style.color = "red";
-            };
-        }
+        let c = $("li");
+
+        c.click(function () {
+
+            c.css({ color: "blue" });
+            $(this.not).css({ color: " red" });
+        })
+
+        const liTag = $('li');
+        liTag.click(function () {
+            
+            liTag.not($(this)).css({ color: 'blue' });
+            $(this).css({ color: 'red' });
+        });
 
         // const liTag = document.querySelectorAll('li');
 

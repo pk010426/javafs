@@ -47,7 +47,7 @@
     <div class="box2">파란 고양이</div>
     <div class="box3"> 노란 고양이</div>
     <p></p>
-
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script>
 
         /* 
@@ -75,7 +75,9 @@
             요소.addEventListener('이벤트1', '이벤트2' ... , function(){});
 
             // 제이쿼리
-            $("선택자").이벤트(function(){});
+            $("선택자").이벤트 = function(){};
+
+            $("선택자").on('이벤트', function(){});
 
             // scroll, resize는 윈도우 이벤트이다 *************
         */
@@ -87,48 +89,34 @@
             onmouseleave : 마우스가 대상을 벗어남
 
         */
-        const b1 = document.querySelector(".box1");
-        const b2 = document.querySelector(".box2");
-        const b3 = document.querySelector(".box3");
-        const p1 = document.querySelector("p");
-        b1.onclick = event1;
+        const b1 = $(".box1");
+        const b2 = $(".box2");
+        const b3 = $(".box3");
+        const p1 = $("p");
 
-        function event1() {
-            p1.innerText = "졸린 고양이";
+        // 제이쿼리 innerText
+        // $("선택자").text(값);
+        b1.on("click", function () {
+            p1.text("빨간 고양이가 도망갔습니다!");
+        });
+        // 기본 형식
+        // 객체.on("이벤트명", 함수)
+        b2.on("mouseenter", blue)
+        function blue() {
+            p1.text("파란 고양이에게 다가갑니다.")
         }
-
-        b2.onmouseenter = function event2() {
-            p1.innerText = "아침마다 커피";
-        }
-
-        b1.addEventListener("mousemove", function () {
-            p1.innerText = "빨간색에 마우스 올림 / 빨간색 눌러보세여";
-        })
-        // class b2를 클릭하면, 
-        b2.onclick = function () {
-            p1.innerText = "파란 고양이가 도망갔습니다!";
-        }
-        window.addEventListener("scroll", function () {
-            document.querySelector("body").style.background = "aqua";
-        })
-
-        b1.onmouseleave = event3;
-
-        function event3() {
-            p1.innerText = "빨간 고양이가 도망갔습니다!";
-        }
-
-
-        b3.addEventListener("onmouseenter", event3);
-        function event4() {
-            p1.innerText = "모든 고양이가 도망갔습니다!";
-        }
-        window.onscroll = event4;
-
-        window.onresize = function () {
-            p1.innerText = "창이 조정됨";
-        }
-
+        b2.on("mouseleave", function () {
+            p1.text("파란 고양이가 도망갔습니다!");
+        });
+        b3.on("mousemove", function () {
+            p1.text("노란 고양이를 쓰다듬는 중.");
+        });
+        $(window).on("scroll", function () {
+            p1.text("모든 고양이가 도망갔습니다!");
+        });
+        $(window).on("resize", function () {
+            p1.text("모든 고양이가 줄어듭니다!");
+        });
 
     </script>
 </body>

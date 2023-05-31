@@ -28,21 +28,24 @@
     <button class="btn1">이미지 속성 변경하기1</button>
     <button class="btn2">이미지 속성 변경하기2</button>
     <p class="frame"><img src="../assets/pic_1.jpg" alt="이미지1"></p>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
     <script>
-        let img = document.querySelector("img");
-        let ch1 = document.querySelector(".btn1");
-        let ch2 = document.querySelector(".btn2");
-        ch1.onclick = function (pi1) {
-            img.setAttribute("src", "../assets/pic_1.jpg");
-            img.setAttribute("img", "1.jpg");
-        };
-        ch2.onclick = function () {
-            img.setAttribute("src", "../assets/pic_2.jpg");
-            img.setAttribute("img", "2.jpg");
-        };
+        let img = $("img");
+        let ch1 = $(".btn1");
+        let ch2 = $(".btn2");
+        ch1.click(function () {
+            img.attr({ "src": "../assets/pic_1.jpg", "alt": "pic_1.jpg}" });
+        });
+        ch2.click(function () {
+            img.attr("src", "../assets/pic_2.jpg");
+            img.attr("alt", "pic_2.jpg");
+        });
         /*
             요소.setAttribute('속성명', '값') ~ HTML 속성 설정
+            제이쿼리도 attr 씀
+            attr은 속성 여러개 쓸 수 있음
+            요소.attr({"속성명" : "값", "속성명" : "값" .... });
         */
 
 

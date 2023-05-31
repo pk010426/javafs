@@ -31,14 +31,47 @@
         <li>pink</li>
     </ul>
 
-    <div></div>
+    <div>고양이</div>
+    <script src="jquery-3.7.0.min.js"></script>
 
     <script>
-        /* 
+
+        const btn = $("li");
+        const back = $("div");
+
+        
+        btn.click(bgfn);
+        
+        
+        function bgfn() {
+            let text = $(this).html();
+            back.html(text);
+            back.css({ background: text });
+        }
+        /*
             요소.textContent; ~ 문자열 반환
             요소.textContent = '문자열'; ~ 문자열 설정
         */
+        // const btn = document.querySelectorAll("li");
+        // const back = document.querySelector("div");
 
+        // for (i = 0; i < btn.length; i++) {
+        //     btn[i].onclick = function () {
+        //         const color = this.textContent;
+        //         back.textContent = color;
+        //         back.style.backgroundColor = color;
+        //         for (a = 0; a < btn.length; a++) {
+        //             btn[a].style.color = "black";
+        //         }
+        //         this.style.color = color;
+        //     }
+        // }
+        /*
+        
+        
+        */
+    </script>
+    <script>
 
     </script>
 </body>

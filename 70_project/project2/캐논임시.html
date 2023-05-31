@@ -58,7 +58,7 @@
         <div class="main_img">
             <button onclick="left()"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
             <button onclick="right()"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
-            <button class="btn btn1" onclick="color(1)">이미지 1번</button>
+            <button class="btn btn1" onclick="color(a)">이미지 1번</button>
             <button class="btn btn2" onclick="color(2)">이미지 2번</button>
             <button class="btn btn3" onclick="color(3)">이미지 3번</button>
             <button class="btn btn4" onclick="color(4)">이미지 4번</button>
@@ -124,9 +124,9 @@
                     // 전 타이틀 지움
                     title_prev.style.display = "none";
                 }
-                function color(a) {
+                function color() {
                     let changecolor = document.querySelector(".btn" + a);
-                    changecolor.style.color = "#dc000c";
+                    this.style.color = "#dc000c";
                 }
 
 

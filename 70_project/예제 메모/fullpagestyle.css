@@ -1,0 +1,28 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    transition-delay: 0;
+
+}
+#fullpage section {
+    height: 1500px;
+}
+
+#section1 {
+    background-color: aqua;
+}
+#section2 {
+    background-color: royalblue;
+}
+#section3 {
+    background-color: green;
+}
+#section4 {
+    background-color: gray;
+}
+#section5 {
+    background-color: yellowgreen;
+}
+#section6 {
+    background-color: orange;
+}
