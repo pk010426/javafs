@@ -20,6 +20,7 @@
         <li>목록3</li>
         <li>목록4</li>
     </ul>
+    <p>고양이</p>
 
     <script>
         /* 
@@ -28,10 +29,11 @@
             forEach()  for제어문 대신 사용
         */
         const tli = document.querySelectorAll("li");
+        const tp = document.querySelector("p");
 
-        tli.forEach(function (e, index) {
-            e.onclick = function () {
-                alert(index);
+        tli.forEach(function (change, idx) {
+            change.onclick = function () {
+                tp.innerText = idx;
             }
         });
 

@@ -1,0 +1,128 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+
+#main {
+
+    width: 380px;
+    position: absolute;
+    top: 300px;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slide1 {
+    border-radius: 24px;
+    width: 100px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slot1,
+.slot2,
+.slot3 {
+
+    position: absolute;
+    /* top: 500px; */
+    /* left: 500px; */
+    /* overflow: hidden; */
+    animation: slide .3s infinite;
+    /* animation-play-state: paused; */
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    /* padding-top: 15px; */
+}
+
+@keyframes slide {
+    0% {
+        top: 0;
+    }
+
+    13% {
+        top: -100%;
+
+    }
+
+    26% {
+        top: -200%
+    }
+
+    39% {
+        top: -300%
+    }
+
+    52% {
+        top: -400%;
+    }
+
+    65% {
+        top: -500%
+    }
+
+    78% {
+        top: -600%;
+    }
+
+    91% {
+        top: -700%;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+.page {
+    width: 100px;
+    height: 200px;
+    font-size: 160px;
+}
+
+.p1 {
+    background-color: red;
+}
+
+.p2 {
+    background-color: aqua;
+}
+
+.p3 {
+    background-color: orange;
+}
+
+.p4 {
+    background-color: violet;
+}
+
+.p5 {
+    background-color: brown;
+}
+
+.p6 {
+    background-color: gray;
+}
+
+.p7 {
+    background-color: gold;
+}
+
+.btn1 {
+    position: absolute;
+    bottom: 250px;
+    left: 20px;
+    width: 160px;
+    height: 80px;
+}
+
+.btn2 {
+    position: absolute;
+    bottom: 250px;
+    left: 200px;
+    width: 160px;
+    height: 80px;
+}

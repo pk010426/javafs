@@ -20,6 +20,8 @@
         <li>목록3</li>
         <li>목록4</li>
     </ul>
+    <p>고양이</p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
     <script>
         /* 
@@ -27,12 +29,12 @@
             for ~ in     배열에 사용
             forEach()  for제어문 대신 사용
         */
-        const tli = document.querySelectorAll("li");
+        const tli = $("li");
+        const tgp = $("p");
 
-        tli.forEach(function (e, index) {
-            e.onclick = function () {
-                alert(index);
-            }
+        tli.click(function () {
+            let idx = $(this).index();
+            tgp.text(idx);
         });
 
     </script>

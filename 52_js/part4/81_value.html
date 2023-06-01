@@ -37,6 +37,27 @@
             요소.value ~ input에 입력된 값 반환
         */
 
+        let age = document.querySelector("input");
+        let btn = document.querySelector("button");
+
+        btn.onclick = function () {
+            let user_age = age.value;
+
+
+
+            if (user_age == "" || user_age == " ") {
+                alert("공란");
+            } else if (user_age <= 18 && user_age >= 0) {
+                alert("당신은 미성년 입니다.");
+            } else if (user_age >= 19) {
+                alert("당신은 성인 입니다.");
+            } else if (user_age / 1 != true) {
+                alert("숫자입력");
+            } else {
+                alert("당신의 나이를 '숫자'로만 입력해 주세요.");
+            }
+        };
+
     </script>
 </body>
 

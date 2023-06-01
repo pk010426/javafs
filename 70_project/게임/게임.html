@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="게임style.css">
+</head>
+
+<body>
+
+    <div id="main">
+        <div class="slide1">
+            <div class="slot1 all_slot">
+                <div class="p1 page">당첨</div>
+                <div class="p2 page">1</div>
+                <div class="p3 page">2</div>
+                <div class="p4 page">3</div>
+                <div class="p5 page">4</div>
+                <div class="p6 page">5</div>
+                <div class="p7 page">6</div>
+            </div>
+        </div>
+        <div class="slide1">
+            <div class="slot2 all_slot">
+                <div class="p3 page">2</div>
+                <div class="p4 page">3</div>
+                <div class="p7 page">6</div>
+                <div class="p2 page">1</div>
+                <div class="p1 page">당첨</div>
+                <div class="p6 page">5</div>
+                <div class="p5 page">4</div>
+            </div>
+        </div>
+        <div class="slide1">
+            <div class="slot3 all_slot">
+                <div class="p3 page">2</div>
+                <div class="p6 page">5</div>
+                <div class="p1 page">당첨</div>
+                <div class="p4 page">3</div>
+                <div class="p7 page">6</div>
+                <div class="p5 page">4</div>
+                <div class="p2 page">1</div>
+            </div>
+        </div>
+    </div>
+    <button class="btn1"> 고 </button>
+    <button class="btn2"> 스톱 </button>
+    <script>
+        let go_btn = document.querySelector(".btn1");
+        let stop_btn = document.querySelector(".btn2");
+        let sl1 = document.querySelector(".slot1");
+        let sl2 = document.querySelector(".slot2");
+        let sl3 = document.querySelector(".slot3");
+        let a = document.querySelector(".all_slot");
+
+        var num = 0;
+        console.log(num);
+
+        stop_btn.onclick = function () {
+            num++
+            if (num == 1) {
+                document.querySelector(".slot1").style.animationPlayState = "paused"
+            }
+            else if (num == 2) {
+                // animation-play-state: paused;
+                document.querySelector(".slot2").style.animationPlayState = "paused"
+                // document.querySelector(".slot2").style.animation = "slide paused"
+
+            }
+            else if (num == 3) {
+                document.querySelector(".slot3").style.animationPlayState = "paused"
+
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
