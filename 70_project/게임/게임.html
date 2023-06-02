@@ -5,14 +5,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>빠칭코게임_박건우</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="게임style.css">
 </head>
 
 <body>
-
+    <!-- seciton -->
     <section>
         <audio class="bgm" src="audio/망치끝에걸린달빛.mp3" autoplay=true></audio>
+        <div class="score">
+            <div>
+                <img src="images/img7.jpg" alt="img7">
+                <img src="images/img7.jpg" alt="img7">
+                <img src="images/img7.jpg" alt="img7">
+                <h3> = 1등</h3>
+            </div>
+            <div>
+                <img src="images/img6.jpg" alt="img6">
+                <img src="images/img6.jpg" alt="img6">
+                <img src="images/img6.jpg" alt="img6">
+                <h3> = 2등</h3>
+            </div>
+            <div>
+                <img src="images/img5.jpg" alt="img5">
+                <img src="images/img5.jpg" alt="img5">
+                <img src="images/img5.jpg" alt="img5">
+                <h3> = 3등</h3>
+            </div>
+            <div>
+                <img src="images/img4.jpg" alt="img4">
+                <img src="images/img4.jpg" alt="img4">
+                <img src="images/img4.jpg" alt="img4">
+                <h3> = 4등</h3>
+            </div>
+            <div>
+                <img src="images/img2.jpg" alt="img2">
+                <img src="images/img2.jpg" alt="img2">
+                <img src="images/img2.jpg" alt="img2">
+                <h3> = 5등</h3>
+            </div>
+            <div>
+                <img src="images/img3.jpg" alt="img3">
+                <img src="images/img3.jpg" alt="img3">
+                <img src="images/img3.jpg" alt="img3">
+                <h3> = 6등</h3>
+            </div>
+            <div>
+                <img src="images/img1.jpg" alt="img1">
+                <img src="images/img1.jpg" alt="img1">
+                <img src="images/img1.jpg" alt="img1">
+                <h3> = 7등</h3>
+            </div>
+            <p>당첨 확률 : 2.0408163265306%</p>
+        </div>
         <div id="main">
             <img class="slotmachine" src="images/slotimg.jpg" alt="slotmachine">
             <div class="slide1">
@@ -25,10 +71,9 @@
                     <div class="p6 page"><img src="images/img6.jpg" alt="img6"></div>
                     <div class="p7 page"><img src="images/img7.jpg" alt="img7"></div>
                     <div class="p1 page"><img src="images/img1.jpg" alt="img1"></div>
-
                 </div>
             </div>
-            <div><img src="" class="lightbox1" alt="choseimg"></div>
+            <div class="lightbox_wrap1"><img src="" class="lightbox1" alt="choseimg"></div>
             <div class="slide2">
                 <div class="slot2">
                     <div class="p3 page"><img src="images/img3.jpg" alt="img3"></div>
@@ -39,10 +84,9 @@
                     <div class="p4 page"><img src="images/img4.jpg" alt="img4"></div>
                     <div class="p5 page"><img src="images/img5.jpg" alt="img5"></div>
                     <div class="p5 page"><img src="images/img5.jpg" alt="img5"></div>
-
                 </div>
             </div>
-            <div><img class="lightbox2" src="" alt="choseimg"></div>
+            <div class="lightbox_wrap2"><img class="lightbox2" src="" alt="choseimg"></div>
 
             <div class="slide3">
                 <div class="slot3">
@@ -54,21 +98,26 @@
                     <div class="p5 page"><img src="images/img5.jpg" alt="img5"></div>
                     <div class="p4 page"><img src="images/img4.jpg" alt="img4"></div>
                     <div class="p4 page"><img src="images/img4.jpg" alt="img4"></div>
-
                 </div>
             </div>
-            <div><img src="" class="lightbox3" alt="choseimg"></div>
+            <div class="lightbox_wrap3"><img src="" class="lightbox3" alt="choseimg"></div>
 
             <div class="result">
-                <p>결과</p>
-            </div>
+                <h3>결과</h3>
 
-            <audio class="btn_audio" src="audio/btn_sound.m4a">
-            </audio>
+                <div>
+                    <button><a href="게임.html">게임 재시작 <br> <i class="fa-solid fa-arrow-down"
+                                style="color: #000000;"></i></a></button>
+                    <button><a href="로그인.html">게임 끝내기 <br> <i class="fa-sharp fa-solid fa-arrow-up"
+                                style="color: #000000;"></i></a></button>
+                </div>
+            </div>
+            <audio class="btn_audio" src="audio/btn_sound.m4a"></audio>
             <button class="btn1"> START </button>
             <button class="btn2"> STOP </button>
-        </div>
 
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
         <script>
             // 브금 재생
             let BGM = document.querySelector(".bgm");
@@ -76,20 +125,26 @@
             BGM.autoplay = true;
             BGM.loop = true;
             BGM.volume = 0.15;
-
+            // 전역함수 선언
             let go_btn = document.querySelector(".btn1");
             let stop_btn = document.querySelector(".btn2");
             let lbox1 = document.querySelector(".lightbox1");
             let lbox2 = document.querySelector(".lightbox2");
             let lbox3 = document.querySelector(".lightbox3");
+            let lbox_wrap1 = document.querySelector(".lightbox_wrap1");
+            let lbox_wrap2 = document.querySelector(".lightbox_wrap2");
+            let lbox_wrap3 = document.querySelector(".lightbox_wrap3");
+            // 빠칭코 뽑기
+            let c1 = Math.floor(Math.random() * (7)) + 1;
+            let c2 = Math.floor(Math.random() * (7)) + 1;
+            let c3 = Math.floor(Math.random() * (7)) + 1;
 
-            let c1;
-
+            // 빠칭코 출력
             let num = 0;
             go_btn.onclick = function () {
                 location.href = "게임.html"
             }
-
+            // 한 번 클릭시 효과 발생
             stop_btn.onclick = function () {
                 const btn_sound = document.querySelector(".btn_audio");
                 btn_sound.volume = 1;
@@ -99,12 +154,9 @@
                 let sl2 = document.querySelector(".slot2");
                 let sl3 = document.querySelector(".slot3");
                 let r = document.querySelector(".result");
-                let rt = document.querySelector(".result p");
-                console.log(lbox1);
-                let c1 = Math.floor(Math.random() * (7)) + 1;
-                let c2 = Math.floor(Math.random() * (7)) + 1;
-                let c3 = Math.floor(Math.random() * (7)) + 1;
-                // 여기만수정하면 끝
+                let rt = document.querySelector(".result h3");
+
+                // 당첨 여부 확인
                 lbox1.setAttribute("src", ("images/img" + c1 + ".jpg"));
                 lbox2.setAttribute("src", ("images/img" + c2 + ".jpg"));
                 lbox3.setAttribute("src", ("images/img" + c3 + ".jpg"));
@@ -113,7 +165,6 @@
                     rt.innerText = "당첨!";
                 } else if (c1 == c2 || c2 == c3 || c3 == c1) {
                     rt.innerText = "아쉽네요 2개!";
-
                 } else {
                     rt.innerText = "꽝!";
                 }
@@ -121,29 +172,29 @@
                 // 룰렛 멈추는 함수
                 if (num == 1) {
                     sl1.style.animationPlayState = "paused";
-                    lbox1.style.display = "block";
+                    lbox_wrap1.style.display = "block";
                 }
                 else if (num == 2) {
                     sl2.style.animationPlayState = "paused";
-                    lbox2.style.display = "block";
+                    lbox_wrap2.style.display = "block";
 
                 }
                 else if (num == 3) {
                     sl3.style.animationPlayState = "paused";
-                    lbox3.style.display = "block";
+                    lbox_wrap3.style.display = "block";
                     r.style.animationPlayState = "running";
                 }
 
-                console.log(c1);
-                console.log(c2);
-                console.log(c3);
-
-
             }
-
 
         </script>
     </section>
+    <footer>
+        <h4>장시간 게임은 정신건강을 해칠 수 있습니다.</h4>
+        <h3>도박 중독 상담은 국번 없이 <a href="https://www.kcgp.or.kr/pcMain.do"><b>1336</b></a> <i class="fa-solid fa-arrow-left"
+                style="color: #fff;"></i></h3>
+        <p>Copyrigth by pk0426</p>
+    </footer>
 </body>
 
 </html>
