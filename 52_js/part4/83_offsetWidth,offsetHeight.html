@@ -10,9 +10,13 @@
         div {
             width: 200px;
             height: 400px;
+            padding: 20px;
+            border: 5px solid blue;
             margin: 50px;
             background: blue;
+            box-sizing: border-box;
         }
+        
     </style>
 </head>
 
@@ -24,7 +28,14 @@
             요소.offsetWidth ~ 패딩, 테두리 및 스크롤 막대를 포함하여 요소의 볼 수 있는 너비(픽셀 단위)를 반환
             요소.offsetHeight ~ 패딩, 테두리 및 스크롤 막대를 포함하여 요소의 볼 수 있는 높이(픽셀 단위)를 반환
         */
+        const div1 = document.querySelector("div");
 
+        let change_width = div1.offsetWidth;
+        console.log(change_width);
+        div1.onclick = function () {
+
+            div1.style.height = change_width + ("px");
+        }
     </script>
 </body>
 

@@ -12,25 +12,33 @@
     <h1>텍스트 노드를 사용하는 새로운 요소 추가하기</h1>
     <div id="info"></div>
     <!-- <img src="../assets/KakaoTalk_20230605_103903941.gif" alt=""> -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
     <script>
         /* 
-            요소.createElement(노드명) ~ 요소에 요소 노드 추가
-            요소.createTextNode(텍스트) ~ 요소에 텍스트 노드 추가
+            $("선택자a").createElement("선택자b")
+            요소 a에 요소b 생성
+            a.append(b) a에 b추가
+            a.prepend(b) a에 b추가
+            a.after(b) a에 b추가
+            a.before(b) a에 b추가
+
             부모노드.appendChild(자식노드) ~ 부모 노드에 자식 노드 연결
+
+            
         */
-        let info_box = document.getElementById("info");
+        let info_box = $("#info");
         let plus = document.createElement("p");
+
         let img = document.createElement("img");
-        info_box.appendChild(plus);
-        info_box.appendChild(img);
-        // info_box.createElement("p");
+        info_box.append(plus);
+        info_box.append(img);
         let text = document.createTextNode("고양이");
         plus.appendChild(text);
 
         img.setAttribute("src", "../assets/KakaoTalk_20230605_103903941.gif");
         img.setAttribute("alt", "html나무");
-</script>
+    </script>
 </body>
 
 </html>

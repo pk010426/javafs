@@ -20,6 +20,17 @@
             부모노드.appendChild(자식노드) ~ 부모 노드에 자식 노드 연결
         */
 
+        let plus_img = document.createElement("img");
+        let plus_src = document.createAttribute("src");
+        let plus_alt = document.createAttribute("alt");
+
+        plus_src.value = "../assets/KakaoTalk_20230605_103903941.gif";
+        plus_alt.value = "pic1";
+        
+        plus_img.setAttributeNode(plus_src);
+        plus_img.setAttributeNode(plus_alt);
+
+        document.querySelector("#info").appendChild(plus_img);
     </script>
 </body>
 
