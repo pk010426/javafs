@@ -12,7 +12,7 @@ section {
     position: relative;
     top: 30%;
     left: 30%;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .imgslide {
     position: absolute;
@@ -24,7 +24,8 @@ section {
     height: 100px;
     border: 3px solid black;
     display: flex;
-    animation: slide 9s infinite;
+    transition: all 1s;
+    /* animation: slide 9s infinite; */
     
 }
 button {

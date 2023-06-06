@@ -136,14 +136,124 @@
     <!-- section2 -->
     <section id="camera">
         <div class="section2_inner">
-            <button><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
-            <button><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
-            <div class="camera_page"></div>
-            <div class="camera_page"></div>
-            <div class="camera_page"></div>
-            <div class="camera_page"></div>
+            <button class="slide2_btn1"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
+
+            <button class="slide2_btn2"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
+
+
+            <div class="slide_hidden">
+                <div class="section2_slide">
+                    <div class="camera_page">
+                        <div>
+                            <p>NEW - 최신제품</p>
+                            <h2>EOS R8</h2>
+                            <p>독보적 초경량 풀프레임의 탄생</p>
+                        </div>
+                        <img src="images/EOS_R8/r8front.jpg" alt="EOS_R8">
+                    </div>
+
+                    <div class="camera_page">
+                        <div>
+                            <p>DESIGN AWARD 2021</p>
+                            <h2>EOS R5</h2>
+                            <p>8K 풀프레임 미러리스의 혁명</p>
+                        </div>
+                        <img src="images/EOS_R5/r5front.jpg" alt="EOS_R5">
+                    </div>
+
+                    <div class="camera_page">
+                        <div>
+                            <p>DESIGN AWARD 2018</p>
+                            <h2>EOS 5D Mark IV</h2>
+                            <p>열망, 그것은 5D의 DNA</p>
+                        </div>
+                        <img src="images/EOS_5D_MARK4/5dfront.jpg" alt="EOS_5D_Mark_IV
+                        ">
+                    </div>
+
+                    <div class="camera_page">
+                        <div>
+                            <p></p>
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                        <img src="" alt="">
+                    </div>
+
+                    <div class="camera_page">
+                        <div>
+                            <p></p>
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                        <img src="" alt="">
+                    </div>
+
+                    <div class="camera_page">
+                        <div>
+                            <p></p>
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                        <img src="" alt="">
+                    </div>
+
+                    <div class="camera_page">
+                        <div>
+                            <p></p>
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                        <img src="" alt="">
+                    </div>
+
+                    <div class="camera_page">
+                        <div>
+                            <p></p>
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
+    <!-- section 2 script -->
+    <script>
+        let btn1 = document.querySelector(".slide2_btn1");
+        let btn2 = document.querySelector(".slide2_btn2");
+        let section2_imgslide = document.querySelector(".section2_slide");
+        section2_left = section2_imgslide.getAttribute("left");
+        section2_left = 0;
+        console.log(section2_left + "나");
+
+        // img_next = section2_imgslide.getAttribute("left");
+        let count;
+        console.log(count + "b");
+        btn1.onclick = function () {
+            section2_left = section2_left + 358;
+            if (section2_left > 0) {
+                section2_left = -1432;
+            }
+
+            section2_imgslide.style.left = section2_left + "px";
+        }
+        btn2.onclick = function () {
+            section2_left = section2_left - 358;
+            if (section2_left < -1432) {
+                section2_left = 0;
+            }
+            section2_imgslide.style.left = section2_left + "px";
+        }
+
+
+
+    </script>
+
+
+
     <!-- section3 -->
     <section id="lens">
         <div class="section3_title">

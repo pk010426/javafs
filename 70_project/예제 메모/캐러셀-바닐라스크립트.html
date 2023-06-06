@@ -11,15 +11,16 @@
 <!-- http://inthree.kr/_2023/ -->
 <!-- 섹션에 마우스 엔터시 애니메이션 플레이 -->
 <!-- 클릭 시에만 애니메이션 멈춤 -->
+
 <body>
-    
+
     <section>
         <button>123</button>
         <div class="imgslide">
             <div class="s1"></div>
             <div class="s2"></div>
             <div class="s3"></div>
-            <div class="s1"></div>
+            <!-- <div class="s1"></div> -->
         </div>
     </section>
 
@@ -31,12 +32,18 @@
     imgslide.onmouseover = function () {
         imgslide.style.animation = "slide";
     }
-
-    btn.onclick = function() {
-        imgslide.style.animation = "none";
-        imgslide.style.left = "-200%";
+    img_left = imgslide.getAttribute("left") - 100;
+    btn.onclick = function () {
+        // imgslide.style.animation = "none";
+        imgslide.style.left = img_left + "%";
+        img_left = img_left - 100;
+        console.log(img_left);
+        if (img_left === -300) {
+            img_left = 0;
+        }
     }
-    
+    console.log(img_left);
+
 </script>
 
 </html>
