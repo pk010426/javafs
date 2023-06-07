@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imgbtn</title>
+    <style>
+        .box {
+            width: 400px;
+            position: relative;
+        }
+
+        .box video {
+            width: 100%;
+        }
+
+        .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 5px solid white;
+            text-indent: -99999px;
+            cursor: pointer;
+        }
+
+        .btn_style {
+            z-index: 5;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: 1s;
+            width: 80px;
+            height: 80px;
+        }
+       
+    </style>
+</head>
+
+<body>
+  
+    <div class="box">
+        <video>
+            <source src="../../assets/video/mainimg.mp4" type="video/mp4">
+        </video>
+        <span class="btn">
+            버튼
+            <img class="btn_style" src="../../assets/playbtn.png" alt="start">
+        </span>
+    </div>
+
+    <script>
+
+
+        const btn = document.querySelector(".btn");
+        const vid = document.querySelector("video");
+        let num = 0;
+
+        btn.onclick = function () {
+            if (num === 0) {
+                vid.play();
+                num = 1;
+                document.querySelector(".btn_style").setAttribute("src", "../../assets/stopbtn.png");
+                document.querySelector(".btn_style").setAttribute("alt", "stop");
+
+            } else {
+                vid.pause();
+                num = 0;
+                document.querySelector(".btn_style").setAttribute("src", "../../assets/playbtn.png");
+                document.querySelector(".btn_style").setAttribute("alt", "start");
+            }
+        };
+        
+    </script>
+</body>
+
+</html>

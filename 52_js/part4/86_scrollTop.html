@@ -30,6 +30,17 @@
             document.documentElement.scrollTop ~ 창에서 스크롤한 양 반환
         */
 
+        window.onscroll = function (scroll_e) {
+            let scr_e = document.documentElement.scrollTop;
+
+            document.querySelector("p").innerText = scr_e;
+
+            if (scr_e >= 300 && scr_e <=500) {
+                // document.querySelector("p").innerText = "300초과!"
+                scr_e ==2000;
+            }
+        }
+
     </script>
 </body>
 

@@ -22,7 +22,13 @@
             e.pageX ~ 현재 문서 기준으로 이벤트가 발생한 가로 위치 반환
             e.pageY ~ 현재 문서 기준으로 이벤트가 발생한 세로 위치 반환
         */
+        const x = document.querySelector(".posX");
+        const y = document.querySelector(".posY");
 
+        window.onmousemove = function (mouse_e /* 이 자리에는 문자열 뭐가 와도 노상관*/) {
+            x.innerHTML = mouse_e.pageX;
+            y.innerHTML = mouse_e.pageY;
+        }
     </script>
 </body>
 

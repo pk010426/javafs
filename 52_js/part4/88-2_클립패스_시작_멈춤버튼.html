@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style>
+        .box {
+            width: 400px;
+            position: relative;
+        }
+
+        .box video {
+            width: 100%;
+        }
+
+        .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 5px solid white;
+            text-indent: -99999px;
+            cursor: pointer;
+        }
+
+        .btn_style1 {
+            clip-path: polygon(0 0, 0% 100%, 100% 50%);
+            background-color: white;
+            width: 50px;
+            height: 50px;
+            z-index: 5;
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            transition: 1s;
+        }
+        .btn_style2 {
+            position: absolute;
+            top: 16px;
+            left :46px;
+            width: 50px;
+            height: 50px;
+            z-index: 5;
+            background-color: white;
+            display: none;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- <ul class="btnSet">
+        <li class="load">load</li>
+        <li class="play">play</li>
+        <li class="pause">pause</li>
+        <li class="video">video</li>
+    </ul> -->
+    <div class="box">
+        <video>
+            <source src="../../assets/video/mainimg.mp4" type="video/mp4">
+        </video>
+        <span class="btn">
+            버튼
+            <div class="btn_style1"></div>
+            <div class="btn_style2"></div>
+        </span>
+    </div>
+<img src="../../assets/Component 7.png" alt="">
+    <script>
+
+
+        /*
+            비디오요소.load() ~ 비디오 불러오기
+            비디오요소.play() ~ 비디오 재생하기
+            비디오요소.pause() ~ 비디오 일시정지
+        */
+        const btn = document.querySelector(".btn");
+        const vid = document.querySelector("video");
+
+        // 내가 쓴 방법 1  
+        // let num = 1;
+        // btn.onclick = function () {
+
+        //     if (num % 2 != 0) {
+        //         vid.play();
+        //     } else {
+        //         vid.pause();
+        //     }
+
+        //     num++
+
+        // };
+
+
+        let num = 0;
+
+        btn.onclick = function () {
+            if (num === 0) {
+                vid.play();
+                num = 1;
+                document.querySelector(".btn_style1").style.clipPath = "inset(0 75% 0 10%)";
+                document.querySelector(".btn_style2").style.clipPath = "inset(0 75% 0 10%)";
+                document.querySelector(".btn_style2  ").style.display = "block";
+
+            } else {
+                vid.pause();
+                num = 0;
+                document.querySelector(".btn_style1  ").style.clipPath = " polygon(0 0, 0% 100%, 100% 50%)";
+                document.querySelector(".btn_style2  ").style.clipPath = "none";
+                document.querySelector(".btn_style2  ").style.display = "none";
+
+            }
+        };
+
+    </script>
+</body>
+
+</html>

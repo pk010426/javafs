@@ -8,39 +8,66 @@
     <title>HTML+CSS+JS</title>
     <style>
         .box {
-            width: 800px;
+            width: 400px;
         }
+
         .box video {
             width: 100%;
         }
-        .btnSet li {
-            float: left;
-            margin: 0 20px;
-            font: bold 18px/2 arial;
-            cursor: pointer;
+
+        .btn_wrap {
+            width: 400px;
+            text-align: center;
+            margin: 40px 0;
         }
+
+        .btn_wrap button {
+            margin: 0 20px;
+        }
+        
     </style>
 </head>
 
 <body>
-    <div class="box">
-        <video>
-            <source src="../assets/mov_bbb.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <ul class="btnSet">
+    <!-- <ul class="btnSet">
         <li class="load">load</li>
         <li class="play">play</li>
         <li class="pause">pause</li>
-    </ul>
+        <li class="video">video</li>
+    </ul> -->
+    <div class="btn_wrap">
+        <button class="load">처음으로</button>
+        <button class="play">실행</button>
+        <button class="pause">일시정지</button>
+    </div>
+    <div class="box">
+        <video>
+            <source src="../../assets/video/mainimg.mp4" type="video/mp4">
+        </video>
+    </div>
+
+
 
     <script>
-        /* 
+
+
+        /*
             비디오요소.load() ~ 비디오 불러오기
             비디오요소.play() ~ 비디오 재생하기
-            비디오요소.pause() ~ 비디오 불러오기
+            비디오요소.pause() ~ 비디오 일시정지
         */
+        const vid = document.querySelector("video");
+
+        document.querySelector(".load").onclick = function () {
+            vid.load();
+        }
+        document.querySelector(".play").onclick = function () {
+            vid.play();
+        }
+        document.querySelector(".pause").onclick = function () {
+            vid.pause();
+        }
+
 
     </script>
 </body>

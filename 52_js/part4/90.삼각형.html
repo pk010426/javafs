@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼각형</title>
+
+    <style>
+        div {
+            /* background-color: aquamarine; */
+            width: 0;
+            height: 0;
+        }
+        /* 너비 높이 안 주고, 선의 굵기로 삼각형 만드는 원리 */
+        .triangle_top {
+            border-top: 40px solid blue;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+        }
+        .triangle_bottom {
+            border-right: 25px solid transparent;
+            border-left: 25px solid transparent;
+            border-bottom: 40px solid gray;
+        }
+        .triangle_left {
+            border-top: 25px solid transparent;
+            border-right: 40px solid red;
+            border-bottom: 25px solid transparent;
+        }
+        .triangle_right {
+            border-top: 25px solid transparent;
+            border-left: 40px solid red;
+            border-bottom: 25px solid transparent;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="triangle_top">1</div>
+    <div class="triangle_bottom">2</div>
+    <div class="triangle_left">3</div>
+    <div class="triangle_right">4</div>
+</body>
+
+</html>
