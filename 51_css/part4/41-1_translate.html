@@ -19,13 +19,13 @@
 
         .trf {
             display: inline-block;
-            transform: scale(0, 0);
+            /* transform: scale(0, 0); */
             width: 200px;
             height: 100px;
             background: red;
             animation: scale 5s infinite;
             transition: 5s;
-            a
+            
         }
 
         @keyframes scale {
@@ -51,11 +51,11 @@
         /* .outer에 마우스를 올리면 자식 .trftx를 오른쪽으로 100px 이동 */
         .outer:hover .trftx {
             transform: scale(.5, 1);
-            /* animation: scale 3s infinite; */
+            animation: scale 3s infinite;
         }
 
         .outer:hover .trfty {
-            /* transform: translateY(y); */
+            transform: translateY(y);
             transform: translateY(100px);
         }
 
