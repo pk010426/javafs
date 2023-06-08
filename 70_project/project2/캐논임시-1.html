@@ -136,14 +136,35 @@
     <!-- section2 -->
     <section id="camera">
         <div class="section2_inner">
-            <button class="slide2_btn1"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
 
-            <button class="slide2_btn2"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
+            <div class="section2_slide_next_prev">
+                <button class="slide2_btn1"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
+                <button class="slide2_btn2"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
+            </div>
+            <div class="section2_slide_click">
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+            </div>
 
 
             <div class="slide_hidden">
                 <div class="section2_slide">
-                    <div class="camera_page">
+                    <div class="camera_page" id="c8">
+                        <div>
+                            <p></p>
+                            <h2>8</h2>
+                            <p></p>
+                        </div>
+                        <img src="" alt="">
+                    </div>
+
+                    <div class="camera_page" id="c1">
                         <div>
                             <p>NEW - 최신제품</p>
                             <h2>EOS R8</h2>
@@ -152,7 +173,7 @@
                         <img src="images/EOS_R8/r8front.jpg" alt="EOS_R8">
                     </div>
 
-                    <div class="camera_page">
+                    <div class="camera_page" id="c2">
                         <div>
                             <p>DESIGN AWARD 2021</p>
                             <h2>EOS R5</h2>
@@ -161,7 +182,7 @@
                         <img src="images/EOS_R5/r5front.jpg" alt="EOS_R5">
                     </div>
 
-                    <div class="camera_page">
+                    <div class="camera_page" id="c3">
                         <div>
                             <p>DESIGN AWARD 2018</p>
                             <h2>EOS 5D Mark IV</h2>
@@ -171,7 +192,7 @@
                         ">
                     </div>
 
-                    <div class="camera_page">
+                    <div class="camera_page" id="c4">
                         <div>
                             <p></p>
                             <h2>4</h2>
@@ -180,7 +201,7 @@
                         <img src="" alt="">
                     </div>
 
-                    <div class="camera_page">
+                    <div class="camera_page" id="c5">
                         <div>
                             <p></p>
                             <h2>5</h2>
@@ -189,7 +210,7 @@
                         <img src="" alt="">
                     </div>
 
-                    <div class="camera_page">
+                    <div class="camera_page" id="c6">
                         <div>
                             <p></p>
                             <h2>6</h2>
@@ -198,7 +219,7 @@
                         <img src="" alt="">
                     </div>
 
-                    <div class="camera_page">
+                    <div class="camera_page" id="c7">
                         <div>
                             <p></p>
                             <h2>7</h2>
@@ -207,14 +228,7 @@
                         <img src="" alt="">
                     </div>
 
-                    <div class="camera_page">
-                        <div>
-                            <p></p>
-                            <h2>8</h2>
-                            <p></p>
-                        </div>
-                        <img src="" alt="">
-                    </div>
+
 
 
 
@@ -227,29 +241,103 @@
     <!-- section 2 script -->
     <script>
 
+
+
         // https://weareferal.com/blog/creating-an-infinite-gallery-with-vanilla-js
 
         document.addEventListener('DOMContentLoaded', function () {
+
+            function next_btn() {
+                section2_imgslide.appendChild(camera_pages[0]);
+                section2_imgslide.insertBefore(camera_pages[camera_pages.length - 2], camera_pages[7]);
+                // camera_pages[camera_pages.length - 4].classList.add("fade");
+                camera_pages = document.querySelectorAll('.camera_page');
+                console.log(camera_pages[0].getAttribute("id"))
+                if (camera_pages[1].getAttribute("id") == "c1") {
+                    alert("123");
+                }
+            };
+
+            function prev_btn() {
+                section2_imgslide.insertBefore(camera_pages[camera_pages.length - 1], camera_pages[0]);
+                // camera_pages[camera_pages.length - 1].classList.add("fade");
+                camera_pages = document.querySelectorAll('.camera_page');
+            };
+
+            // 섹션 2 슬라이드 함수 시작
+            // 좌우 버튼 함수
             const section2_imgslide = document.querySelector('.section2_slide');
             let camera_pages = document.querySelectorAll('.camera_page');
 
             const prev = document.querySelector('.slide2_btn1');
-            prev.onclick = function () {
-                section2_imgslide.insertBefore(camera_pages[camera_pages.length - 1], camera_pages[0]);
-                camera_pages[camera_pages.length - 1].classList.add("fade");
-                camera_pages = document.querySelectorAll('.camera_page');
-            };
+            prev.onclick = prev_btn;
 
             const next = document.querySelector('.slide2_btn2');
-            next.onclick = function () {
-                section2_imgslide.appendChild(camera_pages[0]);
-                section2_imgslide.insertBefore(camera_pages[camera_pages.length - 4], camera_pages[4]);
-                camera_pages[camera_pages.length - 4].classList.add("fade");
-                camera_pages = document.querySelectorAll('.camera_page');
-            };
+            next.onclick = next_btn;
+
+            // 좌우 버튼 함수 끝
+
+            // btn 함수
+            let section2_click_btn = document.querySelectorAll(".section2_click_btn");
+
+            for (let i = 0; i < section2_click_btn.length; i++) {
+
+                section2_click_btn[i].onclick = function () {
+                    for (let i = 0; i < section2_click_btn.length; i++) {
+                        section2_click_btn[i].style.width = 6 + "px";
+                        section2_click_btn[i].style.backgroundColor = "#ccc";
+                    }
+
+                    this.style.width = 16 + "px";
+                    this.style.backgroundColor = "#000";
+
+                    if (i == 1) {
+
+                        next_btn();
+                    } else if (i == 2) {
+
+                        for (let j = 0; j < i; j++)
+                            next_btn();
+                    } else if (i == 3) {
+
+                        for (let j = 0; j < i; j++)
+                            next_btn();
+                    } else if (i == 4) {
+
+                        for (let j = 0; j < i; j++)
+                            next_btn();
+                    } else if (i == 5) {
+
+                        for (let j = 0; j < i; j++)
+                            next_btn();
+                    } else if (i == 6) {
+
+                        for (let j = 0; j < i; j++)
+                            next_btn();
+                    } else if (i == 7) {
+
+                        for (let j = 0; j < i; j++)
+                            next_btn();
+                    }
+
+
+
+
+
+
+
+
+
+
+                }
+            }
+            // btn endㄹ
+
+
+
+
+            // 섹션2 슬라이드 함수 종료
         });
-
-
 
 
 
