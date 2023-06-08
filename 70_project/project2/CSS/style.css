@@ -211,7 +211,7 @@ div .section1_title1 {
     padding: 44px 0;
     width: 1400px;
     height: 532px;
-    /* overflow: hidden; */
+    overflow: hidden;
     position: absolute;
 
 }

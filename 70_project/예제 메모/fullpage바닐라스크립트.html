@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fullpage</title>
+    <title>풀페이지</title>
     <link rel="stylesheet" href="fullpagestyle.css">
 </head>
 
@@ -13,24 +13,21 @@
     <header>
 
     </header>
-    <button>섹션 1</button>
-    <button>섹션 2</button>
-    <button>섹션 3</button>
-    <button>섹션 4</button>
+
     <div id="fullpage">
         <section id="section1" class="section">
-            <h1>글씨</h1>
+            <h1>섹션 1</h1>
         </section>
         <section id="section2" class="section">
+            <h1>섹션 2</h1>
         </section>
         <section id="section3" class="section">
+            <h1>섹션 3</h1>
         </section>
         <section id="section4" class="section">
+            <h1>섹션 4</h1>
         </section>
-        <section id="section5" class="section">
-        </section>
-        <section id="section6" class="section">
-        </section>
+
     </div>
 
     <footer>
@@ -38,21 +35,30 @@
     </footer>
 </body>
 <script>
-    num = 1;
 
+    let num = 1;
     document.documentElement.onwheel = function (event) {
+        let sec_top;
+
         if (event.deltaY < 0) {
-            location.href = "#section" + num;
             num = num - 1;
-            if (num == 0) {
+            if (num < 1) {
                 num = 1;
             }
+
+            sec_top = document.querySelector("#section" + num).offsetTop;
+            document.documentElement.scrollTop = sec_top;
+
         } else {
-            location.href = "#section" + num;
+
             num = num + 1;
-            if (num > 6) {
-                num = 6;
+            if (num > 4) {
+                num = 4;
             }
+            sec_top = document.querySelector("#section" + num).offsetTop;
+            document.documentElement.scrollTop = sec_top;
+
+
         }
     };
 

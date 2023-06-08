@@ -9,7 +9,9 @@ body {
     overflow-y: hidden;
 }
 #fullpage section {
+    width: 100%;
     height: 100vh;
+    position: absolute;
 }
 
 #section1 {
@@ -17,16 +19,13 @@ body {
 }
 #section2 {
     background-color: royalblue;
+    display: none;
 }
 #section3 {
     background-color: green;
+    display: none;
 }
 #section4 {
     background-color: gray;
-}
-#section5 {
-    background-color: yellowgreen;
-}
-#section6 {
-    background-color: orange;
+    display: none;
 }
