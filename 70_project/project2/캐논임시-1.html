@@ -159,16 +159,16 @@
                 <div class="section2_slide">
                     <div class="camera_page" id="c8">
                         <div>
-                            <p></p>
-                            <h2>8</h2>
-                            <p></p>
+                            <h3>출시일 : 2023-03</h3>
+                            <h2>EOS R50</h2>
+                            <p>EOS R시리즈 중 가장 가벼운 바디</p>
                         </div>
-                        <img src="" alt="">
+                        <img src="images/EOS_R50/r50friont.jpg" alt="EOS_R50">
                     </div>
 
                     <div class="camera_page" id="c1">
                         <div>
-                            <p>NEW - 최신제품</p>
+                            <h3>NEW - 최신제품</h3>
                             <h2>EOS R8</h2>
                             <p>독보적 초경량 풀프레임의 탄생</p>
                         </div>
@@ -177,7 +177,7 @@
 
                     <div class="camera_page" id="c2">
                         <div>
-                            <p>DESIGN AWARD 2021</p>
+                            <h3>DESIGN AWARD 2021</h3>
                             <h2>EOS R5</h2>
                             <p>8K 풀프레임 미러리스의 혁명</p>
                         </div>
@@ -186,7 +186,7 @@
 
                     <div class="camera_page" id="c3">
                         <div>
-                            <p>DESIGN AWARD 2018</p>
+                            <h3>DESIGN AWARD 2018</h3>
                             <h2>EOS 5D Mark IV</h2>
                             <p>열망, 그것은 5D의 DNA</p>
                         </div>
@@ -196,38 +196,38 @@
 
                     <div class="camera_page" id="c4">
                         <div>
-                            <p></p>
-                            <h2>4</h2>
-                            <p></p>
+                            <h3>EISA - AWARD 2018 - 2019</h3>
+                            <h2>EOS 6D MARK2</h2>
+                            <p>당신을 새로운 사진 세계로 인도하다</p>
                         </div>
-                        <img src="" alt="">
+                        <img src="images/EOS_6D_MARK2/6dfront.jpg" alt="EOS_6D_MARK2">
                     </div>
 
                     <div class="camera_page" id="c5">
                         <div>
-                            <p></p>
-                            <h2>5</h2>
-                            <p></p>
+                            <h3>출시일 : 2020-05</h3>
+                            <h2>EOS 850D</h2>
+                            <p>약 2,410만 화소의 APS-C 센서</p>
                         </div>
-                        <img src="" alt="">
+                        <img src="images/EOS_850D/850dfront.jpg" alt="EOS_850D">
                     </div>
 
                     <div class="camera_page" id="c6">
                         <div>
-                            <p></p>
-                            <h2>6</h2>
-                            <p></p>
+                            <h3>출시일 : 2022-07</h3>
+                            <h2>EOS R10</h2>
+                            <p>작고 가벼운 고성능 APS-C 시스템</p>
                         </div>
-                        <img src="" alt="">
+                        <img src="images/EOS_R10/r10front.jpg" alt="EOS_R10">
                     </div>
 
                     <div class="camera_page" id="c7">
                         <div>
-                            <p></p>
-                            <h2>7</h2>
-                            <p></p>
+                            <h3>출시일 : 2021-11</h3>
+                            <h2>EOS R3</h2>
+                            <p>이면조사 적층형 풀프레임 센서</p>
                         </div>
-                        <img src="" alt="">
+                        <img src="images/EOS_R3/r3front.jpg" alt="EOS_R3">
                     </div>
 
 
@@ -253,7 +253,7 @@
                 for (i = 1; i < 9; i++) {
                     if (camera_pages[1].getAttribute("id") == "c" + i) {
                         document.querySelector(".section2_slide_click button:nth-of-type(" + i + ")").style.width = 16 + "px";
-                        document.querySelector(".section2_slide_click button:nth-of-type(" + i + ")").style.backgroundColor = "black";
+                        document.querySelector(".section2_slide_click button:nth-of-type(" + i + ")").style.backgroundColor = "#363E4A";
                     }
                 };
             }
@@ -292,7 +292,7 @@
             function btn_reset() {
                 for (let i = 0; i < section2_click_btn.length; i++) {
                     section2_click_btn[i].style.width = 6 + "px";
-                    section2_click_btn[i].style.backgroundColor = "#ccc";
+                    section2_click_btn[i].style.backgroundColor = "#d1d1d1";
                 }
             }
             for (let i = 0; i < section2_click_btn.length; i++) {
@@ -300,13 +300,10 @@
                 section2_click_btn[i].onclick = function () {
                     btn_reset();
                     this.style.width = 16 + "px";
-                    this.style.backgroundColor = "#000";
-                    console.log(document.querySelector("#c4").index);
-                    // console.log(camera_pages[i].findindex(e => e == e.querySelector("#c2")));
-                    // console.log(this));
+                    this.style.backgroundColor = "#363E4A";
+
                     let arr1_id = camera_pages[1].getAttribute("id");
-                    console.log(arr1_id);
-                    
+
                     if (i == 0) {
                         if (arr1_id == "c1") {
                             return 0;
@@ -318,6 +315,8 @@
                             next_btn();
                             next_btn();
                             next_btn();
+                            document.querySelectorAll(".camera_page").style.transition = "4s";
+
                         } else if (arr1_id == "c3") {
                             next_btn();
                             next_btn();
@@ -347,83 +346,331 @@
                             next_btn();
                         }
                     }
+                    if (i == 1) {
+                        if (arr1_id == "c2") {
+                            return 0;
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c4") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 2) {
+                        if (arr1_id == "c3") {
+                            return 0;
+                        } else if (arr1_id == "c4") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 3) {
+                        if (arr1_id == "c4") {
+                            return 0;
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 3) {
+                        if (arr1_id == "c4") {
+                            return 0;
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 4) {
+                        if (arr1_id == "c5") {
+                            return 0;
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c4") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 5) {
+                        if (arr1_id == "c6") {
+                            return 0;
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c4") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 6) {
+                        if (arr1_id == "c7") {
+                            return 0;
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c4") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 7) {
+                        if (arr1_id == "c8") {
+                            return 0;
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c4") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                        }
+                    }
 
-                    // if (i == 0) {
-                    //     if (arr1_id == "c1") {
-                    //         return 0;
-                    //     } else if (arr1_id == "c2") {
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //     } else if (arr1_id == "c3") {
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //     } else if (arr1_id == "c4") {
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //     } else if (arr1_id == "c5") {
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //     } else if (arr1_id == "c6") {
-                    //         next_btn();
-                    //         next_btn();
-                    //         next_btn();
-                    //     } else if (arr1_id == "c7") {
-                    //         next_btn();
-                    //         next_btn();
-                    //     } else if (arr1_id == "c8") {
-                    //         next_btn();
-                    //     }
-                    // }
 
-                    // if (arr1_id = 1)
-                    // for (i = 1; 1 < 9; i++) {
-                    //     if (camera_pages[i]) {
 
-                    //     }
-                    // }
 
-                    // if (i == 1) {
 
-                    //     next_btn();
-                    // } else if (i == 2) {
-
-                    //     for (let j = 0; j < i; j++)
-                    //         next_btn();
-                    // } else if (i == 3) {
-
-                    //     for (let j = 0; j < i; j++)
-                    //         next_btn();
-                    // } else if (i == 4) {
-
-                    //     for (let j = 0; j < i; j++)
-                    //         next_btn();
-                    // } else if (i == 5) {
-
-                    //     for (let j = 0; j < i; j++)
-                    //         next_btn();
-                    // } else if (i == 6) {
-
-                    //     for (let j = 0; j < i; j++)
-                    //         next_btn();
-                    // } else if (i == 7) {
-
-                    //     for (let j = 0; j < i; j++)
-                    //         next_btn();
-                    // }
 
 
                 }

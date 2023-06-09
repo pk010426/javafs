@@ -1,172 +1,770 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canon_캐논_박건우</title>
+    <title>캐논</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="css/typo.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
+<!-- https://www.frisbeekorea.com/shop/main/main.do -->
 
 <body>
-
+    <!-- header -->
     <header>
-        <div id="login">
-            <input type="search" placeholder="검색어를 입력해 주세요"> <i class="fa-solid fa-magnifying-glass"
-                style="color: #000000;"></i>
-            <span>로그인 &nbsp; &nbsp;</span>
-            <span>회원 가입</span>
+        <div class="nav_bottom_border">
+            <div class="login">
+                <ul>
+                    <li>회사소개</li>
+                    <li>&nbsp; | &nbsp;</li>
+                    <li>다운로드센터</li>
+                    <li>&nbsp; | &nbsp;</li>
+                    <li>정품등록</li>
+                    <li>&nbsp; | &nbsp;</li>
+                    <li>매장안내</li>
+                </ul>
+                <ul>
+                    <li><i class="fa-regular fa-user" style="color: #6e7683;"></i> 마이페이지</li>
+                    <li>&nbsp; | &nbsp;</li>
+                    <li><i class="fa-solid fa-user-plus" style="color: #6e7683;"></i> 회원가입</li>
+                    <li>&nbsp; | &nbsp;</li>
+                    <li><i class="fa-solid fa-right-to-bracket fa-rotate-180" style="color: #6e7683;"></i> 로그인</li>
+                </ul>
+            </div>
         </div>
 
-        <nav>
-            <h1><a href="#" class="logo">Canon</a></h1>
-            <span><i class="fa-solid fa-bars" style="color: #000000;"></i></span>
-            <ul>
-                <li><a href="#camera"> <i class="fa-solid fa-camera"></i> Camera</a></li>
-                <li><a href="#print"> <i class="fa-solid fa-print"></i> Print</a></li>
-                <li><a href="#head_office_location"> <i class="fa-solid fa-location-dot"></i> Head Office Location</a>
-                </li>
-            </ul>
-        </nav>
-
+        <div class="nav_bottom_border">
+            <nav>
+                <div class="nav_inner">
+                    <a href="#">
+                        <div class="logo"><img src="images/logo.jpg" alt="logo"></div>
+                    </a>
+                    <i class="fa-solid fa-bars" style="color: #7d7d7d;"></i>
+                    <ul>
+                        <li><a href="#camera">Camera</a></li>
+                        <li><a href="#lens">Lens</a></li>
+                        <li><a href="#event">Event</a></li>
+                        <li><a href="#printer">Printer</a></li>
+                        <li><a href="#customer_support">Customer Support</a></li>
+                    </ul>
+                </div>
+                <span><i class="fa-solid fa-magnifying-glass" style="color: #7d7d7d;"></i></span>
+            </nav>
+        </div>
     </header>
+    <!-- section1 -->
+    <section id="main">
+        <div class="main_img">
+            <button onclick="left()"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
+            <button onclick="right()"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
+            <button class="btn btn1" onclick="color(a)">이미지 1번</button>
+            <button class="btn btn2" onclick="color(2)">이미지 2번</button>
+            <button class="btn btn3" onclick="color(3)">이미지 3번</button>
+            <button class="btn btn4" onclick="color(4)">이미지 4번</button>
+            <div class="section1_title1">글자 1</div>
+            <div class="section1_title2">글자 2</div>
+            <div class="section1_title3">글자 3</div>
+            <div class="section1_title4">글자 4</div>
+            <img src="images/main1.jpg" alt="" id="photo">
+            <!-- slide_img_button_script -->
+            <script>
+                // 전역함수 선언
+                let changeimg = ['images/main1.jpg', 'images/main2.jpg', 'images/main3.jpg', 'images/main4.jpg'];
+                let i = 0;
+                let num;
 
-        <!-- section 1 -->
-        <section id="main_img">
-            <img src="images/main_img.jpg" alt="캐논 소비자 만족도 이미지 ">
-            <!-- 이미지 중앙 로고 -->
-            <h2 class="slogan"><b>Canon<div>For</div> Consumer</b></h2>
-        </section>
-        <!-- section 2 -->
-        <section id="camera">
-            <h2>Camera</h2>
+                // 메인 캐로셀 왼쪽 버튼
+                function left() {
+                    // 배열 감소 함수
+                    i--;
+                    if (i < 0) {
+                        i = 3;
+                    }
+                    // 이미지 타이틀 변수
+                    num = i + 1;
+                    // 이미지 출력
+                    const photo = document.querySelector('#photo');
+                    photo.setAttribute("src", changeimg[i]);
+                    // 타이틀 변수
+                    let title = document.querySelector(".section1_title" + num);
+                    // 출력된 타이틀의 전 변수 (지우는 용도)
+                    let title_prev = document.querySelector(".section1_title" + (num + 1));
+                    // 캐로셀 처음에서 마지막 이동
+                    if (title_prev == document.querySelector(".section1_title5")) {
+                        title_prev = document.querySelector(".section1_title1");
+                    }
+                    // 타이틀 출력
+                    title.style.display = "block";
+                    // 전 타이틀 지움
+                    title_prev.style.display = "none";
+                }
+                // 메인 캐로셀 오른쪽 버튼
+                function right() {
+                    // 배열 증가 함수
+                    i++;
+                    if (i >= changeimg.length) {
+                        i = 0;
+                    }
+                    // 이미지 타이틀 변수
+                    num = i + 1;
+                    // 이미지 출력
+                    const photo = document.querySelector('#photo');
+                    photo.setAttribute("src", changeimg[i]);
+                    // 타이틀 변수
+                    let title = document.querySelector(".section1_title" + num);
+                    // 출력된 타이틀의 전 변수 (지우는 용도)
+                    let title_prev = document.querySelector(".section1_title" + (num - 1));
+                    // 캐로셀 마지막에서 처음 이동
+                    if (title_prev == document.querySelector(".section1_title0")) {
+                        title_prev = document.querySelector(".section1_title4");
+                    }
+                    // 타이틀 출력
+                    title.style.display = "block";
+                    // 전 타이틀 지움
+                    title_prev.style.display = "none";
+                }
+                function color() {
+                    let changecolor = document.querySelector(".btn" + a);
+                    this.style.color = "#dc000c";
+                }
 
-            <ul>
-                <li>
-                    <h3>EOS 1500D</h3>
-                    <img src="images/EOS_1500D.jpg" alt="캐논 카메라 사진1">
-                </li>
-                <li>
-                    <h3>EOS 90D</h3>
-                    <img src="images/EOS_90D.png" alt="캐논 카메라 사진2">
-                </li>
-                <li>
-                    <h3>EOS M200</h3>
-                    <img src="images/EOS_M200.jpg" alt="캐논 카메라 사진3">
-                </li>
-                <li>
-                    <h3>EOS R</h3>
-                    <img src="images/EOS_R.jpg" alt="캐논 카메라 사진4">
-                </li>
-                <li>
-                    <h3>EOS R3</h3>
-                    <img src="images/EOS_R3.jpg" alt="캐논 카메라 사진5">
-                </li>
-                <li>
-                    <h3>EOS R50</h3>
-                    <img src="images/EOS_R50.jpg" alt="캐논 카메라 사진6">
-                </li>
-                <li>
-                    <h3>EOS R6 Mark II</h3>
-                    <img src="images/EOS_R6_Mark_II.jpg" alt="캐논 카메라 사진7">
-                </li>
-                <li>
-                    <h3>EOS R8</h3>
-                    <img src="images/EOS_R8.jpg" alt="캐논 카메라 사진8">
-                </li>
-            </ul>
-        </section>
-        <section id="event">
-            <h2>Event</h2>
-            <div class="event_img">
-                <div>
-                    <img src="images/event1.jpg" alt="">
-                    <h3>귀여운 벨리곰과 셀피가 만났다곰</h3>
-                    <span>벨리곰 한정판 패키지</span> <span>미니 포토프린터</span>
-                </div>
-                <div>
-                    <img src="images/event2.jpg" alt="">
-                    <h3>나만의 포토그래퍼, <br>
-                        캐논 PowerShot PICK 카메라!</h3>
-                    <span>PowerShot PICK</span>
-                    <span>컴팩트 카메라</span>
-                </div>
-                <div>
-                    <img src="images/event3.jpg" alt="">
-                    <h3>디지털트랜스포메이션 <br>
-                        오피스를 선도하다.</h3>
-                    <span>iR ADV DX Series</span>
+
+            </script>
+        </div>
+    </section>
+    <!-- section2 -->
+    <section id="camera">
+        <div class="section2_inner">
+
+            <div class="section2_slide_next_prev">
+                <button class="slide2_btn1"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
+                <button class="slide2_btn2"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
+            </div>
+            <div class="section2_slide_click">
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+                <button class="section2_click_btn"></button>
+            </div>
+
+
+            <div class="slide_hidden">
+                <div class="section2_slide">
+                    <div class="camera_page" id="c8">
+                        <div>
+                            <h3>출시일 : 2023-03</h3>
+                            <h2>EOS R50</h2>
+                            <p>EOS R시리즈 중 가장 가벼운 바디</p>
+                        </div>
+                        <img src="images/EOS_R50/r50friont.jpg" alt="EOS_R50">
+                    </div>
+
+                    <div class="camera_page" id="c1">
+                        <div>
+                            <h3>NEW - 최신제품</h3>
+                            <h2>EOS R8</h2>
+                            <p>독보적 초경량 풀프레임의 탄생</p>
+                        </div>
+                        <img src="images/EOS_R8/r8front.jpg" alt="EOS_R8">
+                    </div>
+
+                    <div class="camera_page" id="c2">
+                        <div>
+                            <h3>DESIGN AWARD 2021</h3>
+                            <h2>EOS R5</h2>
+                            <p>8K 풀프레임 미러리스의 혁명</p>
+                        </div>
+                        <img src="images/EOS_R5/r5front.jpg" alt="EOS_R5">
+                    </div>
+
+                    <div class="camera_page" id="c3">
+                        <div>
+                            <h3>DESIGN AWARD 2018</h3>
+                            <h2>EOS 5D Mark IV</h2>
+                            <p>열망, 그것은 5D의 DNA</p>
+                        </div>
+                        <img src="images/EOS_5D_MARK4/5dfront.jpg" alt="EOS_5D_Mark_IV
+                        ">
+                    </div>
+
+                    <div class="camera_page" id="c4">
+                        <div>
+                            <h3>EISA - AWARD 2018 - 2019</h3>
+                            <h2>EOS 6D MARK2</h2>
+                            <p>당신을 새로운 사진 세계로 인도하다</p>
+                        </div>
+                        <img src="images/EOS_6D_MARK2/6dfront.jpg" alt="EOS_6D_MARK2">
+                    </div>
+
+                    <div class="camera_page" id="c5">
+                        <div>
+                            <h3>출시일 : 2020-05</h3>
+                            <h2>EOS 850D</h2>
+                            <p>약 2,410만 화소의 APS-C 센서</p>
+                        </div>
+                        <img src="images/EOS_850D/850dfront.jpg" alt="EOS_850D">
+                    </div>
+
+                    <div class="camera_page" id="c6">
+                        <div>
+                            <h3>출시일 : 2022-07</h3>
+                            <h2>EOS R10</h2>
+                            <p>작고 가벼운 고성능 APS-C 시스템</p>
+                        </div>
+                        <img src="images/EOS_R10/r10front.jpg" alt="EOS_R10">
+                    </div>
+
+                    <div class="camera_page" id="c7">
+                        <div>
+                            <h3>출시일 : 2021-11</h3>
+                            <h2>EOS R3</h2>
+                            <p>이면조사 적층형 풀프레임 센서</p>
+                        </div>
+                        <img src="images/EOS_R3/r3front.jpg" alt="EOS_R3">
+                    </div>
+
+
+
+
+
+
                 </div>
             </div>
-        </section>
-        <!-- section 3 -->
-        <section id="print">
-            <h2>Print</h2>
-            <p>깔끔하고 매력적인 디자인, 명확하고미니멀한버튼, 작고 가벼운 무게로 인테리어소품처럼 두고사용하는 즐거움을 제공합니다. 두 프린터는 자동 보정 기능을 갖추고 있습니다. 설정만 하면사진에서
-                밝기, 대비, 채도 등을 전체적으로 자동 조정하므로간편하게 멋진 사진을 얻을 수 있습니다. 또한, 기체를 사용해 인화함으로써 입자 없이 부드럽게 색조를 표현할 수 있습니다. 색농도는온도로
-                제어되며 더욱 풍부한 계조로 재현할 수 있습니다. 인화 마지막 과정에서 특수 필름 처리(오버코팅)로 마감하여 소중한 사진들을 물과 먼지 등의 오염으로 부터 보호하고 색이 변색되는 것을
-                방지합니다.</p>
-            <ul>
-                <li>
-                    <div>
-                        <img src="images/SELPHY_CP1500.jpg" alt="캐논 프린트 1">
 
-                        <h3>SELPHY CP1500</h3>
-                        <p>출시일 : 2022-09</p>
-                        <p>염료승화형 열전사 방식(오버코팅 적용)</p>
-                        <p>300 x 300 dpi, (256계조)</p>
-                        <p>60W 이하(대기전력 : 4W이하)</p>
-                    </div>
-                    <a href="https://kr.canon/product/content/detail/EC5AE85F4CC6D0469396F00C925F0725">Go To
-                        Product</a>
+        </div>
+    </section>
+    <!-- section 2 script -->
+    <script>
 
-                </li>
 
-                <li>
-                    <div>
-                        <img src="images/SELPHY_CP1300.jpg" alt="캐논 프린트 2">
-                        <h3>SELPHY CP1300</h3>
-                        <p>출시일 : 2017-10</p>
-                        <p>승화형 열전사 방식 (오버 코팅)</p>
-                        <p>300 x 300 dpi, (256계조)</p>
-                        <p>60 W 이하 (대기 상태: 4 W 이하)</p>
-                    </div>
-                    <a href="https://kr.canon/product/content/detail/D5AD26B0E8253D77DD0158D5EA4F0141">Go To
-                        Product</a>
-                </li>
-                <li>
-                    <div>
-                        <img src="images/PCPL-CP400.jpg" alt="셀피 1">
-                        <h3>PCPL-CP400</h3>
-                        <p>원산지 : 중국</p>
-                        <P>대응 기종 : SELPHY CP1300, SELPHY CP1500</P>
-                    </div>
-                    <a href="https://kr.canon/product/content/detail/5CD1B5BC4B1252FEEFADECC106EA33C8">Go To
-                        Product</a>
-                </li>
-                <li>
-                    <div>
-                        <img src="images/PCP-CP400.jpg" alt="셀피 2">
-                        <h3>PCP-CP400</h3>
-                        <p>원산지 : 중국</p>
-                        <P>대응 기종 : SELPHY CP1300, SELPHY CP1500</P>
-                    </div>
-                    <a href="https://kr.canon/product/content/detail/835C654F30AEA16501CEE91AE4E10100">Go To Product
-                    </a>
-                </li>
-            </ul>
-        </section>
-        <!-- 섹션 4 -->
-        <section id="head_office_location">
-            <h2> Head Office Location</h2>
+
+        // https://weareferal.com/blog/creating-an-infinite-gallery-with-vanilla-js
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            function btn_choose() {
+                for (i = 1; i < 9; i++) {
+                    if (camera_pages[1].getAttribute("id") == "c" + i) {
+                        document.querySelector(".section2_slide_click button:nth-of-type(" + i + ")").style.width = 16 + "px";
+                        document.querySelector(".section2_slide_click button:nth-of-type(" + i + ")").style.backgroundColor = "#363E4A";
+                    }
+                };
+            }
+
+            function next_btn() {
+                section2_imgslide.appendChild(camera_pages[0]);
+                section2_imgslide.insertBefore(camera_pages[camera_pages.length - 2], camera_pages[7]);
+                camera_pages = document.querySelectorAll('.camera_page');
+                btn_reset();
+                btn_choose();
+            };
+
+            function prev_btn() {
+                section2_imgslide.insertBefore(camera_pages[camera_pages.length - 1], camera_pages[0]);
+                camera_pages = document.querySelectorAll('.camera_page');
+                btn_reset();
+                btn_choose();
+            };
+
+            // 섹션 2 슬라이드 함수 시작
+            // 좌우 버튼 함수
+            const section2_imgslide = document.querySelector('.section2_slide');
+            let camera_pages = document.querySelectorAll('.camera_page');
+
+            const prev = document.querySelector('.slide2_btn1');
+            prev.onclick = prev_btn;
+
+            const next = document.querySelector('.slide2_btn2');
+            next.onclick = next_btn;
+
+            // 좌우 버튼 함수 끝
+
+            // btn 함수
+            let section2_click_btn = document.querySelectorAll(".section2_click_btn");
+
+            function btn_reset() {
+                for (let i = 0; i < section2_click_btn.length; i++) {
+                    section2_click_btn[i].style.width = 6 + "px";
+                    section2_click_btn[i].style.backgroundColor = "#d1d1d1";
+                }
+            }
+            for (let i = 0; i < section2_click_btn.length; i++) {
+
+                section2_click_btn[i].onclick = function () {
+                    btn_reset();
+                    this.style.width = 16 + "px";
+                    this.style.backgroundColor = "#363E4A";
+
+                    let arr1_id = camera_pages[1].getAttribute("id");
+
+                    if (i == 0) {
+                        if (arr1_id == "c1") {
+                            return 0;
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            document.querySelectorAll(".camera_page").style.transition = "4s";
+
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c4") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 1) {
+                        if (arr1_id == "c2") {
+                            return 0;
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c4") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 2) {
+                        if (arr1_id == "c3") {
+                            return 0;
+                        } else if (arr1_id == "c4") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 3) {
+                        if (arr1_id == "c4") {
+                            return 0;
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 3) {
+                        if (arr1_id == "c4") {
+                            return 0;
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 4) {
+                        if (arr1_id == "c5") {
+                            return 0;
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c4") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 5) {
+                        if (arr1_id == "c6") {
+                            return 0;
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c4") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 6) {
+                        if (arr1_id == "c7") {
+                            return 0;
+                        } else if (arr1_id == "c8") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c4") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                        }
+                    }
+                    if (i == 7) {
+                        if (arr1_id == "c8") {
+                            return 0;
+                        } else if (arr1_id == "c1") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c2") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c3") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c4") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c5") {
+                            next_btn();
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c6") {
+                            next_btn();
+                            next_btn();
+                        } else if (arr1_id == "c7") {
+                            next_btn();
+                        }
+                    }
+
+
+
+
+
+
+
+                }
+            }
+            // btn end
+
+
+
+
+            // 섹션2 슬라이드 함수 종료
+        });
+
+
+
+
+    </script>
+
+
+
+    <!-- section3 -->
+    <section id="lens">
+        <div class="section3_title">
+
+        </div>
+        <div class="section3_inner">
+            <button><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
+            <button><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
+            <div class="lens_page"></div>
+            <div class="lens_page"></div>
+            <div class="lens_page"></div>
+            <div class="lens_page"></div>
+        </div>
+    </section>
+    <!-- section4 -->
+    <section id="event">
+        <div class="ad">
+
+        </div>
+        <div class="section4_inner">
+            <div class="event_wrap">
+                <div class="event_page"></div>
+                <h3>title</h3>
+                <p>내용</p>
+            </div>
+            <div class="event_wrap">
+                <div class="event_page"></div>
+                <h3>title</h3>
+                <p>내용</p>
+            </div>
+            <div class="event_wrap">
+                <div class="event_page"></div>
+                <h3>title</h3>
+                <p>내용</p>
+            </div>
+            <div class="event_wrap">
+                <div class="event_page"></div>
+                <h3>title</h3>
+                <p>내용</p>
+            </div>
+        </div>
+    </section>
+    <!-- section5 -->
+    <section id="printer">
+        <div class="section5_title">
+
+        </div>
+        <div class="section5_inner">
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+            <div class="printer_page"></div>
+        </div>
+    </section>
+    <!-- section6 -->
+    <section id="customer_support">
+        <div class="section6_title">
+
+        </div>
+        <div class="section6_inner">
+            <div id="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1881.893554136018!2d127.06227233359915!3d37.50897742815602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca44054201203%3A0xd71388edba01e49d!2z7LqQ64W87L2U66as7JWEIOyjvOyLne2ajOyCrA!5e0!3m2!1sko!2skr!4v1682408009345!5m2!1sko!2skr">
+                </iframe>
+            </div>
             <form action="message.php" method="post">
                 <h3>고객센터 문의</h3>
                 <input type="text" name="user_name" placeholder="이름">
                 <input type="email" name="user_email" placeholder="이메일">
                 <input type="text" name="user_subject" placeholder="제목">
-                <textarea name="user_commet" cols="200" rows="5" placeholder="문의사항을 적어주세요."></textarea>
+                <textarea name="user_commet" cols="88" rows="5" placeholder="문의사항을 적어주세요."></textarea>
                 <button type="submit"> <i class="fa-sharp fa-solid fa-paper-plane"></i> SEND MESSAGE</button>
             </form>
             <div class="ask">
@@ -181,37 +779,12 @@
                     <p>운영시간 09:00 ~ 18:00 <br> (점심 12:00 ~ 13:00) <br>토,일요일, 공휴일 휴무</p>
                 </div>
             </div>
-            <div id="map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1881.893554136018!2d127.06227233359915!3d37.50897742815602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca44054201203%3A0xd71388edba01e49d!2z7LqQ64W87L2U66as7JWEIOyjvOyLne2ajOyCrA!5e0!3m2!1sko!2skr!4v1682408009345!5m2!1sko!2skr">
-                </iframe>
-            </div>
-        </section>
-        <footer>
-            <div id="footer">
-                <div class="ad">
-                    <h3>카메라 / 렌즈 소개</h3>
-                    <i class="fa-brands fa-youtube fa-2x" style="color: #000000;"></i>
-                    <i class="fa-brands fa-facebook fa-2x" style="color: #000000;"></i>
-                    <i class="fa-solid fa-blog fa-2x" style="color: #000000;"></i>
-                    <i class="fa-brands fa-instagram fa-2x" style="color: #000000;"></i>
-                </div>
-                <div class="sns">
-                    <h3>구독하고 캐논의 이벤트 소식을 받아보세요!</h3>
-                    <i class="fa-brands fa-youtube fa-2x" style="color: #000000;"></i>
-                    <i class="fa-brands fa-facebook fa-2x" style="color: #000000;"></i>
-                    <i class="fa-solid fa-blog fa-2x" style="color: #000000;"></i>
-                    <i class="fa-brands fa-instagram fa-2x" style="color: #000000;"></i>
-                </div>
-            </div>
-            <div class="adr">
-                <span>주소 : 서울특별시 강남구 테헤란로 607 (삼성동) <br> </span>
-                <span>복합기 • 카메라 고객상담실 : 1533-3355</span>
-            </div>
-            <h2>Copyright &copy; CANON KOREA. All Right reserved.</h2>
-            <p><a href="http://pk0426.dothome.co.kr/">Imitation by pk0426</a></p>
-        </footer>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer>
 
+    </footer>
 </body>
 
 </html>
