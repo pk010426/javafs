@@ -249,21 +249,28 @@
 
         document.addEventListener('DOMContentLoaded', function () {
 
+            function btn_choose() {
+                for (i = 1; i < 9; i++) {
+                    if (camera_pages[1].getAttribute("id") == "c" + i) {
+                        document.querySelector(".section2_slide_click button:nth-of-type(" + i + ")").style.width = 16 + "px";
+                        document.querySelector(".section2_slide_click button:nth-of-type(" + i + ")").style.backgroundColor = "black";
+                    }
+                };
+            }
+
             function next_btn() {
                 section2_imgslide.appendChild(camera_pages[0]);
                 section2_imgslide.insertBefore(camera_pages[camera_pages.length - 2], camera_pages[7]);
-                // camera_pages[camera_pages.length - 4].classList.add("fade");
                 camera_pages = document.querySelectorAll('.camera_page');
-                console.log(camera_pages[0].getAttribute("id"))
-                if (camera_pages[2].getAttribute("id") == "c1") {
-                    document.querySelector(".section2_slide_click button:nth-of-type(2)").style.width = 16 + "px";
-                }
+                btn_reset();
+                btn_choose();
             };
 
             function prev_btn() {
                 section2_imgslide.insertBefore(camera_pages[camera_pages.length - 1], camera_pages[0]);
-                // camera_pages[camera_pages.length - 1].classList.add("fade");
                 camera_pages = document.querySelectorAll('.camera_page');
+                btn_reset();
+                btn_choose();
             };
 
             // 섹션 2 슬라이드 함수 시작
@@ -282,58 +289,63 @@
             // btn 함수
             let section2_click_btn = document.querySelectorAll(".section2_click_btn");
 
+            function btn_reset() {
+                for (let i = 0; i < section2_click_btn.length; i++) {
+                    section2_click_btn[i].style.width = 6 + "px";
+                    section2_click_btn[i].style.backgroundColor = "#ccc";
+                }
+            }
             for (let i = 0; i < section2_click_btn.length; i++) {
 
                 section2_click_btn[i].onclick = function () {
-                    for (let i = 0; i < section2_click_btn.length; i++) {
-                        section2_click_btn[i].style.width = 6 + "px";
-                        section2_click_btn[i].style.backgroundColor = "#ccc";
-                    }
-
+                    btn_reset();
                     this.style.width = 16 + "px";
                     this.style.backgroundColor = "#000";
+                    console.log(document.querySelector("#c4").index);
+                    // console.log(camera_pages[i].findindex(e => e == e.querySelector("#c2")));
+                    // console.log(this));
+                    let arr1_id = camera_pages[1].getAttribute("id");
+                    console.log(arr1_id);
+                    // if (arr1_id = 1)
+                    // for (i = 1; 1 < 9; i++) {
+                    //     if (camera_pages[i]) {
 
-                    if (i == 1) {
+                    //     }
+                    // }
 
-                        next_btn();
-                    } else if (i == 2) {
+                    // if (i == 1) {
 
-                        for (let j = 0; j < i; j++)
-                            next_btn();
-                    } else if (i == 3) {
+                    //     next_btn();
+                    // } else if (i == 2) {
 
-                        for (let j = 0; j < i; j++)
-                            next_btn();
-                    } else if (i == 4) {
+                    //     for (let j = 0; j < i; j++)
+                    //         next_btn();
+                    // } else if (i == 3) {
 
-                        for (let j = 0; j < i; j++)
-                            next_btn();
-                    } else if (i == 5) {
+                    //     for (let j = 0; j < i; j++)
+                    //         next_btn();
+                    // } else if (i == 4) {
 
-                        for (let j = 0; j < i; j++)
-                            next_btn();
-                    } else if (i == 6) {
+                    //     for (let j = 0; j < i; j++)
+                    //         next_btn();
+                    // } else if (i == 5) {
 
-                        for (let j = 0; j < i; j++)
-                            next_btn();
-                    } else if (i == 7) {
+                    //     for (let j = 0; j < i; j++)
+                    //         next_btn();
+                    // } else if (i == 6) {
 
-                        for (let j = 0; j < i; j++)
-                            next_btn();
-                    }
+                    //     for (let j = 0; j < i; j++)
+                    //         next_btn();
+                    // } else if (i == 7) {
 
-
-
-
-
-
-
-
+                    //     for (let j = 0; j < i; j++)
+                    //         next_btn();
+                    // }
 
 
                 }
             }
-            // btn endㄹ
+            // btn end
 
 
 
