@@ -98,28 +98,16 @@ nav>span {
     border-radius: 4px;
     position: absolute;
     cursor: pointer;
-    z-index: 2;
 }
 
 /* section1 */
-.section1_slide {
+
+.main_img {
     width: 1400px;
     height: 700px;
     margin: 0 auto;
     position: relative;
-    overflow: hidden;
 }
-.main_img {
-    width: 500%;
-    height: 700px;
-    margin: 0 auto;
-    position: absolute;
-    background-color: rosybrown;
-    display: flex;
-    top: 0;
-    left: -100%;
-}
-
 
 /* 캐로셀 넘기는 버튼 */
 

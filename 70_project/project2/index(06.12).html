@@ -57,85 +57,82 @@
     </header>
     <!-- section1 -->
     <section id="main">
-        <div class="section1_slide">
-
+        <div class="main_img">
             <button onclick="left()"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
             <button onclick="right()"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
             <button class="btn btn1" onclick="color(a)">이미지 1번</button>
             <button class="btn btn2" onclick="color(2)">이미지 2번</button>
             <button class="btn btn3" onclick="color(3)">이미지 3번</button>
             <button class="btn btn4" onclick="color(4)">이미지 4번</button>
-            <div class="main_img">
+            <div class="section1_title1">글자 1</div>
+            <div class="section1_title2">글자 2</div>
+            <div class="section1_title3">글자 3</div>
+            <div class="section1_title4">글자 4</div>
+            <img src="images/main1.jpg" alt="" id="photo">
+            <!-- slide_img_button_script -->
+            <script>
+                // 전역함수 선언
+                let changeimg = ['images/main1.jpg', 'images/main2.jpg', 'images/main3.jpg', 'images/main4.jpg'];
+                let i = 0;
+                let num;
 
-                <!-- <div class="section1_title1">글자 1</div>
-                <div class="section1_title2">글자 2</div>
-                <div class="section1_title3">글자 3</div>
-                <div class="section1_title4">글자 4</div> -->
-                <img src="images/main4.jpg" alt="main_img4">
-                <img src="images/main1.jpg" alt="main_img1">
-                <img src="images/main2.jpg" alt="main_img2">
-                <img src="images/main3.jpg" alt="main_img3">
-                <img src="images/main4.jpg" alt="main_img4">
-                <img src="images/main1.jpg" alt="main_img1">
-
-                <!-- slide_img_button_script -->
-                <script>
-                    // 전역함수 선언
-                    let section1_slide = document.querySelector(".main_img");
-                    let section1_left = section1_slide.getAttribute("left");
-                    let num = 0;
-                    // 메인 캐로셀 왼쪽 버튼
-                    function left() {
-                        section1_slide.style.transition = "1s"
-                        section1_left = section1_left + 100;
-                        section1_slide.style.left = section1_left + "%";
-                        console.log(section1_left);
-
-                        if (section1_left == 0) {
-                            setTimeout(function () {
-                                section1_slide.style.transition = "0s";
-                                section1_slide.style.left = -400 + "%";
-                                section1_left = -400;
-                            }, 950);
-                        }
-
-
-                        num--
-                        if (num == 0) {
-                            num = 4;
-                        }
-                        console.log(num);
+                // 메인 캐로셀 왼쪽 버튼
+                function left() {
+                    // 배열 감소 함수
+                    i--;
+                    if (i < 0) {
+                        i = 3;
                     }
-
-                    // 메인 캐로셀 오른쪽 버튼
-                    function right() {
-                        section1_slide.style.transition = "1s"
-                        section1_left = section1_left - 100;
-                        section1_slide.style.left = section1_left + "%";
-                        console.log(section1_left);
-
-
-                        if (section1_left == -500) {
-                            setTimeout(function () {
-                                section1_slide.style.transition = "0s";
-                                section1_slide.style.left = -100 + "%";
-                                section1_left = -100;
-                            }, 950);
-                        }
-
-
-                        num++
-                        if (num > 4) {
-                            num = 1;
-                        }
-
+                    // 이미지 타이틀 변수
+                    num = i + 1;
+                    // 이미지 출력
+                    const photo = document.querySelector('#photo');
+                    photo.setAttribute("src", changeimg[i]);
+                    // 타이틀 변수
+                    let title = document.querySelector(".section1_title" + num);
+                    // 출력된 타이틀의 전 변수 (지우는 용도)
+                    let title_prev = document.querySelector(".section1_title" + (num + 1));
+                    // 캐로셀 처음에서 마지막 이동
+                    if (title_prev == document.querySelector(".section1_title5")) {
+                        title_prev = document.querySelector(".section1_title1");
                     }
+                    // 타이틀 출력
+                    title.style.display = "block";
+                    // 전 타이틀 지움
+                    title_prev.style.display = "none";
+                }
+                // 메인 캐로셀 오른쪽 버튼
+                function right() {
+                    // 배열 증가 함수
+                    i++;
+                    if (i >= changeimg.length) {
+                        i = 0;
+                    }
+                    // 이미지 타이틀 변수
+                    num = i + 1;
+                    // 이미지 출력
+                    const photo = document.querySelector('#photo');
+                    photo.setAttribute("src", changeimg[i]);
+                    // 타이틀 변수
+                    let title = document.querySelector(".section1_title" + num);
+                    // 출력된 타이틀의 전 변수 (지우는 용도)
+                    let title_prev = document.querySelector(".section1_title" + (num - 1));
+                    // 캐로셀 마지막에서 처음 이동
+                    if (title_prev == document.querySelector(".section1_title0")) {
+                        title_prev = document.querySelector(".section1_title4");
+                    }
+                    // 타이틀 출력
+                    title.style.display = "block";
+                    // 전 타이틀 지움
+                    title_prev.style.display = "none";
+                }
+                function color() {
+                    let changecolor = document.querySelector(".btn" + a);
+                    this.style.color = "#dc000c";
+                }
 
 
-                    window.onload = right();
-
-                </script>
-            </div>
+            </script>
         </div>
     </section>
     <!-- section2 -->

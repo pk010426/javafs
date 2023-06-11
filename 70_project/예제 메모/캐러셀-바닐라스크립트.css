@@ -25,7 +25,8 @@ section {
     border: 3px solid black;
     display: flex;
     transition: all 1s;
-    /* animation: slide 9s infinite; */
+    /* animation-name: ; */
+    animation: slide 9s infinite;
     
 }
 button {

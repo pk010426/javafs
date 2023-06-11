@@ -29,19 +29,22 @@
     let imgslide = document.querySelector(".imgslide");
     let btn = document.querySelector("button");
 
-    imgslide.onmouseover = function () {
-        imgslide.style.animation = "slide";
-    }
+    // imgslide.onmouseover = function () {
+    //     imgslide.style.animation = "slide";
+    // }
     img_left = imgslide.getAttribute("left") - 100;
     btn.onclick = function () {
-        // imgslide.style.animation = "none";
+
+        imgslide.style.animation = "none";
         imgslide.style.left = img_left + "%";
         img_left = img_left - 100;
         console.log(img_left);
         if (img_left === -300) {
             img_left = 0;
+
         }
     }
+
     console.log(img_left);
 
 </script>
