@@ -43,6 +43,12 @@ nav i {
     font-size: 1.6rem;
 }
 
+/* section1 */
+/* 하단버튼 */
+.section1_button_wrap_1 button{
+    color: #aaa;
+    font-weight: bold;
+}
 
 /* section2 */
 

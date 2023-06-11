@@ -64,7 +64,9 @@ nav {
 .logo {
     margin-right: 96px;
 }
-
+.logo img {
+    vertical-align: text-bottom;
+}
 .nav_inner {
     display: flex;
 }
@@ -88,20 +90,25 @@ nav>span {
 }
 
 
-/* section1,2,3 button 공통 */
-#main button:nth-of-type(1),
-#main button:nth-of-type(2),
+/* section1,2,3 button 공통 모양 */
+.section1_button_wrap_2 button,
 .section2_slide_next_prev button,
 .section3_inner button {
     width: 36px;
     height: 36px;
     border-radius: 4px;
-    position: absolute;
     cursor: pointer;
     z-index: 2;
 }
 
+/* section 2, 3 button 공통 위치 */
+.section2_slide_next_prev button,
+.section3_inner button {
+    position: absolute;
+}
+
 /* section1 */
+
 .section1_slide {
     width: 1400px;
     height: 700px;
@@ -109,6 +116,7 @@ nav>span {
     position: relative;
     overflow: hidden;
 }
+
 .main_img {
     width: 500%;
     height: 700px;
@@ -120,90 +128,70 @@ nav>span {
     left: -100%;
 }
 
+/* section1 title */
+.section1_title {
+    width: 100px;
+    height: 100px;
+    background-color: royalblue;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    /* left: 30%; */
+    transform: translateY(-50%);
+    display: none;
+}
 
+#main_title1 {
+    left: 100px;
+}
+
+#main_title2 {
+    left: 200px;
+    background-color: orange;
+}
+
+#main_title3 {
+    left: 300px;
+    background-color: green;
+}
+
+#main_title4 {
+    left: 400px;
+    background-color: aqua;
+}
+/* section1 하단 버튼 */
+.section1_button_wrap {
+    width: 100%;
+    position: absolute;
+    z-index: 54;
+    height: 40px;
+    bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 64px;
+    align-items:end;
+}
+/* 타이틀 바로가기 버튼 */
+.section1_button_wrap_1{
+    width: 740px;
+    height: 36px;
+    display: flex;
+    
+}
+.section1_button_wrap_1 button{
+    background-color: transparent;
+    width: 185px;
+    border: none;
+    cursor: pointer;
+}
 /* 캐로셀 넘기는 버튼 */
 
-#main button:nth-of-type(1),
-#main button:nth-of-type(2) {
+.section1_button_wrap_2 button {
     border: 2px solid black;
     bottom: 32px;
     background-color: rgba(184, 184, 185, 0.475);
 }
 
-#main button:nth-of-type(1) {
-    right: 108px;
-}
-
-#main button:nth-of-type(2) {
-    right: 64px;
-}
-
-/* 캐로셀 하단 버튼 */
-.btn_wrap {
-    z-index: 2665;
-    position: absolute;
-    width: 800px;
-    bottom: 200px;
-}
-
-.btn1,
-.btn2,
-.btn3,
-.btn4 {
-    position: absolute;
-    width: 185px;
-    height: 36px;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    bottom: 40px;
-    background-color: unset;
-    color: #dcc;
-    cursor: pointer;
-    /* color: #dc000c; */
-
-}
-
-.btn1 {
-    left: 100px;
-}
-
-.btn2 {
-    left: 250px;
-}
-
-.btn3 {
-    left: 400px;
-}
-
-.btn4 {
-    left: 550px;
-}
-
-/* 문제 섹션 */
-.main_img div {
-    display: none;
-    position: absolute;
-    top: 300px;
-    font-size: 32px;
-    background-color: aqua;
-}
-
-div .section1_title1 {
-    left: 0px;
-    display: block;
-}
-
-.section1_title2 {
-    left: 100px;
-}
-
-.section1_title3 {
-    left: 200px;
-}
-
-.section1_title4 {
-    left: 300px;
-}
 
 /* section2 */
 #camera {
@@ -403,7 +391,6 @@ div .section1_title1 {
 .lens_page {
     width: 320px;
     height: 480px;
-    /* background-color: red; */
     border-top: 1px solid #E5E8EA;
     border-bottom: 1px solid #E5E8EA;
     border-right: 1px solid #E5E8EA;

@@ -59,18 +59,35 @@
     <section id="main">
         <div class="section1_slide">
 
-            <button onclick="left()"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
-            <button onclick="right()"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
-            <button class="btn btn1" onclick="color(a)">이미지 1번</button>
-            <button class="btn btn2" onclick="color(2)">이미지 2번</button>
-            <button class="btn btn3" onclick="color(3)">이미지 3번</button>
-            <button class="btn btn4" onclick="color(4)">이미지 4번</button>
-            <div class="main_img">
+            <div class="section1_button_wrap">
+                <div class="section1_button_wrap_1">
+                    <button id="go_title1" class="go_title">
+                        <p>타이틀 1 바로가기</p>
+                    </button>
+                    <button id="go_title2" class="go_title">
+                        <p>타이틀 2 바로가기</p>
+                    </button>
+                    <button id="go_title3" class="go_title">
+                        <p>타이틀 3 바로가기</p>
+                    </button>
+                    <button id="go_title4" class="go_title">
+                        <p>타이틀 4 바로가기</p>
+                    </button>
+                </div>
 
-                <!-- <div class="section1_title1">글자 1</div>
-                <div class="section1_title2">글자 2</div>
-                <div class="section1_title3">글자 3</div>
-                <div class="section1_title4">글자 4</div> -->
+                <div class="section1_button_wrap_2">
+                    <button onclick="left()"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
+                    <button onclick="right()"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
+                </div>
+            </div>
+
+
+            <div id="main_title1" class="section1_title">타이틀1</div>
+            <div id="main_title2" class="section1_title">타이틀2</div>
+            <div id="main_title3" class="section1_title">타이틀3</div>
+            <div id="main_title4" class="section1_title">타이틀4</div>
+
+            <div class="main_img">
                 <img src="images/main4.jpg" alt="main_img4">
                 <img src="images/main1.jpg" alt="main_img1">
                 <img src="images/main2.jpg" alt="main_img2">
@@ -83,58 +100,128 @@
                     // 전역함수 선언
                     let section1_slide = document.querySelector(".main_img");
                     let section1_left = section1_slide.getAttribute("left");
-                    let num = 0;
+                    // 메인 타이틀 생성 함수
+                    function section1_title() {
+                        let title_all = document.querySelectorAll(".section1_title");
+
+                        for (i = 0; i < title_all.length; i++) {
+                            title_all[i].style.display = "none";
+                        };
+
+                        if (section1_left == -100 || section1_left == -500) {
+                            document.querySelector("#main_title1").style.display = "block";
+                        } else if (section1_left == -200) {
+                            document.querySelector("#main_title2").style.display = "block";
+                        } else if (section1_left == -300) {
+                            document.querySelector("#main_title3").style.display = "block";
+                        } else if (section1_left == -400 || section1_left == 0) {
+                            document.querySelector("#main_title4").style.display = "block";
+                        }
+                    }
+
+                    // 하단 바로가기 버튼 색 넣기
+                    function go_title_color() {
+                        let go_title_all = document.querySelectorAll(".go_title");
+
+                        for (i = 0; i < go_title_all.length; i++) {
+                            go_title_all[i].style.color = "#000"
+                            go_title_all[i].style.borderBottom = "1px solid black"
+                        };
+
+                        if (section1_left == -100 || section1_left == -500) {
+                            go_title_all[0].style.color = "#dc000c";
+                            go_title_all[0].style.borderBottom = "1px solid #dc000c"
+                        } else if (section1_left == -200) {
+                            go_title_all[1].style.color = "#dc000c";
+                            go_title_all[1].style.borderBottom = "1px solid #dc000c"
+                        } else if (section1_left == -300) {
+                            go_title_all[2].style.color = "#dc000c";
+                            go_title_all[2].style.borderBottom = "1px solid #dc000c"
+                        } else if (section1_left == -400 || section1_left == 0) {
+                            go_title_all[3].style.color = "#dc000c";
+                            go_title_all[3].style.borderBottom = "1px solid #dc000c"
+                        }
+                    }
+                    // 하단 바로가기 버튼함수
+                    document.querySelector("#go_title1").onclick = function () {
+                        section1_slide.style.left = -100 + "%";
+                        section1_left = -100;
+                        go_title_color();
+                    }
+                    document.querySelector("#go_title2").onclick = function () {
+                        section1_slide.style.left = -200 + "%";
+                        section1_left = -200;
+                        go_title_color();
+                    }
+                    document.querySelector("#go_title3").onclick = function () {
+                        section1_slide.style.left = -300 + "%";
+                        section1_left = -300;
+                        go_title_color();
+                    }
+                    document.querySelector("#go_title4").onclick = function () {
+                        section1_slide.style.left = -400 + "%";
+                        section1_left = -400;
+                        go_title_color();
+                    }
+
                     // 메인 캐로셀 왼쪽 버튼
                     function left() {
+                        if (section1_left == 0) {
+                            section1_slide.style.transition = "0s"
+                            section1_slide.style.left = -400 + "%";
+                            section1_left = -400;
+
+                            setTimeout(function () {
+                                section1_slide.style.transition = "1s"
+                                section1_left = section1_left + 100;
+                                section1_slide.style.left = section1_left + "%";
+                                section1_title();
+                                go_title_color();
+                            }, 0);
+                            return 0;
+                        }
+
                         section1_slide.style.transition = "1s"
                         section1_left = section1_left + 100;
                         section1_slide.style.left = section1_left + "%";
                         console.log(section1_left);
 
-                        if (section1_left == 0) {
-                            setTimeout(function () {
-                                section1_slide.style.transition = "0s";
-                                section1_slide.style.left = -400 + "%";
-                                section1_left = -400;
-                            }, 950);
-                        }
+                        section1_title();
+                        go_title_color();
 
-
-                        num--
-                        if (num == 0) {
-                            num = 4;
-                        }
-                        console.log(num);
                     }
 
                     // 메인 캐로셀 오른쪽 버튼
                     function right() {
+                        if (section1_left == -500) {
+                            section1_slide.style.transition = "0s";
+                            section1_slide.style.left = -100 + "%";
+                            section1_left = -100;
+
+                            setTimeout(function () {
+                                section1_slide.style.transition = "1s"
+                                section1_left = section1_left - 100;
+                                section1_slide.style.left = section1_left + "%";
+                                section1_title();
+                                go_title_color();
+                            }, 0);
+                            return 0;
+                        }
+
                         section1_slide.style.transition = "1s"
                         section1_left = section1_left - 100;
                         section1_slide.style.left = section1_left + "%";
                         console.log(section1_left);
 
-
-                        if (section1_left == -500) {
-                            setTimeout(function () {
-                                section1_slide.style.transition = "0s";
-                                section1_slide.style.left = -100 + "%";
-                                section1_left = -100;
-                            }, 950);
-                        }
-
-
-                        num++
-                        if (num > 4) {
-                            num = 1;
-                        }
+                        section1_title();
+                        go_title_color();
 
                     }
 
 
                     window.onload = right();
-
                 </script>
+
             </div>
         </div>
     </section>
@@ -311,28 +398,14 @@
                         if (arr1_id == "c1") {
                             return 0;
                         } else if (arr1_id == "c2") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            document.querySelectorAll(".camera_page").style.transition = "4s";
-
+                            prev_btn();
                         } else if (arr1_id == "c3") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c4") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c5") {
                             next_btn();
                             next_btn();
@@ -353,26 +426,15 @@
                         if (arr1_id == "c2") {
                             return 0;
                         } else if (arr1_id == "c3") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+
                         } else if (arr1_id == "c4") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c5") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c6") {
                             next_btn();
                             next_btn();
@@ -393,26 +455,14 @@
                         if (arr1_id == "c3") {
                             return 0;
                         } else if (arr1_id == "c4") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
                         } else if (arr1_id == "c5") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c6") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c7") {
                             next_btn();
                             next_btn();
@@ -433,26 +483,14 @@
                         if (arr1_id == "c4") {
                             return 0;
                         } else if (arr1_id == "c5") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
                         } else if (arr1_id == "c6") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c7") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c8") {
                             next_btn();
                             next_btn();
@@ -469,70 +507,19 @@
                             next_btn();
                         }
                     }
-                    if (i == 3) {
-                        if (arr1_id == "c4") {
-                            return 0;
-                        } else if (arr1_id == "c5") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                        } else if (arr1_id == "c6") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                        } else if (arr1_id == "c7") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                        } else if (arr1_id == "c8") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                        } else if (arr1_id == "c1") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                        } else if (arr1_id == "c2") {
-                            next_btn();
-                            next_btn();
-                        } else if (arr1_id == "c3") {
-                            next_btn();
-                        }
-                    }
+
                     if (i == 4) {
                         if (arr1_id == "c5") {
                             return 0;
                         } else if (arr1_id == "c6") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
                         } else if (arr1_id == "c7") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c8") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c1") {
                             next_btn();
                             next_btn();
@@ -553,26 +540,14 @@
                         if (arr1_id == "c6") {
                             return 0;
                         } else if (arr1_id == "c7") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
                         } else if (arr1_id == "c8") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c1") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c2") {
                             next_btn();
                             next_btn();
@@ -593,26 +568,14 @@
                         if (arr1_id == "c7") {
                             return 0;
                         } else if (arr1_id == "c8") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
                         } else if (arr1_id == "c1") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c2") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c3") {
                             next_btn();
                             next_btn();
@@ -633,26 +596,14 @@
                         if (arr1_id == "c8") {
                             return 0;
                         } else if (arr1_id == "c1") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                           prev_btn();
                         } else if (arr1_id == "c2") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c3") {
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
-                            next_btn();
+                            prev_btn();
+                            prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c4") {
                             next_btn();
                             next_btn();
