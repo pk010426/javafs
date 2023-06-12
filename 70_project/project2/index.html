@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <!-- https://www.frisbeekorea.com/shop/main/main.do -->
+<!-- https://poiret.com/ko/main 글자 애니메이션 -->
 
 <body>
     <!-- header -->
@@ -82,7 +83,14 @@
             </div>
 
 
-            <div id="main_title1" class="section1_title">타이틀1</div>
+            <div id="main_title1" class="section1_title">
+                <h2>사진의 아름다움은</h2>
+                <h2>어디에서 오는가?</h2>
+                <h1> 사진의 미학 </h1>
+                <h2>박</h2>
+                <p>작가의 사진과 작품 보러가기</p>
+
+            </div>
             <div id="main_title2" class="section1_title">타이틀2</div>
             <div id="main_title3" class="section1_title">타이틀3</div>
             <div id="main_title4" class="section1_title">타이틀4</div>
@@ -97,6 +105,26 @@
 
                 <!-- slide_img_button_script -->
                 <script>
+                    window.onscroll = function (scroll_e) {
+                        let scr_e = document.documentElement.scrollTop;
+                        console.log(scr_e);
+                        if (scr_e > 50) {
+                            document.querySelector(".login").style.height = "0";
+                            document.querySelector(".login").style.top = "-60px";
+
+
+                        } else {
+                            document.querySelector(".login").style.height = "43px";
+                            document.querySelector(".login").style.top = "0";
+
+                        }
+
+
+                    }
+
+
+
+
                     // 전역함수 선언
                     let section1_slide = document.querySelector(".main_img");
                     let section1_left = section1_slide.getAttribute("left");
@@ -110,7 +138,22 @@
 
                         if (section1_left == -100 || section1_left == -500) {
                             document.querySelector("#main_title1").style.display = "block";
+                            setTimeout(function () {
+                                document.querySelector("#main_title1").style.clipPath = "polygon(0% 0%, 70% 0, 70% 100%, 0 100%)";
+                            }, 500);
+                            setTimeout(function () {
+                                document.querySelector("#main_title1").style.clipPath = "polygon(0% 0%, 70% 0, 70% 86%, 0 86%)";
+                            }, 1500);
+                            setTimeout(function () {
+                                document.querySelector("#main_title1").style.clipPath = "polygon(0 0, 84% 0, 44% 42%, 0 90%)";
+                            }, 2500);
+                           
+
+
                         } else if (section1_left == -200) {
+                            document.querySelector("#main_title1").style.clipPath = "none";
+
+
                             document.querySelector("#main_title2").style.display = "block";
                         } else if (section1_left == -300) {
                             document.querySelector("#main_title3").style.display = "block";
@@ -600,7 +643,7 @@
                         if (arr1_id == "c8") {
                             return 0;
                         } else if (arr1_id == "c1") {
-                           prev_btn();
+                            prev_btn();
                         } else if (arr1_id == "c2") {
                             prev_btn();
                             prev_btn();
@@ -706,7 +749,10 @@
             <div class="printer_page"></div>
         </div>
     </section>
+
+
     <!-- section6 -->
+    <!-- http://www.understandavenue.com/default/main/main.php section6, footer 밴체마킹 사이트 -->
     <section id="customer_support">
         <div class="section6_title">
 
@@ -717,31 +763,69 @@
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1881.893554136018!2d127.06227233359915!3d37.50897742815602!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca44054201203%3A0xd71388edba01e49d!2z7LqQ64W87L2U66as7JWEIOyjvOyLne2ajOyCrA!5e0!3m2!1sko!2skr!4v1682408009345!5m2!1sko!2skr">
                 </iframe>
             </div>
-            <form action="message.php" method="post">
-                <h3>고객센터 문의</h3>
-                <input type="text" name="user_name" placeholder="이름">
-                <input type="email" name="user_email" placeholder="이메일">
-                <input type="text" name="user_subject" placeholder="제목">
-                <textarea name="user_commet" cols="88" rows="5" placeholder="문의사항을 적어주세요."></textarea>
-                <button type="submit"> <i class="fa-sharp fa-solid fa-paper-plane"></i> SEND MESSAGE</button>
-            </form>
-            <div class="ask">
-                <div>
-                    <i class="fa-solid fa-headset fa-8x" style="color: #ffffff;"></i>
+            <div class="sns">
+                <div class="ask">
+                    <div><i class="fa-solid fa-headset fa-8x" style="color: #ffffff;"></i></div>
                     <h3>1 : 1 문의</h3>
-                    <p>고객님의 제품에 대한 궁금한 내용을 확인 후 <br> 빠른 시간 안에 답변해 드립니다.</p>
                 </div>
                 <div>
-                    <i class="fa-solid fa-phone fa-8x" style="color: #ffffff;"></i>
-                    <h3>고객 상담실 안내</h3>
-                    <p>운영시간 09:00 ~ 18:00 <br> (점심 12:00 ~ 13:00) <br>토,일요일, 공휴일 휴무</p>
+
                 </div>
+                <div>
+
+                </div>
+                <div>
+
+                </div>
+
             </div>
+
         </div>
     </section>
     <!-- footer -->
     <footer>
+        <div class="footer_wrap">
 
+            <div class="price">
+                <div>
+                    <img src="images/footer/가족친화_우수기업.png" alt="가족친화_우수기업">
+                    <h2>가족친화 우수기업</h2>
+                </div>
+                <div>
+                    <img src="images/footer/인증범위.png" alt="인증범위">
+                    <div>
+                        <h2>[인증범위] 캐논코리아 온라인 쇼핑몰 운영</h2>
+                        <h3>[유효기간] 2022.10.19 ~ 2025.10.18
+                        </h3>
+                    </div>
+                </div>
+                <div>
+                    <img src="images/footer/소비자_중심_경영.png" alt="소비자_중심_경영">
+                    <h2>소비자 중심 경영</h2>
+                </div>
+
+            </div>
+
+            <div class="footer_info">
+                <div>
+                    <p>법인명 : 캐논코리아 (주)</p>
+                    <p>대표자 : 박정우, 혼마토시오</p>
+                    <p>사업자등록번호 : 120-81-15636</p>
+                    <p>통신판매 번호 : 강남-01282</p>
+                    <p>주소 : 서울특별시 강남구 테헤란로 607 (삼성동)</p>
+                    <p>복합기 • 카메라 고객상담실 : 1533-3355</p>
+                </div>
+
+                <div>
+                    <p>Copyright © CANON KOREA All Rights reserved</p>
+                    <div>
+                        <p>Family Site</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </footer>
 </body>
 

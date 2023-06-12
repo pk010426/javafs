@@ -6,12 +6,21 @@
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
     font-family: 'SUIT-Regular';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
     font-size: 10px;
 }
@@ -45,10 +54,18 @@ nav i {
 
 /* section1 */
 /* 하단버튼 */
-.section1_button_wrap_1 button{
+.section1_button_wrap_1 button {
     color: #aaa;
     font-weight: bold;
 }
+
+/* title1 */
+#main_title1 h2 {
+    font-size: 6rem;
+    font-family: 'NanumSquareNeo-Variable';
+/* color: rgb(255, 255, 255); */
+}
+
 
 /* section2 */
 
@@ -73,4 +90,16 @@ nav i {
     color: #8b8d91;
     font-weight: 600;
     font-size: 1.4rem;
+}
+
+
+/* footer */
+footer {
+    color: #adadad;
+
+}
+
+.footer_info {
+    font-size: 1.2rem;
+    line-height: 2.4rem;
 }

@@ -52,21 +52,25 @@ nav,
     justify-content: space-between;
     height: 43px;
     line-height: 43px;
+    transition: all .5s;
+    position: relative;
 }
 
 nav {
     height: 90px;
     line-height: 90px;
     justify-content: space-between;
-
+    background-color: #fff;
 }
 
 .logo {
     margin-right: 96px;
 }
+
 .logo img {
     vertical-align: text-bottom;
 }
+
 .nav_inner {
     display: flex;
 }
@@ -132,7 +136,7 @@ nav>span {
 .section1_title {
     width: 100px;
     height: 100px;
-    background-color: royalblue;
+    /* background-color: royalblue; */
     z-index: 3;
     position: absolute;
     top: 50%;
@@ -141,9 +145,24 @@ nav>span {
     display: none;
 }
 
+/* title 1 */
 #main_title1 {
-    left: 100px;
+    width: 1400px;
+    height: 740px;
+    position: absolute;
+    top: 334px;
+    left: 0px;
+    background-color: white;
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0 100%);
+    /* clip-path: polygon(0 0, 84% 0, 44% 42%, 0 90%); */
+    transition: all 1s;
 }
+
+#main_title1 h2 {
+    letter-spacing: 8px;
+    margin-bottom: 24px;
+}
+
 
 #main_title2 {
     left: 200px;
@@ -159,31 +178,35 @@ nav>span {
     left: 400px;
     background-color: aqua;
 }
+
 /* section1 하단 버튼 */
 .section1_button_wrap {
     width: 100%;
     position: absolute;
-    z-index: 54;
+    z-index: 2;
     height: 40px;
     bottom: 32px;
     display: flex;
     justify-content: space-between;
     padding: 0 64px;
-    align-items:end;
+    align-items: end;
 }
+
 /* 타이틀 바로가기 버튼 */
-.section1_button_wrap_1{
+.section1_button_wrap_1 {
     width: 740px;
     height: 36px;
     display: flex;
-    
+
 }
-.section1_button_wrap_1 button{
+
+.section1_button_wrap_1 button {
     background-color: transparent;
     width: 185px;
     border: none;
     cursor: pointer;
 }
+
 /* 캐로셀 넘기는 버튼 */
 
 .section1_button_wrap_2 button {
@@ -474,53 +497,112 @@ nav>span {
 
 /* section6 */
 #customer_support {
-    padding: 50px 0;
-}
-
-.section6_title,
-.section6_inner {
-    margin: 0 auto;
+    overflow-x: hidden;
+    width: 100%;
+    background-color: #F5F5F7;
 }
 
 .section6_title {
     width: 1400px;
+    margin: 0 auto;
     height: 108px;
     background-color: red;
     margin-bottom: 50px;
 }
 
 .section6_inner {
-    width: 1280px;
+    width: 1920px;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#map {
+    width: 100%;
 }
 
 .section6_inner iframe {
-    width: 1280px;
-    height: 600px;
+    width: 100%;
+    height: 800px;
 }
 
-.section6_inner form,
-.ask {
-    margin-top: 50px;
-    background-color: red;
-    height: 304px;
-}
-
-.section6_inner form {
-    width: 640px;
-
-}
-
-.ask {
-    width: 640px;
+.sns div {
+    width: 338px;
+    height: 250px;
     display: flex;
-    justify-content: right;
+}
+
+.sns div:nth-of-type(2n-1) {
+    background-color: #fff;
+}
+
+
+.ask {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+.ask div {
+    text-align: center;
+
 }
 
 .ask i {
-    padding: 32px;
-    margin-bottom: 32px;
+    width: 120px;
+    height: 120px;
+    align-items: center;
     border-radius: 50%;
     background-color: #dc000c;
+}
+
+
+
+/* footer */
+footer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 56px 0;
+    background-color: #1c1c1c;
+}
+
+.footer_wrap {
+    width: 1080px;
+    margin: 0 auto;
+    /* background-color: orange; */
+}
+
+.price {
+    display: flex;
+    width: 1080px;
+    height: 100px;
+    /* background-color: aqua; */
+    justify-content: center;
+}
+
+.price img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+}
+
+.price div {
+    width: 360px;
+    text-align: center;
+    /* background-color: orchid; */
+}
+
+.price div h2 {
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.footer_info {
+    /* width: 1080px; */
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 120px;
+    /* background-color: aqua; */
 }
