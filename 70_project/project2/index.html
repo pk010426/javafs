@@ -63,33 +63,50 @@
             <div class="section1_button_wrap">
                 <div class="section1_button_wrap_1">
                     <button id="go_title1" class="go_title">
-                        <p>타이틀 1 바로가기</p>
+                        타이틀 1 바로가기
                     </button>
                     <button id="go_title2" class="go_title">
-                        <p>타이틀 2 바로가기</p>
+                        타이틀 2 바로가기
                     </button>
                     <button id="go_title3" class="go_title">
-                        <p>타이틀 3 바로가기</p>
+                        타이틀 3 바로가기
                     </button>
                     <button id="go_title4" class="go_title">
-                        <p>타이틀 4 바로가기</p>
+                        타이틀 4 바로가기
+                    </button>
+                </div>
+
+
+                <div class="section1_slide_button">
+
+                    <button class="restart1">
+                        <span></span>
+                    </button>
+
+                    <button class="stop1">
+                        <span></span>
+                        <span></span>
                     </button>
                 </div>
 
                 <div class="section1_button_wrap_2">
+
                     <button onclick="left()"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
                     <button onclick="right()"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
                 </div>
             </div>
 
-
+            <!-- http://www.newriver.co.kr/ -->
+            <!-- http://www.hihat.co.kr/kor/ -->
             <div id="main_title1" class="section1_title">
+                <div class="bd"></div>
                 <h2>사진의 아름다움은</h2>
                 <h2>어디에서 오는가?</h2>
                 <h1> 사진의 미학 </h1>
-                <h2>박</h2>
-                <p>작가의 사진과 작품 보러가기</p>
-
+                <h2>박건우</h2>
+                <p>작가의</p>
+                <a href="#event">
+                </a>
             </div>
             <div id="main_title2" class="section1_title">타이틀2</div>
             <div id="main_title3" class="section1_title">타이틀3</div>
@@ -108,7 +125,7 @@
                     window.onscroll = function (scroll_e) {
                         let scr_e = document.documentElement.scrollTop;
                         console.log(scr_e);
-                        if (scr_e > 50) {
+                        if (scr_e >= 50) {
                             document.querySelector(".login").style.height = "0";
                             document.querySelector(".login").style.top = "-60px";
 
@@ -129,31 +146,71 @@
                     let section1_slide = document.querySelector(".main_img");
                     let section1_left = section1_slide.getAttribute("left");
                     // 메인 타이틀 생성 함수
+
+                    function title1_reset() {
+                        document.querySelector("#main_title1").style.clipPath = "polygon(0% 0%, 100% 0, 100% 100%, 0 100%)";
+                        document.querySelector("h1").style.top = "50%"
+                        document.querySelector("h1").style.left = "50%"
+                        document.querySelector("h1").style.opacity = "0";
+                        document.querySelector("h1").style.height = "0";
+                        document.querySelector(".bd").style.opacity = 0;
+                        document.querySelector("h2:nth-of-type(1)").style.opacity = 0;
+                        document.querySelector("h2:nth-of-type(2)").style.opacity = 0;
+                        document.querySelector("h2:nth-of-type(3)").style.opacity = 0;
+                        document.querySelector("#main_title1 p").style.opacity = 0;
+                        document.querySelector("#main_title1 a").style.opacity = 0;
+                        document.querySelector("#main_title1 a").innerHTML = "";
+                    }
+
                     function section1_title() {
                         let title_all = document.querySelectorAll(".section1_title");
-
+                        title1_reset();
                         for (i = 0; i < title_all.length; i++) {
                             title_all[i].style.display = "none";
                         };
 
                         if (section1_left == -100 || section1_left == -500) {
+
                             document.querySelector("#main_title1").style.display = "block";
+
                             setTimeout(function () {
-                                document.querySelector("#main_title1").style.clipPath = "polygon(0% 0%, 70% 0, 70% 100%, 0 100%)";
+                                document.querySelector("h1").style.height = "88px";
+                                document.querySelector("h1").style.opacity = "1";
+
                             }, 500);
                             setTimeout(function () {
-                                document.querySelector("#main_title1").style.clipPath = "polygon(0% 0%, 70% 0, 70% 86%, 0 86%)";
+                                document.querySelector("#main_title1").style.clipPath = "polygon(0% 0%, 50% 0, 50% 100%, 0 100%)";
+                                document.querySelector("h1").style.left = "30%"
                             }, 1500);
                             setTimeout(function () {
-                                document.querySelector("#main_title1").style.clipPath = "polygon(0 0, 84% 0, 44% 42%, 0 90%)";
+                                document.querySelector("#main_title1").style.clipPath = "polygon(0% 0%, 50% 0, 50% 86%, 0 86%)";
+                                document.querySelector("h1").style.top = "40%"
                             }, 2500);
-                           
+                            setTimeout(function () {
+                                document.querySelector("#main_title1").style.clipPath = "polygon(0 0, 84% 0, 44% 42%, 0 90%)";
+                                document.querySelector("h1").style.top = "20%"
+                                document.querySelector("h1").style.left = "20%"
+                                document.querySelector(".bd").style.opacity = 1;
+                                document.querySelector("h2:nth-of-type(1)").style.opacity = 1;
+                                document.querySelector("h2:nth-of-type(2)").style.opacity = 1;
+                                document.querySelector("h2:nth-of-type(3)").style.opacity = 1;
+                                document.querySelector("#main_title1 p").style.opacity = 1;
+                                document.querySelector("#main_title1 a").style.opacity = 1;
+
+                                let i = 0;
+                                setInterval(function () {
+                                    const text = "사진과 작품 보러가기";
+                                    if (i < text.length) {
+                                        document.querySelector("#main_title1 a").innerHTML += text.charAt(i);
+                                        i++;
+                                    }
+                                }, 80)
+                            }, 3500);
+
+
 
 
                         } else if (section1_left == -200) {
-                            document.querySelector("#main_title1").style.clipPath = "none";
-
-
                             document.querySelector("#main_title2").style.display = "block";
                         } else if (section1_left == -300) {
                             document.querySelector("#main_title3").style.display = "block";
@@ -167,8 +224,8 @@
                         let go_title_all = document.querySelectorAll(".go_title");
 
                         for (i = 0; i < go_title_all.length; i++) {
-                            go_title_all[i].style.color = "#000"
-                            go_title_all[i].style.borderBottom = "1px solid black"
+                            go_title_all[i].style.color = "#aaa"
+                            go_title_all[i].style.borderBottom = "1px solid #aaa"
                         };
 
                         if (section1_left == -100 || section1_left == -500) {
@@ -231,11 +288,8 @@
                         section1_slide.style.transition = "1s"
                         section1_left = section1_left + 100;
                         section1_slide.style.left = section1_left + "%";
-                        console.log(section1_left);
-
                         section1_title();
                         go_title_color();
-
                     }
 
                     // 메인 캐로셀 오른쪽 버튼
@@ -258,13 +312,34 @@
                         section1_slide.style.transition = "1s"
                         section1_left = section1_left - 100;
                         section1_slide.style.left = section1_left + "%";
-                        console.log(section1_left);
-
                         section1_title();
                         go_title_color();
-
                     }
 
+
+
+                    let ani = setInterval(right, 2000);
+
+                    let al123 = 1;
+                    document.querySelector(".restart1").onclick = function () {
+                        // clearInterval(ani);
+                        // settime으로 재실행
+                        ani = setInterval(right, 2000);
+                        document.querySelectorAll(".stop1 span")[0].style.backgroundColor = "#fff";
+                        document.querySelectorAll(".stop1 span")[1].style.backgroundColor = "#fff";
+                        document.querySelector(".restart1 span").style.backgroundColor = "#dc000c";
+                    }
+
+
+                    document.querySelector(".stop1").onclick = function () {
+                        clearInterval(ani);
+                        document.querySelector(".restart1 span").style.backgroundColor = "#fff";
+                        document.querySelectorAll(".stop1 span")[0].style.backgroundColor = "#dc000c";
+                        document.querySelectorAll(".stop1 span")[1].style.backgroundColor = "#dc000c";
+                    }
+                    // 애니메이션 버튼 함수
+
+                    // ani();
 
                     window.onload = right();
                 </script>

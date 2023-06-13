@@ -93,7 +93,6 @@ nav>span {
     border-bottom: 5px solid black;
 }
 
-
 /* section1,2,3 button 공통 모양 */
 .section1_button_wrap_2 button,
 .section2_slide_next_prev button,
@@ -147,7 +146,7 @@ nav>span {
 
 /* title 1 */
 #main_title1 {
-    width: 1400px;
+    width: 1401px;
     height: 740px;
     position: absolute;
     top: 334px;
@@ -158,11 +157,71 @@ nav>span {
     transition: all 1s;
 }
 
+.bd {
+    position: relative;
+    top: -24px;
+    z-index: 111;
+    width: 1400px;
+    opacity: 0;
+    height: 700px;
+    background-color: #000;
+    clip-path: polygon(0 8%, 99% 8.5%, 0.3% 9%, 0.2% 100%);
+    transition: 2s;
+}
+
+#main_title1 h1,
+#main_title1 h2,
+#main_title1 p,
+#main_title1 a {
+    position: absolute;
+    transition: 2s;
+    opacity: 0;
+}
+
+#main_title1 h1 {
+    top: 50%;
+    left: 50%;
+    transition: all 1.2s;
+    transform: translate(-50%, -50%);
+    /* top: 20%;
+    left: 20%; */
+    opacity: 0;
+    height: 0;
+}
+
 #main_title1 h2 {
     letter-spacing: 8px;
     margin-bottom: 24px;
 }
 
+#main_title1 h2:nth-of-type(1) {
+    top: 30%;
+    left: 6%;
+}
+
+#main_title1 h2:nth-of-type(2) {
+    top: 36%;
+    left: 6%;
+}
+
+#main_title1 h2:nth-of-type(3) {
+    top: 44%;
+    left: 6%;
+}
+
+#main_title1 p:nth-of-type(1) {
+    top: 46%;
+    left: 17%;
+}
+
+#main_title1 a {
+    top: 56%;
+    left: 5.5%;
+    padding: 12px 16px;
+    width: max-content;
+    border-radius: 25px;
+    background-color: #dc000c;
+}
 
 #main_title2 {
     left: 200px;
@@ -207,7 +266,9 @@ nav>span {
     cursor: pointer;
 }
 
-/* 캐로셀 넘기는 버튼 */
+
+
+/* section1 캐로셀 넘기는 버튼 */
 
 .section1_button_wrap_2 button {
     border: 2px solid black;
@@ -215,10 +276,46 @@ nav>span {
     background-color: rgba(184, 184, 185, 0.475);
 }
 
+/* section1 애니메이션 멈추는 버튼  */
+.section1_slide_button {
+    display: flex;
+    position: absolute;
+    right: 150px;
+    bottom: 8px;
+}
+
+.restart1,
+.stop1 {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+}
+
+.section1_slide_button span {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+}
+
+.restart1 span {
+    clip-path: polygon(0 0, 0% 100%, 100% 50%);
+    background-color: #dc000c;
+}
+
+.stop1 span:nth-of-type(1) {
+    clip-path: inset(0 0 0 80%);
+}
+
+.stop1 span:nth-of-type(2) {
+    clip-path: inset(0 60% 0 20%);
+}
 
 /* section2 */
 #camera {
     background-color: #F5F5F7;
+    width: 100%;
 }
 
 .section2_inner {
@@ -353,26 +450,10 @@ nav>span {
     margin-bottom: 50px;
 }
 
-/* 
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-} */
 
 
 
-@keyframes fade {
-    0% {
-        opacity: 0;
-        transform: scale(0, 0);
-    }
 
-    100% {
-        opacity: 1;
-        transform: scale(1, 1);
-
-    }
-}
 
 
 
