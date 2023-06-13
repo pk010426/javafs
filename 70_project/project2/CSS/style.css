@@ -133,14 +133,8 @@ nav>span {
 
 /* section1 title */
 .section1_title {
-    width: 100px;
-    height: 100px;
-    /* background-color: royalblue; */
-    z-index: 3;
+    z-index: 2;
     position: absolute;
-    top: 50%;
-    /* left: 30%; */
-    transform: translateY(-50%);
     display: none;
 }
 
@@ -148,13 +142,12 @@ nav>span {
 #main_title1 {
     width: 1401px;
     height: 740px;
-    position: absolute;
     top: 334px;
     left: 0px;
     background-color: white;
     clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0 100%);
-    /* clip-path: polygon(0 0, 84% 0, 44% 42%, 0 90%); */
     transition: all 1s;
+    transform: translateY(-50%);
 }
 
 .bd {
@@ -183,8 +176,6 @@ nav>span {
     left: 50%;
     transition: all 1.2s;
     transform: translate(-50%, -50%);
-    /* top: 20%;
-    left: 20%; */
     opacity: 0;
     height: 0;
 }
@@ -224,19 +215,59 @@ nav>span {
 }
 
 #main_title2 {
-    left: 200px;
-    background-color: orange;
+    top: 80%;
+    left: 12%;
+    transform: translateY(-50%);
+    transition: 2s;
 }
 
-#main_title3 {
-    left: 300px;
-    background-color: green;
+#main_title2 h1 {
+    opacity: 0;
+    transition: 2s;
+
 }
+
+#main_title2 h2 {
+    margin-top: 16px;
+    margin-bottom: 36px;
+    opacity: 0;
+    transition: 3s;
+}
+
+#main_title2 h2 span {
+    opacity: 0;
+    transition: 3s;
+}
+
+#main_title2 h3 {
+    opacity: 0;
+    transition: 2s;
+}
+
+
+#main_title2 button {
+    cursor: pointer;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    background-color: #dc000c;
+    transition: 2s;
+    opacity: 0;
+}
+
+/* title3 */
 
 #main_title4 {
-    left: 400px;
-    background-color: aqua;
+    width: 1401px;
+    height: 70px;
+    background-color: red;
+    top: 0;
+    left: 0px;
+    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0 100%);
+    transition: all 10s;
 }
+
+
 
 /* section1 하단 버튼 */
 .section1_button_wrap {

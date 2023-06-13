@@ -61,7 +61,7 @@ nav i {
 
 /* title1 */
 #main_title1 h1 {
-    font-size: 8rem;
+    font-size: 14rem;
     font-family: 'ONE-Mobile-Title';
 }
 
@@ -84,7 +84,23 @@ nav i {
     color: #fff;
 }
 
-
+/* title2 */
+#main_title2 h2 {
+    font-size: 6rem;
+    font-family: 'NanumSquareNeo-Variable';
+    letter-spacing: 4px;
+    line-height: 8rem;
+    font-weight: bolder;
+}
+#main_title2 h3 {
+    font-size: 2.4rem;
+    font-family: 'SUIT-Regular';
+}
+#main_title2 button {
+    color: white;
+    font-family: 'SUIT-Regular';
+    font-size: 1.8rem;
+}
 /* section2 */
 
 .camera_page h2 {

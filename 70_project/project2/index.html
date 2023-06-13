@@ -108,9 +108,16 @@
                 <a href="#event">
                 </a>
             </div>
-            <div id="main_title2" class="section1_title">타이틀2</div>
-            <div id="main_title3" class="section1_title">타이틀3</div>
-            <div id="main_title4" class="section1_title">타이틀4</div>
+            <div id="main_title2" class="section1_title">
+                <h3>대한민국 NO. 1 캐논!</h3>
+                <h2>한국에서 가장 <br> 존경받는 기업 <br> <span>3년 연속 1위</span></h2>
+                <button>더 알아보기</button>
+            </div>
+            <div id="main_title3" class="section1_title">
+            </div>
+            <div id="main_title4" class="section1_title">
+                <!-- <img src="images/main3-1.png" alt="main3-1"> -->
+            </div>
 
             <div class="main_img">
                 <img src="images/main4.jpg" alt="main_img4">
@@ -126,21 +133,13 @@
                         let scr_e = document.documentElement.scrollTop;
                         console.log(scr_e);
                         if (scr_e >= 50) {
-                            document.querySelector(".login").style.height = "0";
+                            document.querySelector(".login").style.height = 0;
                             document.querySelector(".login").style.top = "-60px";
-
-
                         } else {
                             document.querySelector(".login").style.height = "43px";
-                            document.querySelector(".login").style.top = "0";
-
+                            document.querySelector(".login").style.top = 0;
                         }
-
-
                     }
-
-
-
 
                     // 전역함수 선언
                     let section1_slide = document.querySelector(".main_img");
@@ -151,8 +150,8 @@
                         document.querySelector("#main_title1").style.clipPath = "polygon(0% 0%, 100% 0, 100% 100%, 0 100%)";
                         document.querySelector("h1").style.top = "50%"
                         document.querySelector("h1").style.left = "50%"
-                        document.querySelector("h1").style.opacity = "0";
-                        document.querySelector("h1").style.height = "0";
+                        document.querySelector("h1").style.opacity = 0;
+                        document.querySelector("h1").style.height = 0;
                         document.querySelector(".bd").style.opacity = 0;
                         document.querySelector("h2:nth-of-type(1)").style.opacity = 0;
                         document.querySelector("h2:nth-of-type(2)").style.opacity = 0;
@@ -160,36 +159,48 @@
                         document.querySelector("#main_title1 p").style.opacity = 0;
                         document.querySelector("#main_title1 a").style.opacity = 0;
                         document.querySelector("#main_title1 a").innerHTML = "";
+                        document.querySelector("h1").style.fontSize = "14rem";
+
+                    }
+                    function title2_reset() {
+                        document.querySelector("#main_title2").style.top = "80%";
+                        document.querySelector("#main_title2 h3").style.opacity = 0;
+                        document.querySelector("#main_title2 h2").style.opacity = 0;
+                        document.querySelector("#main_title2 h2 span").style.opacity = 0;
+                        document.querySelector("#main_title2 button").style.opacity = 0;
                     }
 
                     function section1_title() {
                         let title_all = document.querySelectorAll(".section1_title");
                         title1_reset();
+                        title2_reset();
                         for (i = 0; i < title_all.length; i++) {
                             title_all[i].style.display = "none";
                         };
 
                         if (section1_left == -100 || section1_left == -500) {
-
                             document.querySelector("#main_title1").style.display = "block";
 
                             setTimeout(function () {
                                 document.querySelector("h1").style.height = "88px";
                                 document.querySelector("h1").style.opacity = "1";
-
+                                document.querySelector("h1").style.fontSize = "13rem";
                             }, 500);
                             setTimeout(function () {
                                 document.querySelector("#main_title1").style.clipPath = "polygon(0% 0%, 50% 0, 50% 100%, 0 100%)";
-                                document.querySelector("h1").style.left = "30%"
+                                document.querySelector("h1").style.left = "25%"
+                                document.querySelector("h1").style.fontSize = "10rem";
+
                             }, 1500);
                             setTimeout(function () {
                                 document.querySelector("#main_title1").style.clipPath = "polygon(0% 0%, 50% 0, 50% 86%, 0 86%)";
-                                document.querySelector("h1").style.top = "40%"
+                                document.querySelector("h1").style.top = "36%"
                             }, 2500);
                             setTimeout(function () {
                                 document.querySelector("#main_title1").style.clipPath = "polygon(0 0, 84% 0, 44% 42%, 0 90%)";
                                 document.querySelector("h1").style.top = "20%"
                                 document.querySelector("h1").style.left = "20%"
+                                document.querySelector("h1").style.fontSize = "8rem";
                                 document.querySelector(".bd").style.opacity = 1;
                                 document.querySelector("h2:nth-of-type(1)").style.opacity = 1;
                                 document.querySelector("h2:nth-of-type(2)").style.opacity = 1;
@@ -207,15 +218,62 @@
                                 }, 80)
                             }, 3500);
 
-
-
-
                         } else if (section1_left == -200) {
                             document.querySelector("#main_title2").style.display = "block";
+                            setTimeout(function () {
+                                document.querySelector("#main_title2").style.top = "50%";
+                                document.querySelector("#main_title2 h3").style.opacity = 1;
+                            }, 500);
+                            setTimeout(function () {
+                                document.querySelector("#main_title2 h2").style.opacity = 1;
+                            }, 1400);
+                            setTimeout(function () {
+                                document.querySelector("#main_title2 h2 span").style.opacity = 1;
+                            }, 2200);
+                            setTimeout(function () {
+                                document.querySelector("#main_title2 button").style.opacity = 1;
+                            }, 3200);
+
+
+
+
                         } else if (section1_left == -300) {
                             document.querySelector("#main_title3").style.display = "block";
                         } else if (section1_left == -400 || section1_left == 0) {
+
                             document.querySelector("#main_title4").style.display = "block";
+
+                            // setTimeout(function () {
+                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-2.png");
+                            // }, 1000);
+                            // setTimeout(function () {
+                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-3.png");
+                            // }, 1200);
+                            // setTimeout(function () {
+                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-4.png");
+                            // }, 1300);
+                            // setTimeout(function () {
+                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-5.png");
+                            // }, 1400);
+                            // setTimeout(function () {
+                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-6.png");
+                            // }, 1500);
+                            // setTimeout(function () {
+                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-5.png");
+                            // }, 1600);
+                            // setTimeout(function () {
+                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-4.png");
+                            // }, 1700);
+                            // setTimeout(function () {
+                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-3.png");
+                            // }, 1800);
+                            // setTimeout(function () {
+                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-2.png");
+                            // }, 1900);
+                            // setTimeout(function () {
+                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-1.png");
+                            // }, 2000);
+
                         }
                     }
 
@@ -267,6 +325,32 @@
                         section1_title();
                         go_title_color();
                     }
+                    // 
+
+                    // 애니메이션 버튼 함수
+                    let ani = setInterval(right, 8000);
+                    // 시작 함수
+                    function seciton1_ani_start() {
+                        clearInterval(ani);
+                        ani = setInterval(right, 8000);
+                        document.querySelectorAll(".stop1 span")[0].style.backgroundColor = "#fff";
+                        document.querySelectorAll(".stop1 span")[1].style.backgroundColor = "#fff";
+                        document.querySelector(".restart1 span").style.backgroundColor = "#dc000c";
+                    }
+                    // 멈춤 함수
+                    function seciton1_ani_stop() {
+                        clearInterval(ani);
+                        document.querySelector(".restart1 span").style.backgroundColor = "#fff";
+                        document.querySelectorAll(".stop1 span")[0].style.backgroundColor = "#dc000c";
+                        document.querySelectorAll(".stop1 span")[1].style.backgroundColor = "#dc000c";
+                    }
+
+                    document.querySelector(".restart1").onclick = function () {
+                        seciton1_ani_start();
+                    }
+                    document.querySelector(".stop1").onclick = function () {
+                        seciton1_ani_stop();
+                    }
 
                     // 메인 캐로셀 왼쪽 버튼
                     function left() {
@@ -290,6 +374,7 @@
                         section1_slide.style.left = section1_left + "%";
                         section1_title();
                         go_title_color();
+                        seciton1_ani_start();
                     }
 
                     // 메인 캐로셀 오른쪽 버튼
@@ -314,32 +399,12 @@
                         section1_slide.style.left = section1_left + "%";
                         section1_title();
                         go_title_color();
+                        seciton1_ani_start();
                     }
 
 
 
-                    let ani = setInterval(right, 2000);
 
-                    let al123 = 1;
-                    document.querySelector(".restart1").onclick = function () {
-                        // clearInterval(ani);
-                        // settime으로 재실행
-                        ani = setInterval(right, 2000);
-                        document.querySelectorAll(".stop1 span")[0].style.backgroundColor = "#fff";
-                        document.querySelectorAll(".stop1 span")[1].style.backgroundColor = "#fff";
-                        document.querySelector(".restart1 span").style.backgroundColor = "#dc000c";
-                    }
-
-
-                    document.querySelector(".stop1").onclick = function () {
-                        clearInterval(ani);
-                        document.querySelector(".restart1 span").style.backgroundColor = "#fff";
-                        document.querySelectorAll(".stop1 span")[0].style.backgroundColor = "#dc000c";
-                        document.querySelectorAll(".stop1 span")[1].style.backgroundColor = "#dc000c";
-                    }
-                    // 애니메이션 버튼 함수
-
-                    // ani();
 
                     window.onload = right();
                 </script>
