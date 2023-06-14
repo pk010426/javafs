@@ -63,16 +63,16 @@
             <div class="section1_button_wrap">
                 <div class="section1_button_wrap_1">
                     <button id="go_title1" class="go_title">
-                        타이틀 1 바로가기
+                        사진의 미학
                     </button>
                     <button id="go_title2" class="go_title">
-                        타이틀 2 바로가기
+                        존경받는 기업 1위
                     </button>
                     <button id="go_title3" class="go_title">
-                        타이틀 3 바로가기
+                        EOS R8 출시
                     </button>
                     <button id="go_title4" class="go_title">
-                        타이틀 4 바로가기
+                        초경량 EOS 시리즈
                     </button>
                 </div>
 
@@ -114,9 +114,15 @@
                 <button>더 알아보기</button>
             </div>
             <div id="main_title3" class="section1_title">
+                <h3>독보적 초경량 풀프레임의 탄생</h3>
+                <h2>EOS R8<br>출시기념 프로모션</h2>
+                <button>더 알아보기</button>
             </div>
             <div id="main_title4" class="section1_title">
-                <!-- <img src="images/main3-1.png" alt="main3-1"> -->
+                <img src="images/main3-1.png" alt="main3-1">
+                <h2>375g</h2>
+                <h3>초경량 EOS R 시리즈</h3>
+                <button>더 알아보기</button>
             </div>
 
             <div class="main_img">
@@ -131,7 +137,6 @@
                 <script>
                     window.onscroll = function (scroll_e) {
                         let scr_e = document.documentElement.scrollTop;
-                        console.log(scr_e);
                         if (scr_e >= 50) {
                             document.querySelector(".login").style.height = 0;
                             document.querySelector(".login").style.top = "-60px";
@@ -169,11 +174,25 @@
                         document.querySelector("#main_title2 h2 span").style.opacity = 0;
                         document.querySelector("#main_title2 button").style.opacity = 0;
                     }
+                    function title3_reset() {
+                        document.querySelector("#main_title3").style.top = "36%";
+                        document.querySelector("#main_title3 h2").style.opacity = 0;
+                        document.querySelector("#main_title3 h3").style.opacity = 0;
+                        document.querySelector("#main_title3 button").style.opacity = 0;
+                    }
+                    function title4_reset() {
+                        document.querySelector("#main_title4 h2").style.display = "none";
+                        document.querySelector("#main_title4 h3").style.display = "none";
+                        document.querySelector("#main_title4 button").style.display = "none";
+                    }
+
 
                     function section1_title() {
                         let title_all = document.querySelectorAll(".section1_title");
                         title1_reset();
                         title2_reset();
+                        title3_reset();
+                        title4_reset();
                         for (i = 0; i < title_all.length; i++) {
                             title_all[i].style.display = "none";
                         };
@@ -239,40 +258,66 @@
 
                         } else if (section1_left == -300) {
                             document.querySelector("#main_title3").style.display = "block";
+
+                            setTimeout(function () {
+                                document.querySelector("#main_title3").style.top = "30%";
+                                document.querySelector("#main_title3 h2").style.opacity = 1;
+                                document.querySelector("#main_title3 h3").style.opacity = 1;
+                                document.querySelector("#main_title3 button").style.opacity = 1;
+                            }, 500);
+
                         } else if (section1_left == -400 || section1_left == 0) {
+                            setTimeout(function () {
+                                document.querySelector("#main_title4").style.display = "block";
+                            }, 310)
+                            function png_ani() {
+                                setTimeout(function () {
+                                    document.querySelector("#main_title4 img").setAttribute("src", "images/main3-2.png");
+                                }, 500);
+                                setTimeout(function () {
+                                    document.querySelector("#main_title4 img").setAttribute("src", "images/main3-3.png");
+                                }, 550);
+                                setTimeout(function () {
+                                    document.querySelector("#main_title4 img").setAttribute("src", "images/main3-4.png");
+                                }, 600);
+                                setTimeout(function () {
+                                    document.querySelector("#main_title4 img").setAttribute("src", "images/main3-5.png");
+                                }, 650);
+                                setTimeout(function () {
+                                    document.querySelector("#main_title4 img").setAttribute("src", "images/main3-6.png");
+                                }, 700);
+                                setTimeout(function () {
+                                    document.querySelector("#main_title4 img").setAttribute("src", "images/main3-5.png");
+                                }, 750);
+                                setTimeout(function () {
+                                    document.querySelector("#main_title4 img").setAttribute("src", "images/main3-4.png");
+                                }, 800);
+                                setTimeout(function () {
+                                    document.querySelector("#main_title4 img").setAttribute("src", "images/main3-3.png");
+                                }, 850);
+                                setTimeout(function () {
+                                    document.querySelector("#main_title4 img").setAttribute("src", "images/main3-2.png");
+                                }, 900);
+                                setTimeout(function () {
+                                    document.querySelector("#main_title4 img").setAttribute("src", "images/main3-1.png");
+                                }, 950);
+                            }
+                            png_ani();
+                            setTimeout(function () {
+                                document.querySelector("#main_title4 h2").style.display = "block";
+                            }, 950);
 
-                            document.querySelector("#main_title4").style.display = "block";
-
-                            // setTimeout(function () {
-                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-2.png");
-                            // }, 1000);
-                            // setTimeout(function () {
-                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-3.png");
-                            // }, 1200);
-                            // setTimeout(function () {
-                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-4.png");
-                            // }, 1300);
-                            // setTimeout(function () {
-                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-5.png");
-                            // }, 1400);
-                            // setTimeout(function () {
-                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-6.png");
-                            // }, 1500);
-                            // setTimeout(function () {
-                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-5.png");
-                            // }, 1600);
-                            // setTimeout(function () {
-                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-4.png");
-                            // }, 1700);
-                            // setTimeout(function () {
-                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-3.png");
-                            // }, 1800);
-                            // setTimeout(function () {
-                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-2.png");
-                            // }, 1900);
-                            // setTimeout(function () {
-                            //     document.querySelector("#main_title4 img").setAttribute("src", "images/main3-1.png");
-                            // }, 2000);
+                            setTimeout(function () {
+                                png_ani();
+                            }, 1000);
+                            setTimeout(function () {
+                                document.querySelector("#main_title4 h2").style.display = "none";
+                            }, 1600);
+                            setTimeout(function () {
+                                document.querySelector("#main_title4 h2").style.display = "block";
+                                document.querySelector("#main_title4 h3").style.display = "block";
+                                document.querySelector("#main_title4 button").style.display = "block";
+                            }, 1950);
 
                         }
                     }
@@ -306,24 +351,28 @@
                         section1_left = -100;
                         section1_title();
                         go_title_color();
+                        seciton1_ani_start();
                     }
                     document.querySelector("#go_title2").onclick = function () {
                         section1_slide.style.left = -200 + "%";
                         section1_left = -200;
                         section1_title();
                         go_title_color();
+                        seciton1_ani_start();
                     }
                     document.querySelector("#go_title3").onclick = function () {
                         section1_slide.style.left = -300 + "%";
                         section1_left = -300;
                         section1_title();
                         go_title_color();
+                        seciton1_ani_start();
                     }
                     document.querySelector("#go_title4").onclick = function () {
                         section1_slide.style.left = -400 + "%";
                         section1_left = -400;
                         section1_title();
                         go_title_color();
+                        seciton1_ani_start();
                     }
                     // 
 
@@ -414,8 +463,8 @@
     </section>
     <!-- section2 -->
     <section id="camera">
+        <h2>Camera</h2>
         <div class="section2_inner">
-
             <div class="section2_slide_next_prev">
                 <button class="slide2_btn1"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
                 <button class="slide2_btn2"><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
@@ -506,12 +555,6 @@
                         </div>
                         <img src="images/EOS_R3/r3front.jpg" alt="EOS_R3">
                     </div>
-
-
-
-
-
-
                 </div>
             </div>
 
@@ -519,11 +562,7 @@
     </section>
     <!-- section 2 script -->
     <script>
-
-
-
         // https://weareferal.com/blog/creating-an-infinite-gallery-with-vanilla-js
-
         document.addEventListener('DOMContentLoaded', function () {
 
             function btn_choose() {
@@ -807,26 +846,11 @@
                             next_btn();
                         }
                     }
-
-
-
-
-
-
-
                 }
             }
             // btn end
-
-
-
-
             // 섹션2 슬라이드 함수 종료
         });
-
-
-
-
     </script>
 
 
@@ -834,17 +858,97 @@
     <!-- section3 -->
     <section id="lens">
         <div class="section3_title">
-
+            <h3>차원이 다른 선명도 캐논</h3>
+            <h2>Lens</h2>
         </div>
         <div class="section3_inner">
             <button><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
             <button><i class="fa-solid fa-angle-right" style="color: #363636;"></i></button>
-            <div class="lens_page"></div>
-            <div class="lens_page"></div>
-            <div class="lens_page"></div>
-            <div class="lens_page"></div>
+
+            <div class="section3_slide_wrap">
+                <div class="section3_slide">
+                    <div class="lens_page">1</div>
+                    <div class="lens_page">2</div>
+                    <div class="lens_page">3</div>
+                    <div class="lens_page">4</div>
+                    <div class="lens_page">5</div>
+                    <div class="lens_page">6</div>
+                    <div class="lens_page">7</div>
+                    <div class="lens_page">8</div>
+                    <div class="lens_page">9</div>
+                </div>
+            </div>
+            <div class="section3_slide_click">
+                <button class="section3_click_btn"></button>
+                <button class="section3_click_btn"></button>
+                <button class="section3_click_btn"></button>
+                <button class="section3_click_btn"></button>
+                <button class="section3_click_btn"></button>
+                <button class="section3_click_btn"></button>
+            </div>
         </div>
     </section>
+    <!-- section3 스크립트 -->
+    <script>
+        const section3_slide_prev = document.querySelector(".section3_inner > button:nth-of-type(1)"),
+            section3_slide_next = document.querySelector(".section3_inner > button:nth-of-type(2)"),
+            section3_click_btn = document.querySelectorAll(".section3_click_btn");
+
+        let section3_slide = document.querySelector(".section3_slide"),
+            section3_slide_left = section3_slide.getAttribute("left");
+
+        let section3_num = 1;
+
+        section3_slide_prev.onclick = function () {
+
+            if (section3_num == 1) {
+                return;
+            } else {
+                section3_slide_prev.style.opacity = 1;
+                section3_slide.style.left = section3_slide_left + 320 + "px";
+                section3_slide_left = section3_slide_left + 320;
+                section3_num--
+            }
+
+            if (section3_num == 1) {
+                section3_slide_prev.style.opacity = 0.5;
+            }
+            section3_click_btn_reset();
+        }
+        section3_slide_next.onclick = function () {
+
+            if (section3_num == 6) {
+                return;
+            } else {
+                section3_slide_prev.style.opacity = 1;
+                section3_slide.style.left = section3_slide_left - 320 + "px";
+                section3_slide_left = section3_slide_left - 320;
+                section3_num++
+            }
+
+            if (section3_num == 6) {
+                section3_slide_next.style.opacity = 0.5;
+            }
+            section3_click_btn_reset();
+        }
+
+        function section3_click_btn_reset() {
+            for (i = 0; i < 6; i++) {
+                section3_click_btn[i].style.backgroundColor = "#d1d1d1";
+                section3_click_btn[(section3_num - 1)].style.backgroundColor = "#363E4A";
+            }
+        }
+
+        for (i = 0; i < section3_click_btn.length; i++) {
+            section3_click_btn[i].style.backgroundColor = "#d1d1d1";
+            section3_click_btn[i].onclick = function () {
+                this.style.backgroundColor = "#363E4A";
+
+            }
+        }
+
+    </script>
+
     <!-- section4 -->
     <section id="event">
         <div class="ad">

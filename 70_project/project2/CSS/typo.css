@@ -59,6 +59,12 @@ nav i {
     font-weight: bold;
 }
 
+/* 하단 바로가기 버튼 */
+.go_title {
+    font-family: 'ONE-Mobile-Title';
+    letter-spacing: 4px;
+}
+
 /* title1 */
 #main_title1 h1 {
     font-size: 14rem;
@@ -75,10 +81,12 @@ nav i {
     font-family: 'ONE-Mobile-Title';
     font-weight: lighter;
 }
+
 #main_title1 p:nth-of-type(1) {
     font-size: 3rem;
     font-family: 'NanumSquareNeo-Variable';
 }
+
 #main_title1 a {
     font-size: 2rem;
     color: #fff;
@@ -92,26 +100,71 @@ nav i {
     line-height: 8rem;
     font-weight: bolder;
 }
+
 #main_title2 h3 {
     font-size: 2.4rem;
     font-family: 'SUIT-Regular';
 }
+
 #main_title2 button {
     color: white;
     font-family: 'SUIT-Regular';
     font-size: 1.8rem;
 }
+
+/* title3 */
+#main_title3 h2 {
+    font-size: 6rem;
+    color: white;
+}
+
+#main_title3 h3 {
+    font-size: 3rem;
+    color: white;
+}
+
+#main_title3 button {
+    color: white;
+    font-family: 'SUIT-Regular';
+    font-size: 1.8rem;
+}
+
+/* title4 */
+#main_title4 h2 {
+    font-size: 8rem;
+    font-family: 'ONE-Mobile-Title';
+    color: #dc000bbb;
+}
+
+#main_title4 h3 {
+    font-size: 4rem;
+    font-family: 'NanumSquareNeo-Variable';
+    letter-spacing: 4px;
+}
+
+#main_title4 button {
+    color: white;
+    font-family: 'SUIT-Regular';
+    font-size: 1.8rem;
+}
+
 /* section2 */
+#camera>h2 {
+    font-size: 3.2rem;
+    font-family: 'ONE-Mobile-Title';
+    letter-spacing: 4px;
+    color: #363e4a;
+}
 
 .camera_page h2 {
     font-size: 2rem;
-    font-family: ONE-Mobile-Title, sans-serif;
+    font-family: 'ONE-Mobile-Title';
     letter-spacing: 2.5px;
 }
 
 .camera_page h3,
 .camera_page p {
-    font-family: SUIT-Regular, sans-serif;
+    font-family: 'SUIT-Regular';
     letter-spacing: 2px;
 }
 
@@ -126,7 +179,20 @@ nav i {
     font-size: 1.4rem;
 }
 
-
+/* section3 */
+.section3_title h2 {
+    font-size: 3.2rem;
+    font-family: 'ONE-Mobile-Title';
+    letter-spacing: 4px;
+    color: #363e4a;
+}
+.section3_title h3 {
+    font-size: 1.8rem;
+    font-family: 'NanumSquareNeo-Variable';
+    color: #4b82ee;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
 /* footer */
 footer {
     color: #adadad;

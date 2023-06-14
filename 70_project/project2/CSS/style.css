@@ -96,7 +96,7 @@ nav>span {
 /* section1,2,3 button 공통 모양 */
 .section1_button_wrap_2 button,
 .section2_slide_next_prev button,
-.section3_inner button {
+.section3_inner>button {
     width: 36px;
     height: 36px;
     border-radius: 4px;
@@ -106,7 +106,7 @@ nav>span {
 
 /* section 2, 3 button 공통 위치 */
 .section2_slide_next_prev button,
-.section3_inner button {
+.section3_inner>button {
     position: absolute;
 }
 
@@ -125,7 +125,6 @@ nav>span {
     height: 700px;
     margin: 0 auto;
     position: absolute;
-    background-color: rosybrown;
     display: flex;
     top: 0;
     left: -100%;
@@ -214,6 +213,7 @@ nav>span {
     background-color: #dc000c;
 }
 
+/* title2 */
 #main_title2 {
     top: 80%;
     left: 12%;
@@ -256,17 +256,65 @@ nav>span {
 }
 
 /* title3 */
-
-#main_title4 {
-    width: 1401px;
-    height: 70px;
-    background-color: red;
-    top: 0;
-    left: 0px;
-    clip-path: polygon(0% 0%, 100% 0, 100% 100%, 0 100%);
-    transition: all 10s;
+#main_title3 {
+    top: 36%;
+    left: 10%;
+    transition: 1.5s;
 }
 
+#main_title3 h2,
+#main_title3 h3,
+#main_title3 button {
+    transition: 2s;
+    opacity: 0;
+}
+
+#main_title3 h2 {
+    margin-top: 16px;
+    margin-bottom: 50px;
+}
+
+#main_title3 button {
+    cursor: pointer;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    background-color: #dc000c;
+}
+
+/* title4 */
+#main_title4 {
+    width: 1401px;
+    top: 2%;
+    left: 5%;
+}
+
+#main_title4 h2,
+#main_title4 h3,
+#main_title4 button {
+    position: absolute;
+    display: none;
+}
+
+#main_title4 h2 {
+    top: 30%;
+    left: 15%;
+}
+
+#main_title4 h3 {
+    top: 48%;
+    left: 7%;
+}
+
+#main_title4 button {
+    top: 64%;
+    left: 17%;
+    cursor: pointer;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    background-color: #dc000c;
+}
 
 
 /* section1 하단 버튼 */
@@ -349,9 +397,14 @@ nav>span {
     width: 100%;
 }
 
+#camera>h2 {
+    margin: 0 auto;
+    width: 1400px;
+    padding: 44px 0;
+}
+
 .section2_inner {
     margin: 0 auto;
-    padding: 44px 0;
     width: 1400px;
     height: 532px;
     position: relative;
@@ -482,15 +535,7 @@ nav>span {
 }
 
 
-
-
-
-
-
-
-
 /* section3 */
-.section3_title,
 .section3_inner {
     margin: 0 auto;
     width: 1400px;
@@ -498,32 +543,77 @@ nav>span {
 }
 
 .section3_title {
-    height: 160px;
+    width: 1280px;
+    margin: 0 auto;
+    padding: 44px 0;
+}
+
+.section3_title h2 {
+    margin: 12px 0;
 }
 
 .section3_inner {
     height: 504px;
-    display: flex;
     justify-content: center;
     position: relative;
     margin-bottom: 56px;
 }
 
-.section3_inner button {
+.section3_slide_wrap {
+    width: 1280px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.section3_slide {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    transition: .5s;
+}
+
+/* section3 캐로셀 넘기는 버튼 */
+.section3_inner>button {
     top: 252px;
     border: 2px solid #6b6b6b;
     background-color: rgba(255, 255, 255, 0);
 }
 
-.section3_inner button:nth-of-type(1) {
+.section3_inner>button:nth-of-type(1) {
     left: 40px;
+    opacity: 0.5;
 }
 
-.section3_inner button:nth-of-type(2) {
+.section3_inner>button:nth-of-type(2) {
     right: 40px;
 }
 
+/* section3 캐로셀 바로가기 버튼 */
+.section3_slide_click {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section3_slide_click button {
+    z-index: 1;
+    height: 6px;
+    width: 6px;
+    border: none;
+    background-color: #d1d1d1;
+    cursor: pointer;
+    transition: .5s;
+    margin: 0 3px;
+}
+.section3_slide_click button:nth-of-type(1) {
+    background-color: #363E4A;
+    width: 16px;
+}
+
 .lens_page {
+    flex-shrink: 0;
     width: 320px;
     height: 480px;
     border-top: 1px solid #E5E8EA;
