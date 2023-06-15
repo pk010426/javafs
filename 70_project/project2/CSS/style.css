@@ -31,6 +31,7 @@ header {
     top: 0;
     z-index: 999;
     background-color: #fff;
+    transition: all .8s;
 }
 
 header ul {
@@ -52,7 +53,6 @@ nav,
     justify-content: space-between;
     height: 43px;
     line-height: 43px;
-    transition: all .5s;
     position: relative;
 }
 
@@ -473,7 +473,6 @@ nav>span {
     border-radius: 8px;
     transition: .3s all;
     box-shadow: rgba(0, 0, 0, 0.08) 2px 4px 12px 0px;
-
 }
 
 .camera_page img {
@@ -494,13 +493,11 @@ nav>span {
 
 .camera_page:nth-of-type(4) {
     transform: translateX(-256px);
-
 }
 
 .camera_page:nth-of-type(5) {
     transform: translateX(-224px);
     box-shadow: rgba(0, 0, 0, 0.08) -4px 4px 12px 0px;
-
 }
 
 .camera_page:nth-of-type(6) {
@@ -508,11 +505,11 @@ nav>span {
 }
 
 .camera_page:nth-of-type(7) {
-    transform: translateX(-140px);
+    transform: translateX(-176px);
 }
 
 .camera_page:nth-of-type(8) {
-    transform: translateX(-100px);
+    transform: translateX(-154px);
 }
 
 /* 카메라 페이지의 요소 설정 */
@@ -560,7 +557,7 @@ nav>span {
 }
 
 .section3_slide_wrap {
-    width: 1280px;
+    width: 1281px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -607,6 +604,7 @@ nav>span {
     transition: .5s;
     margin: 0 3px;
 }
+
 .section3_slide_click button:nth-of-type(1) {
     background-color: #363E4A;
     width: 16px;
@@ -640,9 +638,10 @@ nav>span {
 
 .ad {
     height: 160px;
-    background-color: pink;
     border-radius: 8px;
     margin-bottom: 50px;
+    overflow: hidden;
+    box-shadow: 4px 10px 20px 0 rgba(40, 65, 106, 0.1);
 }
 
 .section4_inner {
@@ -656,8 +655,24 @@ nav>span {
     width: 630px;
     height: 330px;
     border-radius: 8px;
-    background-color: aqua;
+    overflow: hidden;
+    box-shadow: 4px 10px 20px 0 rgba(40, 65, 106, 0.2);
 }
+
+.event_wrap h3 {
+    margin: 15px 0;
+}
+
+.event_page img,
+.ad img {
+    transition: all .3s;
+}
+
+.event_page img:hover,
+.ad img:hover {
+    transform: scale(1.1, 1.1);
+}
+
 
 /* section5 */
 #printer {

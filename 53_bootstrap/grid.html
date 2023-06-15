@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부트스트랩</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+    <style>
+        .bn {
+            text-align: center;
+        }
+
+        .sec1 {
+            background-color: orange;
+        }
+        .sec2 {
+            background-color: red;
+            text-align: center;
+        }
+        .bow {
+            background-color: aqua;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 감싸는 거 이름
+        container(max 1200 = width는 1140, margin이 30씩 있음), container-fluid(가로 100%)
+    -->
+    <!-- col은 총 12 -->
+    <!-- sm은 브레이크, 중단점 -->
+    <!--
+    sm : 576
+    md : 768
+    lg : 992
+    xl : 1200
+
+    5버전에서만 가능
+    xxl : 1400
+  -->
+
+    <section class="container bg-primary text-white">
+        <div class="row">
+            <div class="col-sm-6 col-md">
+                <h3>Column 1</h3>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+            <div class="col-sm-6 col-md">
+                <h3>Column 2</h3>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+            <div class="col-sm-6 col-md">
+                <h3>Column 3</h3>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+            <div class="col-sm-6 col-md">
+                <h3>Column 4</h3>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+
+        </div>
+        <div class="bn">
+            <button type="button" class="btn btn-info btn-lg">
+                더 보기
+            </button>
+        </div>
+
+    </section>
+
+    <section class="container-fluid sec1">
+        <div>1</div>
+        <div>2</div>
+    </section>
+
+    <section class="container-fluid sec1">
+        <h2>고양이</h2>
+
+        <div class="container sec2">
+        </div>
+        <div class="row bow">
+            <div class="col-sm-6 col-md-3">냥냥</div>
+            <div class="col-sm-6 col-md-3">멍멍</div>
+            <div class="col-sm-6 col-md-3">골골</div>
+            <div class="col-sm-6 col-md-3">댕댕</div>
+        </div>
+
+    </section>
+</body>
+
+</html>
