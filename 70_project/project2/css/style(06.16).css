@@ -55,11 +55,9 @@ nav,
     line-height: 43px;
     position: relative;
 }
-
 .login li {
     cursor: pointer;
 }
-
 nav {
     height: 90px;
     line-height: 90px;
@@ -96,53 +94,6 @@ nav>span {
 
 .nav_inner li:hover {
     border-bottom: 5px solid black;
-}
-
-.menu_page {
-    opacity: 0;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1400px;
-    padding: 50px 125px;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    flex-wrap: wrap;
-}
-
-header .menu_page>div {
-    width: 287px;
-    z-index: 999;
-    padding: 0 32px;
-    margin-bottom: 16px;
-}
-
-header .menu_page>div h3 {
-    margin-bottom: 20px;
-    line-height: 36px;
-}
-
-header .menu_page>div:not(div:nth-of-type(4)) {
-    border-right: 1px solid rgba(154, 154, 154, 0.15);
-}
-
-header .menu_page>div p {
-    margin: 12px 0;
-}
-
-header .menu_page>div p:hover {
-    text-decoration: underline;
-    text-underline-position: under;
-}
-
-header .menu_page span {
-    display: inline-block;
-    width: 100%;
-    text-align: right;
-}
-
-header .menu_page span i {
-    cursor: pointer;
 }
 
 /* section1,2,3 button 공통 모양 */
@@ -804,13 +755,11 @@ header .menu_page span i {
     width: 290px;
     height: 290px;
 }
-
 .printer_page h2,
 .printer_page h3,
 .printer_page p {
     margin-left: 16px;
 }
-
 .printer_page h2 {
     margin-top: 6px;
     margin-bottom: 24px;

@@ -43,7 +43,7 @@
                     <a href="#">
                         <div class="logo"><img src="images/logo.jpg" alt="logo"></div>
                     </a>
-                    <i id="munu_icon" class="fa-solid fa-bars" style="color: #7d7d7d;"></i>
+                    <i class="fa-solid fa-bars" style="color: #7d7d7d;"></i>
                     <ul>
                         <li><a href="#camera">Camera</a></li>
                         <li><a href="#lens">Lens</a></li>
@@ -54,126 +54,6 @@
                 </div>
                 <span><i class="fa-solid fa-magnifying-glass" style="color: #7d7d7d;"></i></span>
             </nav>
-        </div>
-        <div class="menu_page">
-            <div>
-                <h3>Camera</h3>
-                <a href="#">
-                    <p>EOS R8</p>
-                </a>
-                <a href="#">
-                    <p>EOS R5</p>
-                </a>
-                <a href="#">
-                    <p>EOS 5D Mark IV</p>
-                </a>
-                <a href="#">
-                    <p>EOS 6D MARK2</p>
-                </a>
-                <a href="#">
-                    <p>EOS 850D</p>
-                </a>
-                <a href="#">
-                    <p>EOS R10</p>
-                </a>
-                <a href="#">
-                    <p>EOS R3</p>
-                </a>
-                <a href="#">
-                    <p>EOS R50</p>
-                </a>
-            </div>
-            <div>
-                <h3>RF Lens</h3>
-                <a href="#">
-                    <p>RF28mm F2.8 STM</p>
-                </a>
-                <a href="#">
-                    <p>RF100-300mm_F2.8_L_IS_USM</p>
-                </a>
-                <a href="#">
-                    <p>RF135mm F1.8 L IS USM</p>
-                </a>
-                <a href="#">
-                    <p>RF600mm F11 IS STM</p>
-                </a>
-                <a href="#">
-                    <p>RF800mm F11 IS STM</p>
-                </a>
-            </div>
-            <div>
-                <h3>EF Lens</h3>
-                <a href="#">
-                    <p>EF-M18-150mm F3.5-6.3 IS STM</p>
-                </a>
-                <a href="#">
-                    <p>EF-M22mm F2 STM</p>
-                </a>
-                <a href="#">
-                    <p>EF-M28mm F3.5 Macro IS STM</p>
-                </a>
-                <a href="#">
-                    <p>EF-M32mm F1.4 STM</p>
-                </a>
-            </div>
-            <div>
-                <h3>Event</h3>
-                <a href="#">
-                    <p>회원가입 이벤트</p>
-                </a>
-                <a href="#">
-                    <p>박작가의 작품 보러가기</p>
-                </a>
-                <a href="#">
-                    <p>EOS R8 출시 기념 프로모션</p>
-                </a>
-                <a href="#">
-                    <p>캐논 세일즈 페스타</p>
-                </a>
-                <a href="#">
-                    <p>포토 상품평 프로모션</p>
-                </a>
-            </div>
-            <div>
-                <h3>Mini Photo Printer</h3>
-                <a href="#">
-                    <p>SELPHY CP1300</p>
-                </a>
-                <a href="#">
-                    <p>SELPHY CP1500</p>
-                </a>
-                <a href="#">
-                    <p>SELPHY SQUARE QX10</p>
-                </a>
-                <a href="#">
-                    <p>INSPIC P2</p>
-                </a>
-            </div>
-            <div>
-                <h3>Inkjet <br> All-in-one</h3>
-                <a href="#">
-                    <p>PIXMA MG2490</p>
-                </a>
-                <a href="#">
-                    <p>PIXMA TS3490</p>
-                </a>
-                <a href="#">
-                    <p>PIXMA TS9590</p>
-                </a>
-                <a href="#">
-                    <p>GX4092</p>
-                </a>
-            </div>
-            <div>
-                <h3>Customer Support</h3>
-                <a href="#">
-                    <p>1 : 1 문의</p>
-                </a>
-                <a href="#">
-                    <p>제품 수리 문의</p>
-                </a>
-            </div>
-            <span><i id="menu_close" class="fa-solid fa-x fa-4x" style="color: rgba(221, 221, 221, 0.5);"></i></span>
         </div>
     </header>
     <!-- section1 -->
@@ -255,7 +135,6 @@
 
                 <!-- slide_img_button_script -->
                 <script>
-                    // 스크롤 내릴 시 로그인 창 사라짐
                     window.onscroll = function () {
                         let scr_e = document.documentElement.scrollTop;
                         if (scr_e >= 50) {
@@ -264,16 +143,6 @@
                             document.querySelector("header").style.top = 0;
                         }
                     }
-                    // 메뉴 창
-                    const menu_btn = document.querySelector("#menu_icon"),
-                        menu_close_btn = document.querySelector("menu_close"),
-                        menu = document.querySelector(".menu_page");
-
-                    function menu_open() {
-                            menu.style.opacity = 1;
-                    }
-
-                    menu_btn.onclick = menu_open();
 
                     // 전역함수 선언
                     let section1_slide = document.querySelector(".main_img");

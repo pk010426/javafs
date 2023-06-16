@@ -51,7 +51,21 @@ nav i {
 .section2_inner button .section3_inner button {
     font-size: 1.6rem;
 }
+/* 메뉴 버튼 */
+header .menu_page div h3 {
+    color: #fff;
+    font-size: 2.4rem;
+    font-family: 'ONE-Mobile-Title';
+    letter-spacing: 2px;
+}
+header .menu_page div p {
+    color: #a2a2a3;
+    font-size: 1.4rem;
+}
+header .menu_page span i {
+    font-style:normal;
 
+}
 /* section1 */
 /* 하단버튼 */
 .section1_button_wrap_1 button {
@@ -195,6 +209,30 @@ nav i {
     font-weight: bold;
 }
 
+.lens_page>h3 {
+    font-size: 2rem;
+    color: #dc000c;
+}
+
+.lens_page h3 span {
+    color: #000;
+}
+
+.lens_page div p {
+    font-size: 1.6rem;
+    font-family: 'ONE-Mobile-Title';
+    letter-spacing: 2px;
+    color: #9f0040;
+}
+
+.lens_page div h2 {
+    font-size: 1.8rem;
+}
+
+.lens_page div h3 {
+    font-size: 2.4rem;
+}
+
 /* section4 */
 
 .section4_title h2 {
@@ -215,11 +253,25 @@ nav i {
 
 /* section5 */
 
-.section5_title h2 {
+.section5_title>h2 {
     font-size: 3.2rem;
     font-family: 'ONE-Mobile-Title';
     letter-spacing: 4px;
     color: #363e4a;
+}
+.printer_page h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+.printer_page h3 {
+    font-size: 3rem;
+}
+.printer_page p {
+    font-family: 'ONE-Mobile-Title';
+    font-size: 1.6rem;
+}
+.printer_page p span{
+    color: #dc000c;
 }
 
 /* section6 */
