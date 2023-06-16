@@ -149,7 +149,7 @@ nav i {
 }
 
 /* section2 */
-#camera>h2 {
+.section2_title h2 {
     font-size: 3.2rem;
     font-family: 'ONE-Mobile-Title';
     letter-spacing: 4px;
@@ -186,6 +186,7 @@ nav i {
     letter-spacing: 4px;
     color: #363e4a;
 }
+
 .section3_title h3 {
     font-size: 1.8rem;
     font-family: 'NanumSquareNeo-Variable';
@@ -193,23 +194,80 @@ nav i {
     letter-spacing: 4px;
     font-weight: bold;
 }
+
 /* section4 */
+
+.section4_title h2 {
+    font-size: 3.2rem;
+    font-family: 'ONE-Mobile-Title';
+    letter-spacing: 4px;
+    color: #363e4a;
+}
 
 .event_wrap h3 {
     font-size: 2rem;
     margin: 15px 0;
 }
+
 .event_wrap p {
     font-size: 1.6rem;
+}
+
+/* section5 */
+
+.section5_title h2 {
+    font-size: 3.2rem;
+    font-family: 'ONE-Mobile-Title';
+    letter-spacing: 4px;
+    color: #363e4a;
+}
+
+/* section6 */
+#customer_support h2,
+.ask_inner p,
+.ask_inner h3 {
+    letter-spacing: 4px;
+    color: #363e4a;
+}
+
+#customer_support h2 {
+    font-size: 3.2rem;
+    font-family: 'ONE-Mobile-Title';
+}
+
+
+.ask_inner p {
+    font-size: 1.6rem;
+    font-family: 'NanumSquareNeo-Variable';
+}
+
+.ask_inner h3 {
+    font-size: 2.4rem;
+    font-family: 'SUIT-Regular';
 }
 
 /* footer */
 footer {
     color: #adadad;
-
 }
 
 .footer_info {
     font-size: 1.2rem;
     line-height: 2.4rem;
+    font-family: 'SUIT-Regular';
+    letter-spacing: 1.6px;
+}
+
+.copy_right a {
+    color: #adadad;
+
+}
+
+.family_site {
+    font-size: 1.6rem;
+}
+
+.family_site_btn,
+.family_sites a {
+    color: #1c1c1c;
 }

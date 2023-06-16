@@ -135,7 +135,7 @@
 
                 <!-- slide_img_button_script -->
                 <script>
-                    window.onscroll = function (scroll_e) {
+                    window.onscroll = function () {
                         let scr_e = document.documentElement.scrollTop;
                         if (scr_e >= 50) {
                             document.querySelector("header").style.top = "-43px";
@@ -302,7 +302,7 @@
                             }
 
                             png_ani();
-                            
+
                             setTimeout(function () {
                                 document.querySelector("#main_title4 h2").style.display = "block";
                             }, 950);
@@ -459,7 +459,9 @@
     </section>
     <!-- section2 -->
     <section id="camera">
-        <h2>Camera</h2>
+        <div class="section2_title">
+            <h2>Camera</h2>
+        </div>
         <div class="section2_inner">
             <div class="section2_slide_next_prev">
                 <button class="slide2_btn1"><i class="fa-solid fa-angle-left" style="color: #363636;"></i></button>
@@ -590,7 +592,7 @@
 
             // 바로가기 버튼 스타일 함수
             let section2_click_btn = document.querySelectorAll(".section2_click_btn");
-            
+
             function btn_reset() {
                 for (let i = 0; i < section2_click_btn.length; i++) {
                     section2_click_btn[i].style.width = 6 + "px";
@@ -973,6 +975,9 @@
 
     <!-- section4 -->
     <section id="event">
+        <div class="section4_title">
+            <h2>Event</h2>
+        </div>
         <div class="ad">
             <img src="images/event/ad.jpg" alt="ad">
         </div>
@@ -981,36 +986,36 @@
                 <div class="event_page event1">
                     <img src="images/event/event1.jpg" alt="event1">
                 </div>
-                <h3>title</h3>
-                <p>내용</p>
+                <h3>작품 보러가기</h3>
+                <p>기간 : 2023-04-06 ~ 2023-12-31</p>
             </div>
             <div class="event_wrap">
                 <div class="event_page event2">
                     <img src="images/event/event2.jpg" alt="event2">
                 </div>
-                <h3>title</h3>
-                <p>내용</p>
+                <h3>EOS R8 출시 기념 프로모션</h3>
+                <p>기간 : 2023-04-06 ~ 2023-11-10</p>
             </div>
             <div class="event_wrap">
                 <div class="event_page event3">
                     <img src="images/event/event3.jpg" alt="event3">
                 </div>
-                <h3>title</h3>
-                <p>내용</p>
+                <h3>캐논 세일즈 페스타</h3>
+                <p>기간 : 2023-04-06 ~ 2023-11-1</p>
             </div>
             <div class="event_wrap">
                 <div class="event_page event4">
                     <img src="images/event/event4.jpg" alt="event4">
                 </div>
-                <h3>title</h3>
-                <p>내용</p>
+                <h3>포토 상품평 프로모션</h3>
+                <p>기간 : 2023-04-06 ~ 2023-10-29</p>
             </div>
         </div>
     </section>
     <!-- section5 -->
     <section id="printer">
         <div class="section5_title">
-
+            <h2>Printer</h2>
         </div>
         <div class="section5_inner">
             <div class="printer_page"></div>
@@ -1026,10 +1031,12 @@
 
 
     <!-- section6 -->
-    <!-- http://www.understandavenue.com/default/main/main.php section6, footer 밴체마킹 사이트 -->
+    <!-- http://www.understandavenue.com/default/main/main.php section6, footer 밴체마킹 사이트
+         https://www.farmhannong.com/kor/main/index.do 고객지원 밴체마킹 사이트
+    -->
     <section id="customer_support">
         <div class="section6_title">
-
+            <h2>Customer Support</h2>
         </div>
         <div class="section6_inner">
             <div id="map">
@@ -1038,22 +1045,48 @@
                 </iframe>
             </div>
             <div class="sns">
-                <div class="ask">
-                    <div><i class="fa-solid fa-headset fa-8x" style="color: #ffffff;"></i></div>
-                    <h3>1 : 1 문의</h3>
+                <div>
+                    <a href="https://www.youtube.com/channel/UCzRW5RWMLdRQjwTuZLl5yfg" target="_blank"><i
+                            class="fa-brands fa-square-youtube fa-10x" style="color: #000001;"></i></a>
                 </div>
                 <div>
-
+                    <a href="https://www.instagram.com/canonkorea/" target="_blank"><i
+                            class="fa-brands fa-square-instagram fa-10x" style="color: #000000;"></i></a>
                 </div>
                 <div>
-
+                    <a href="https://www.facebook.com/canonkoreacamera" target="_blank"><i
+                            class="fa-brands fa-facebook fa-10x" style="color: #000000;"></i></a>
                 </div>
                 <div>
-
+                    <a href="https://blog.naver.com/canonkoreacamera" target="_blank"><i class="fa-solid fa-blog fa-10x"
+                            style="color: #000000;"></i></a>
                 </div>
-
             </div>
+        </div>
+        <div class="ask">
 
+            <div class="ask_inner">
+                <div>
+                    <i class="fa-solid fa-phone fa-4x" style="color: #000;"></i>
+                    <h2>고객문의</h2>
+                </div>
+                <div>
+                    <p>궁금한 게 있으신가요?</p>
+                    <h3>고객 만족에 최선을 다하겠습니다</h3>
+                </div>
+                <div>
+                    <a href="#">
+                        <i class="fa-solid fa-headset fa-8x" style="color: #ffffff;"></i>
+                        <h3>1 : 1 문의</h3>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <i class="fa-solid fa-screwdriver-wrench fa-8x" style="color: #ffffff;"></i>
+                        <h3>제품 수리 문의</h3>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
     <!-- footer -->
@@ -1077,7 +1110,6 @@
                     <img src="images/footer/소비자_중심_경영.png" alt="소비자_중심_경영">
                     <h2>소비자 중심 경영</h2>
                 </div>
-
             </div>
 
             <div class="footer_info">
@@ -1091,15 +1123,66 @@
                 </div>
 
                 <div>
-                    <p>Copyright © CANON KOREA All Rights reserved</p>
-                    <div>
-                        <p>Family Site</p>
+                    <div class="copy_right">
+                        <p><a href="http://pk0426.dothome.co.kr/" target="_blank">This site is a mock-up site by
+                                pk0426.</a></p>
+                        <p><a href="https://kr.canon/main" target="_blank">Copyright CANON KOREA All Rights
+                                reserved.</a></a></p>
+                    </div>
+
+                    <div class="family_site">
+                        <div class="family_site_btn">Family Site &nbsp; <i class="fa-solid fa-chevron-down"
+                                style="color: #1c1c1c;"></i>
+                        </div>
+
+                        <div class="family_sites">
+
+                            <a href="http://pk0426.dothome.co.kr/" target="_blank">
+                                <div>My site</div>
+                            </a>
+                            <a href="http://pk0426.dothome.co.kr/project4/" target="_blank">
+                                <div>은파 악기</div>
+                            </a>
+                            <a href="http://pk0426.dothome.co.kr/app/" target="_blank">
+                                <div>빠칭코</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
+        <!-- footer script -->
+        <script>
+            const family_site_btn = document.querySelector(".family_site_btn"),
+                family_site_btn_icon = document.querySelector(".family_site_btn i"),
+                family_sites = document.querySelector(".family_sites"),
+                family_sites_div = document.querySelectorAll(".family_sites div"),
+                family_sites_a = document.querySelectorAll(".family_sites div a");
+            let family_site_btn_num = 1;
+
+            family_site_btn.onclick = function () {
+                if (family_site_btn_num == 1) {
+                    family_sites.style.height = "124px";
+                    family_site_btn_icon.setAttribute("class", "fa-solid fa-chevron-up")
+                    family_site_btn_num = 0;
+                } else {
+                    family_sites.style.height = 0;
+                    family_site_btn_icon.setAttribute("class", "fa-solid fa-chevron-down")
+                    family_site_btn_num = 1;
+                }
+            }
+
+            for (i = 0; i < family_sites_div.length; i++) {
+                family_sites_div[i].onmouseenter = function () {
+                    this.style.backgroundColor = "#dc000c";
+                    this.style.color = "#fff";
+                }
+                family_sites_div[i].onmouseleave = function () {
+                    this.style.backgroundColor = "#F5F5F7";
+                    this.style.color = "#1c1c1c";
+                }
+            }
+        </script>
     </footer>
 </body>
 
