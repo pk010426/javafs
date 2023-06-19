@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>progress bar</title>
+    <style>
+        .progress {
+            width: 100%;
+            background-color: #ddd;
+            margin-bottom: 16px;
+        }
+        
+        .progress div {
+            width: 0%;
+            height: 30px;
+            background-color: aquamarine;
+            text-align: center;
+            line-height: 30px;
+            color: black;
+        }
+
+        .section {
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="section">
+        <h1>페이지를 내리면, Progress Bar가 올라갑니다!</h1>
+    </div>
+
+    <div class="skill section">
+        <div class="progress">
+            <h2>html + css</h2>
+            <div>0%</div>
+        </div>
+        <div class="progress">
+            <h2>js</h2>
+            <div>0%</div>
+        </div>
+        <div class="progress">
+            <h2>planning</h2>
+            <div>0%</div>
+        </div>
+       
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        // 변수 선언
+        const elem = document.querySelectorAll('.progress div');
+        // 추가된 점 = j
+        // move() 함수가 실행되면 j가 1이 됨. 중복 실행 막음.
+        // span이 화면을 벗어나면, j = 0; 초기화. 재실행 가능
+
+        let j = 0;
+        window.onscroll = function () {
+            let scr_e = document.documentElement.scrollTop;
+            if (scr_e >= 150) {
+                if (j === 0) {
+                    // 첫 번재 숫자는 카운트 번호, 두 번째 숫자는 배열의 순번, 세 번째는 시간.
+                    move(90, 0, 25);
+                    move(95, 1, 25);
+                    move(85, 2, 30);
+                    // 재실행 방지 j
+                    j = 1;
+                } else {
+                    return;
+                }
+            } else {
+                j = 0;
+            }
+        }
+
+        function move(count, array_num, time) {
+            let w = 0;
+            setInterval(function () {
+                if (w > count) {
+                    return;
+                }
+                elem[array_num].innerHTML = w + "%";
+                elem[array_num].style.width = w + "%";
+                w++
+            }, time)
+        }
+
+        // function move() {
+        //     var elem = $(".progress div");
+        //     var w = 0;
+        //     var timer = setInterval(frame, 30);
+
+        //     function frame() {
+        //         if (w >= 95) {
+        //             clearInterval(timer);
+        //         } else {
+        //             w++;
+        //             elem.css({ width: w + "%" });
+        //             elem.text(w + "%");
+        //         }
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

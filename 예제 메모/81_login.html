@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #wrap {
+            padding: 150px 30px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 24px;
+        }
+
+        p {
+            font-size: 14px;
+            color: red;
+            margin-bottom: 24px;
+        }
+
+        input {
+            width: 100%;
+            height: 50px;
+            font-size: 40px;
+            border: 1px solid #444;
+            margin-bottom: 24px;
+        }
+
+        button {
+            font-size: 40px;
+            margin-bottom: 24px;
+        }
+        #go_member {
+            color: black;
+        }
+        a {
+            color: royalblue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <h1>빠칭코</h1>
+        <input type="id" placeholder="아이디 입력!" id="loginid">
+        <input type="password" placeholder="비번 입력!" id="loginpw">
+        <button>로그인</button>
+        <p>아이디 패스워드 입력 후 로그인</p>
+
+        <p id="go_member">계정이 없나요? <a href="81_member.html"> 가입하기!</a> </p>
+    </div>
+
+
+    <script>
+        /* 
+            요소.value ~ input에 입력된 값 반환
+        */
+
+        // 데이터 베이스 db
+        // location.href = "81_login.html?userid/userpw;
+        let temp = location.href.split("?");
+        let data = temp[1].split("/");
+        console.log(temp[1]);
+        console.log(data);
+
+        let userid = data[0];
+        let userpw = data[1];
+
+        const loginbtn = document.querySelector("button");
+        // 로그인 시 입력한 id pw
+
+        let loginid = document.querySelector("#loginid");
+        let loginpw = document.querySelector("#loginpw");
+
+
+        loginbtn.onclick = login;
+
+
+        function login() {
+            let inputid = loginid.value;
+            let inputpw = loginpw.value;
+            if (inputid == userid) {
+                if (inputpw === userpw) {
+                    document.write(userid + "님 어서오세요. 고양이를 좋아하시네요.");
+                }
+                else {
+                    alert("비밀번호가 일치하지 않습니다.");
+                    location.reload();
+                }
+            } else {
+                alert("존재하지 않는 아이디 입니다.");
+                location.reload();
+            }
+        }
+
+
+        // login(inputId, inputPw);
+
+
+    </script>
+</body>
+
+</html>

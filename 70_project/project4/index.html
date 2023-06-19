@@ -19,7 +19,13 @@
 
     <div id="fullpage">
         <section id="section1" class="section">
-            <video src="images4/mainimg.mov" autoplay loop></video>
+            <div class="logo">
+                <h2>당신의 현악기를</h2>
+                <h2>더 가치있게</h2>
+                <h2>현악기 전문</h2>
+                <h1>은파악기</h1>
+            </div>
+            <video src="images4/mainimg.mp4" autoplay muted loop></video>
             <!-- <h1>섹션 1</h1> -->
         </section>
         <section id="section2" class="section">
@@ -33,17 +39,16 @@
         </section>
     </div>
     <script>
-        window.onscroll = function (scroll_e) {
-            let scr_e = document.documentElement.scrollTop;
 
-            if (scr_e > 0) { 
+        window.onscroll = function () {
+            let scr_e = document.documentElement.scrollTop;
+            console.log(scr_e)
+            if (scr_e > 500) {
+            console.log(scr_e)
                 document.querySelector("header").style.backgroundColor = "#fff";
             } else {
                 document.querySelector("header").style.backgroundColor = "transparent";
-            
             }
-
-
         }
         const secs = document.querySelectorAll(".section");
 
@@ -53,7 +58,7 @@
 
                 if (e.deltaY < 0) {
                     // 맨 위로 갔을 때, 반환
-                    if (this.offsetTop == 0) {
+                    if (this.offsetTop == + 0) {
                         return 0;
                     }
 
@@ -69,11 +74,21 @@
                     let next = this.nextElementSibling.offsetTop;
                     document.documentElement.scrollTop = next;
                 }
-
             }
-
-
         }
+
+        setInterval(function () {
+            const title1 = document.querySelector("h1"),
+                title2 = document.querySelectorAll(".logo h2");
+            title2[0].style.display = "block";
+            title2[1].style.display = "block";
+            setTimeout(function () {
+                title2[0].style.opacity = 1;
+                title2[1].style.opacity = 1;
+
+
+            }, 800);
+        }, 1500)
 
 
     </script>

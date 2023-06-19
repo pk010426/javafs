@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        div {
+            height: 100vh;
+            text-align: center;
+        }
+
+        span {
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Counter</h1>
+    </div>
+
+    <div id="counter">
+        <span>0+</span>
+    </div>
+
+    <script>
+        const elem = document.querySelector('#counter span');
+        // 추가된 점 = j
+        // move() 함수가 실행되면 j가 1이 됨. 중복 실행 막음.
+        // span이 화면을 벗어나면, j = 0; 초기화. 재실행 가능
+        let j = 0;
+
+        window.onscroll = function () {
+            let scr_e = document.documentElement.scrollTop;
+            if (scr_e >= 150) {
+                if (j === 0) {
+                    move();
+                } else {
+                    return;
+                }
+            } else {
+                j = 0;
+            }
+        }
+
+        function move() {
+            let i = 0;
+            setInterval(function () {
+                if (i > 5) {
+                    return;
+                }
+                elem.innerHTML = i + "+";
+                i++
+            }, 100)
+            // 재실행 방지 j
+            j = 1;
+        }
+    </script>
+</body>
+
+</html>
