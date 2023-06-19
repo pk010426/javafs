@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullpage</title>
+    <style>
+        .fix {
+            position: fixed;
+            top: 10%;
+        }
+
+        #fullpage section {
+            width: 100%;
+            height: 100vh;
+            transition: all 2s;
+
+        }
+
+        html {
+            transition: all 2s;
+            /* scroll-behavior: smooth; */
+        }
+
+        body {
+            transition: all 2s;
+
+        }
+
+        #section1 {
+            background-color: aqua;
+
+        }
+
+        #section2 {
+            background-color: royalblue;
+        }
+
+        #section3 {
+            background-color: green;
+        }
+
+        #section4 {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <div class="fix">
+        <button class="btn1">섹션 1</button>
+        <button class="btn2">섹션 2</button>
+        <button class="btn3">섹션 3</button>
+        <button class="btn4">섹션 4</button>
+    </div>
+    <div id="fullpage">
+        <section id="section1" class="section">
+            <h1>글씨</h1>
+        </section>
+        <section id="section2" class="section">
+        </section>
+        <section id="section3" class="section">
+        </section>
+        <section id="section4" class="section">
+        </section>
+
+    </div>
+
+    <footer>
+
+    </footer>
+</body>
+<script>
+    document.querySelector(".btn1").onclick = function () {
+        location.href = "#section1";
+
+    }
+
+    document.querySelector(".btn2").onclick = function () {
+        location.href = "#section2";
+    }
+    document.querySelector(".btn3").onclick = function () {
+        location.href = "#section3";
+    }
+    document.querySelector(".btn4").onclick = function () {
+        location.href = "#section4";
+    }
+
+
+
+</script>
+
+</html>

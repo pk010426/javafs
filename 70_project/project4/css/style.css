@@ -8,36 +8,63 @@
 
 html {
     scroll-behavior: smooth;
+    /* overflow: scroll; */
 }
 
+/* 모바일은 overflow : scroll처리 */
 body {
     overflow-y: hidden;
     background-color: #fff;
 }
 
-
-
 header {
     width: 100%;
     height: 80px;
-    background-color:transparent;
+    background-color: transparent;
     position: fixed;
     top: 0;
     z-index: 999;
     transition: .8s;
 }
+
 .section {
     height: 100vh;
 }
 
 #section1 {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
+    background-color: #000;
+}
+
+.logo h1,
+.logo h2 {
+    color: white;
+    margin: 24px 0;
+    opacity: 0;
+    display: none;
+    transition: 2s;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
 }
 
 video {
-    width: 100%;
+    position: absolute;
+    top: 10%;
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    height: 80%;
+    overflow-X: hidden;
 }
+
 #section2 {
     position: relative;
     background-color: royalblue;

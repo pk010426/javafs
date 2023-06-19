@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="캐러셀-바닐라스크립트.css">
+</head>
+<!-- http://inthree.kr/_2023/ -->
+<!-- 섹션에 마우스 엔터시 애니메이션 플레이 -->
+<!-- 클릭 시에만 애니메이션 멈춤 -->
+
+<body>
+
+    <section>
+        <button>123</button>
+        <div class="imgslide">
+            <div class="s1"></div>
+            <div class="s2"></div>
+            <div class="s3"></div>
+            <!-- <div class="s1"></div> -->
+        </div>
+    </section>
+
+</body>
+<script>
+    let imgslide = document.querySelector(".imgslide");
+    let btn = document.querySelector("button");
+
+    // imgslide.onmouseover = function () {
+    //     imgslide.style.animation = "slide";
+    // }
+    img_left = imgslide.getAttribute("left") - 100;
+    btn.onclick = function () {
+
+        imgslide.style.animation = "none";
+        imgslide.style.left = img_left + "%";
+        img_left = img_left - 100;
+        console.log(img_left);
+        if (img_left === -300) {
+            img_left = 0;
+
+        }
+    }
+
+    console.log(img_left);
+
+</script>
+
+</html>

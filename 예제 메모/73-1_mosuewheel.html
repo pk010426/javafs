@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style>
+        div {
+            width: 600px;
+            height: 400px;
+            background: #888;
+            margin: 50px auto;
+        }
+
+        div p {
+            font-size: 40px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p></p>
+    </div>
+
+    <script>
+        const back = document.querySelector("div");
+        // const text = document.querySelector("div p");
+        // 얘가 빠른 이유 : back이란 변수는 '이미 찾았고', 거기서 자식 선택함
+        const text = back.children[0];
+
+        back.onwheel = function (event) {
+            if (event.deltaY < 0) {
+                text.innerText = "고양이";
+                back.style.background = "red";
+                
+            } else {
+                text.innerText = "길냥이";
+                back.style.background = "blue";
+            }
+        };
+    </script>
+</body>
+
+</html>
