@@ -40,16 +40,14 @@
         <div class="nav_bottom_border">
             <nav>
                 <div class="nav_inner">
-                    <a href="#">
-                        <div class="logo"><img src="images/logo.jpg" alt="logo"></div>
-                    </a>
-                    <i id="munu_icon" class="fa-solid fa-bars" style="color: #7d7d7d;"></i>
+                    <div class="logo"><a href="#"><img src="images/logo.jpg" alt="logo"></a></div>
+                    <i class="fa-solid fa-bars" style="color: #7d7d7d;"></i>
                     <ul>
-                        <li><a href="#camera">Camera</a></li>
-                        <li><a href="#lens">Lens</a></li>
-                        <li><a href="#event">Event</a></li>
-                        <li><a href="#printer">Printer</a></li>
-                        <li><a href="#customer_support">Customer Support</a></li>
+                        <li>Camera</li>
+                        <li>Lens</li>
+                        <li>Event</li>
+                        <li>Printer</li>
+                        <li>Customer Support</li>
                     </ul>
                 </div>
                 <span><i class="fa-solid fa-magnifying-glass" style="color: #7d7d7d;"></i></span>
@@ -173,7 +171,7 @@
                     <p>제품 수리 문의</p>
                 </a>
             </div>
-            <span><i id="menu_close" class="fa-solid fa-x fa-4x" style="color: rgba(221, 221, 221, 0.5);"></i></span>
+            <span><i class="fa-solid fa-x fa-4x" style="color: rgba(221, 221, 221, 0.5);"></i></span>
         </div>
     </header>
     <!-- section1 -->
@@ -258,26 +256,71 @@
                     // 스크롤 내릴 시 로그인 창 사라짐
                     window.onscroll = function () {
                         let scr_e = document.documentElement.scrollTop;
+
                         if (scr_e >= 50) {
                             document.querySelector("header").style.top = "-43px";
                         } else {
                             document.querySelector("header").style.top = 0;
                         }
+                        close_menu();
+                        console.log(scr_e)
                     }
+
+                    function scroll_move(e) {
+                        document.documentElement.scrollTop = e;
+                    }
+                    // 섹션 이동
+                    const section_move = document.querySelectorAll(".nav_inner ul li");
+                    section_move[0].onclick = function() {
+                        scroll_move(743);
+                    }
+                    section_move[1].onclick = function() {
+                        scroll_move(1402);
+                    }
+                    section_move[2].onclick = function() {
+                        scroll_move(2126);
+                    }
+                    section_move[3].onclick = function() {
+                        scroll_move(3409);
+                    }
+                    section_move[4].onclick = function() {
+                        scroll_move(4536);
+                    }
+
+
                     // 메뉴 창
-                    const menu_btn = document.querySelector("#menu_icon"),
-                        menu_close_btn = document.querySelector("menu_close"),
+                    const menu_btn = document.querySelector(".nav_inner i"),
+                        menu_close_btn = document.querySelector(".menu_page span i"),
                         menu = document.querySelector(".menu_page");
+                    let menu_num = 0;
 
-                    function menu_open() {
+                    function open_menu() {
+                        menu_num = 1;
+                        menu.style.display = "flex";
+                        setTimeout(function () {
                             menu.style.opacity = 1;
+                        }, 50)
+                    }
+                    function close_menu() {
+                        menu_num = 0;
+                        menu.style.opacity = 0;
+                        setTimeout(function () {
+                            menu.style.display = "none";
+                        }, 300)
                     }
 
-                    menu_btn.onclick = menu_open();
+                    menu_btn.onclick = function () {
+                        if (menu_num === 0) {
+                            open_menu();
+                        } else {
+                            close_menu();
+                        }
+                    }
+                    menu_close_btn.onclick = close_menu;
 
                     // 전역함수 선언
-                    let section1_slide = document.querySelector(".main_img");
-                    let section1_left = section1_slide.getAttribute("left");
+                    let section1_slide = document.querySelector(".main_img"),
+                        section1_left = section1_slide.getAttribute("left");
                     // 메인 타이틀 생성 함수
 
                     function title1_reset() {
@@ -615,74 +658,92 @@
                     <div class="camera_page" id="c8">
                         <div>
                             <h3>출시일 : 2023-03</h3>
-                            <h2>EOS R50</h2>
+                            <a href="#">
+                                <h2>EOS R50</h2>
+                            </a>
                             <p>EOS R시리즈 중 가장 가벼운 바디</p>
                         </div>
-                        <img src="images/EOS_R50/r50friont.jpg" alt="EOS_R50">
+                        <a href="#"><img src="images/EOS_R50/r50friont.jpg" alt="EOS_R50"></a>
                     </div>
 
                     <div class="camera_page" id="c1">
                         <div>
                             <h3>NEW - 최신제품</h3>
-                            <h2>EOS R8</h2>
+                            <a href="#">
+                                <h2>EOS R8</h2>
+                            </a>
                             <p>독보적 초경량 풀프레임의 탄생</p>
                         </div>
-                        <img src="images/EOS_R8/r8front.jpg" alt="EOS_R8">
+                        <a href="#"><img src="images/EOS_R8/r8front.jpg" alt="EOS_R8"></a>
                     </div>
 
                     <div class="camera_page" id="c2">
                         <div>
                             <h3>DESIGN AWARD 2021</h3>
-                            <h2>EOS R5</h2>
+                            <a href="#">
+                                <h2>EOS R5</h2>
+                            </a>
                             <p>8K 풀프레임 미러리스의 혁명</p>
                         </div>
-                        <img src="images/EOS_R5/r5front.jpg" alt="EOS_R5">
+                        <a href="#"><img src="images/EOS_R5/r5front.jpg" alt="EOS_R5"></a>
                     </div>
 
                     <div class="camera_page" id="c3">
                         <div>
                             <h3>DESIGN AWARD 2018</h3>
-                            <h2>EOS 5D Mark IV</h2>
+                            <a href="#">
+                                <h2>EOS 5D Mark IV</h2>
+                            </a>
                             <p>열망, 그것은 5D의 DNA</p>
                         </div>
-                        <img src="images/EOS_5D_MARK4/5dfront.jpg" alt="EOS_5D_Mark_IV
-                        ">
+                        <a href="#">
+                            <img src="images/EOS_5D_MARK4/5dfront.jpg" alt="EOS_5D_Mark_IV
+                            ">
+                        </a>
                     </div>
 
                     <div class="camera_page" id="c4">
                         <div>
                             <h3>EISA - AWARD 2018 - 2019</h3>
-                            <h2>EOS 6D MARK2</h2>
+                            <a href="#">
+                                <h2>EOS 6D MARK2</h2>
+                            </a>
                             <p>당신을 새로운 사진 세계로 인도하다</p>
                         </div>
-                        <img src="images/EOS_6D_MARK2/6dfront.jpg" alt="EOS_6D_MARK2">
+                        <a href="#"><img src="images/EOS_6D_MARK2/6dfront.jpg" alt="EOS_6D_MARK2"></a>
                     </div>
 
                     <div class="camera_page" id="c5">
                         <div>
                             <h3>출시일 : 2020-05</h3>
-                            <h2>EOS 850D</h2>
+                            <a href="#">
+                                <h2>EOS 850D</h2>
+                            </a>
                             <p>약 2,410만 화소의 APS-C 센서</p>
                         </div>
-                        <img src="images/EOS_850D/850dfront.jpg" alt="EOS_850D">
+                        <a href="#"><img src="images/EOS_850D/850dfront.jpg" alt="EOS_850D"></a>
                     </div>
 
                     <div class="camera_page" id="c6">
                         <div>
                             <h3>출시일 : 2022-07</h3>
-                            <h2>EOS R10</h2>
+                            <a href="#">
+                                <h2>EOS R10</h2>
+                            </a>
                             <p>작고 가벼운 고성능 APS-C 시스템</p>
                         </div>
-                        <img src="images/EOS_R10/r10front.jpg" alt="EOS_R10">
+                        <a href="#"><img src="images/EOS_R10/r10front.jpg" alt="EOS_R10"></a>
                     </div>
 
                     <div class="camera_page" id="c7">
                         <div>
                             <h3>출시일 : 2021-11</h3>
-                            <h2>EOS R3</h2>
+                            <a href="#">
+                                <h2>EOS R3</h2>
+                            </a>
                             <p>이면조사 적층형 풀프레임 센서</p>
                         </div>
-                        <img src="images/EOS_R3/r3front.jpg" alt="EOS_R3">
+                        <a href="#"><img src="images/EOS_R3/r3front.jpg" alt="EOS_R3"></a>
                     </div>
                 </div>
             </div>

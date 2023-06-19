@@ -92,6 +92,7 @@ nav>span {
 
 .nav_inner li {
     margin-right: 36px;
+    cursor: pointer;
 }
 
 .nav_inner li:hover {
@@ -106,8 +107,10 @@ nav>span {
     width: 1400px;
     padding: 50px 125px;
     background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-wrap: wrap;
+    transition: .5s;
 }
 
 header .menu_page>div {
