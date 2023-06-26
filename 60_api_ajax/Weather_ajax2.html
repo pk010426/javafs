@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script>
+    <script src="https://kit.fontawesome.com/fa9c464e26.js" crossorigin="anonymous"></script>
+    <!-- 413ff569f6ab8b2c7f159f8406d6034a -->
+    <!-- 
+       http://api.openweathermap.org/data/2.5/forecast?id=1846898&appid=413ff569f6ab8b2c7f159f8406d6034a
+        
+     -->
+    <script>
+        // 자바스크립트 리터럴 형식
+        let weatherIcon = {
+            "01": "fas fa-sun",
+            "02": "fas fa-cloud-sun",
+            "03": "fas fa-cloud",
+            "04": "fas fa-cloud-meatball",
+            "09": "fas fa-cloud-sun-rain",
+            "10": "fas fa-cloud-showers-heavy",
+            "11": "fas fa-poo-storm",
+            "13": "fas fa-snowflake",
+            "50": "fas fa-smog"
+            // 키 : 반환
+        }
+
+        let apiURI = "http://api.openweathermap.org/data/2.5/weather?id=1846898&appid=413ff569f6ab8b2c7f159f8406d6034a&units=metric";
+
+        $.ajax({
+            url: apiURI,
+            type: 'GET', // 타입(GET, POST, PATCH, PUT 등등)
+            
+            success: function (data) { //성공 콜백함수
+                let weather_data = data.weather[0].icon.substr(0, 2); //인덱스 0번부터 2번 전까지 04d면 04만 추출
+                let temp = Math.floor(data.main.temp) + "'c";
+                let city = data.name;
+                alert(weatherIcon[weather_data]);
+                $(".curricon").append("<i class='" + weatherIcon[weather_data] + "'></i>");
+                $(".currtemp").prepend(temp);
+                $(".city").append(city);
+            }
+
+        });
+    </script>
+    <style>
+        .weather {
+            width: 300px;
+            height: 150px;
+            background-color: royalblue;
+            text-align: center;
+            color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 16px;
+            box-sizing: border-box;
+        }
+
+        .curricon,
+        .currtemp {
+            font-size: 50px;
+            width: 50%;
+        }
+
+        .city {
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="weather">
+        <div class="curricon"></div>
+        <div class="currtemp"></div>
+        <div class="city"> </div>
+    </div>
+    <h1>
+        <i class="fas fa-sun"></i>
+    </h1>
+</body>
+
+</html>

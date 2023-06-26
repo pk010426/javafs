@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.js"></script>
+
+    <!-- 413ff569f6ab8b2c7f159f8406d6034a -->
+    <!-- 
+       http://api.openweathermap.org/data/2.5/forecast?id=1846898&appid=413ff569f6ab8b2c7f159f8406d6034a
+        
+     -->
+    <script>
+        let apiURI = "http://api.openweathermap.org/data/2.5/weather?id=1846898&appid=413ff569f6ab8b2c7f159f8406d6034a&units=metric";
+        $.ajax({
+            url: apiURI,
+            type: 'GET', // 타입(GET, POST, PATCH, PUT 등등)
+
+            success: function (result) { //성공 콜백함수
+
+                console.log("현재 온도 : " + result.main.temp);
+                console.log("현재 습도 : " + result.main.humidity);
+                console.log("날씨 : " + result.weather[0].main);
+                console.log("상세 날씨 설명 : " + result.weather[0].description);
+                console.log("날씨 이미지 : " + result.weather[0].icon);
+                console.log("바람 : " + result.wind.speed);
+                console.log("나라 : " + result.sys.country);
+                console.log("도시이름 : " + result.name);
+                console.log("구름 : " + result.clouds.all + "%");
+
+                let stemp = result.main.temp;
+                $(".ctemp").append(stemp);
+            }
+
+        });
+    </script>
+</head>
+
+<body>
+    <h1>weather api</h1>
+    <h2> 날씨 정보</h2>
+    <div class="ctemp">현재 온도 : </div>
+    <div class="clowtemp">최저 온도 : </div>
+    <div class="chightemp">최고 온도 : </div>
+    <div class="cicon">아이콘 : </div>
+</body>
+
+</html>
