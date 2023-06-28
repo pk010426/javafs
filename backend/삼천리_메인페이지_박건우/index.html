@@ -156,12 +156,13 @@
             </div>
         </div>
     </section>
+
     <section class="section2">
         <div class="section2_inner">
             <a href="#">
                 <div class="service">
-                        <img src="images/service.jpg" alt="도시가스_고객서비스">
-                        <p>도시가스 관련 요금조회/납부, <br> 전출/전입 접수, 자동이체신청 등 <br> 편리한 고객 서비스를<br> 이용하실 수 있습니다.</p>
+                    <img src="images/service.jpg" alt="도시가스_고객서비스">
+                    <p>도시가스 관련 요금조회/납부, <br> 전출/전입 접수, 자동이체신청 등 <br> 편리한 고객 서비스를<br> 이용하실 수 있습니다.</p>
                 </div>
             </a>
             <div class="news">
@@ -178,15 +179,126 @@
                     </div>
                 </div>
                 <div class="news_contents">
-
+                    <div>
+                        <div class="news_text">
+                            <span>천만장학회 공모전 <br> '천만 아트 포 영' <br> 전시회 개막</span>
+                        </div>
+                        <div><span class="news_date">2023.05.10</span></div>
+                    </div>
+                    <div>
+                        <img src="images/news1.jpg" alt="news1">
+                    </div>
+                </div>
+                <div class="news_contents">
+                    <div>
+                        <div class="news_text">
+                            <span>삼천리, '제57기 정기 <br> 주주총회' 개최</span>
+                        </div>
+                        <div><span class="news_date">2023.03.24</span></div>
+                    </div>
+                    <div>
+                        <img src="images/news2.jpg" alt="news2">
+                    </div>
+                </div>
+                <div class="news_contents">
+                    <div>
+                        <div class="news_text">
+                            <span>'한국에서 가장' <br> 존경받는 기업' 20년 <br> 연속 선정</span>
+                        </div>
+                        <div><span class="news_date">2023.03.07</span></div>
+                    </div>
+                    <div>
+                        <img src="images/news3.jpg" alt="news3">
+                    </div>
+                </div>
+                <div class="news_contents">
+                    <div>
+                        <div class="news_text">
+                            <span>미래 인재 육성의 <br> 든든한 후원자, <br> 천만장학회</span>
+                        </div>
+                        <div><span class="news_date">2023.02.06</span></div>
+                    </div>
+                    <div>
+                        <img src="images/news4.jpg" alt="news4">
+                    </div>
+                </div>
+                <div class="news_contents">
+                    <div>
+                        <div class="news_text">
+                            <span>자매결연 군부대와 <br> 아름다운 우정 나눈 <br> 삼천리</span>
+                        </div>
+                        <div><span class="news_date">2023.01.20</span></div>
+                    </div>
+                    <div>
+                        <img src="images/news5.jpg" alt="news5">
+                    </div>
+                </div>
+                <div class="news_contents">
+                    <div>
+                        <div class="news_text">
+                            <span>삼천리, '안전보건 실천' <br> 다짐대회' 개최</span>
+                        </div>
+                        <div><span class="news_date">2023.01.19</span></div>
+                    </div>
+                    <div>
+                        <img src="images/news6.jpg" alt="news6">
+                    </div>
+                </div>
+                <div class="news_contents">
+                    <div>
+                        <div class="news_text">
+                            <span>어려운 이웃 향해 온정 <br> 담긴 손길 내미는 <br> 삼천리그룹</span>
+                        </div>
+                        <div><span class="news_date">2023.01.04</span></div>
+                    </div>
+                    <div>
+                        <img src="images/news7.jpg" alt="news7">
+                    </div>
                 </div>
             </div>
+
+            <script>
+                const btn = document.querySelectorAll(".news_btn span"),
+                    news = document.querySelectorAll(".news_contents");
+
+                function change(btn_name, num, contents_name) {
+                    btn_name[num].onclick = function () {
+                        for (b = 0; b < btn_name.length; b++) {
+                            btn_name[b].style.backgroundColor = "transparent";
+                            btn_name[b].style.border = "2px solid rgba(63, 63, 63, 0.7)";
+                        }
+                        btn_name[num].style.backgroundColor = "#fff";
+                        btn_name[num].style.border = "none";
+
+                        for (j = 0; j < btn_name.length; j++) {
+                            contents_name[j].style.zIndex = 0;
+                        }
+                        contents_name[num].style.zIndex = 1;
+                    }
+                }
+
+                for (i = 0; i < 7; i++) {
+                    change(btn, i, news);
+                }
+            </script>
+
             <div class="info">
                 <div class="info_title">
                     <span>공지사항</span>
+                    <i class="fas fa-plus" style="color: #b5cce1;"></i>
+                </div>
+                <div class="info_text">
+                    <p>도시가스 요금단가 변동</p>
+                    <p>(2020년 6월 1일자)</p>
+                    <p>도시가스 요금단가 변동</p>
+                    <p>(2020년 5월 16일자)</p>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="section3">
+
     </section>
 </body>
 
