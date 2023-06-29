@@ -1,3 +1,5 @@
+package a0626;
+
 class Test {
     int field1;
     String field2;

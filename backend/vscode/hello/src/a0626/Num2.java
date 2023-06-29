@@ -1,3 +1,5 @@
+package a0626;
+
 public class Num2 {
     public static void main(String[] args) {
         int i = 0;
