@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .menu_wrap {
+            margin: 250px auto;
+            width: 400px;
+            height: 300px;
+            border: 4px solid #000;
+            position: relative;
+        }
+
+        .menu_title {
+            width: 100%;
+            background-color: #ccc;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .menu_title span {
+            padding: 8px;
+            width: 100%;
+            height: 40px;
+            text-align: cener;
+            cursor: pointer;
+        }
+
+        .menu_title span:hover {
+            background-color: yellow;
+        }
+
+        .text {
+            width: 100%;
+            height: 252px;
+            position: absolute;
+            text-align: center;
+            opacity: 0;
+            transition: .8s;
+        }
+
+        .txt1 {
+            background-color: aqua;
+            z-index: 1;
+            opacity: 1;
+        }
+
+        .txt2 {
+            background-color: orange;
+        }
+
+        .txt3 {
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu_wrap">
+        <div class="menu_title">
+            <span>메뉴1</span>
+            <span>메뉴2</span>
+            <span>메뉴3</span>
+        </div>
+        <div class="text txt1">
+            <p> 메뉴1을 택하셨습니다! <br> 메뉴 1번에 대한 내용</p>
+        </div>
+        <div class="text txt2">
+            <p> 메뉴2을 택하셨습니다! <br> 메뉴 2번에 대한 내용</p>
+        </div>
+        <div class="text txt3">
+            <p> 메뉴3을 택하셨습니다! <br> 메뉴 3번에 대한 내용</p>
+        </div>
+    </div>
+    <script>
+        const menu_title = document.querySelectorAll(".menu_title span"), menu_text = document.querySelectorAll(".text")
+
+        function show(num) {
+            menu_title[num].onclick = function () {
+                for (i = 0; i < menu_title.length; i++) {
+                    menu_text[i].style.zIndex = 0;
+                    menu_text[i].style.opacity = 0;
+                }
+                menu_text[num].style.zIndex = 1;
+                menu_text[num].style.opacity = 1;
+            }
+        }
+        for (j = 0; j < menu_title.length; j++) {
+            show(j);
+        }
+    </script>
+</body>
+
+</html>
