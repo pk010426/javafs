@@ -1,15 +1,15 @@
-package a0630;
+package a0703;
 
 import java.util.Scanner;
 
-public class 책문제9 {
+public class Exam199_9 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int students = 0;
         int chose = 0;
         int c = 0;
-        int[] score = null;
         int high = 0;
+        int[] score = null;
         float avg = 0;
 
         while (true) {
@@ -18,10 +18,9 @@ public class 책문제9 {
             System.out.println("------------------------------------------------------------");
             System.out.println("메뉴를 선택해주세요.");
             chose = sc.nextInt();
-            // 변수 c는 학생 선택을
-            // 학생을 먼저 선택하지 않았을 경우 돌아감
+            // 변수 c는 학생 입력을 먼저 선택하지 않았을 경우 들아감
             if (c == 0) {
-                if (chose == 2 || chose == 3 || chose == 4) {
+                if (chose != 1) {
                     System.out.println();
                     System.out.println("학생 수를 먼저 입력해 주세요.");
                     continue;
@@ -36,6 +35,7 @@ public class 책문제9 {
                 System.out.println("학생수를 입력해 주세요.");
                 students = sc.nextInt();
                 System.out.println("현재 입력하신 학생수 : " + students);
+                // 학생수 만큼 배열 생성
                 score = new int[students];
                 c = 1;
             } else if (chose == 2) {
