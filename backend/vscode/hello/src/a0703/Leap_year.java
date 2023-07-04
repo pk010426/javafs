@@ -22,11 +22,10 @@ public class Leap_year {
 
             if ((user_year % 4 == 0 && user_year % 100 != 0) || (user_year % 400 == 0)) {
                 System.out.println("윤년 입니다. : 1");
-                System.out.println("당신이 입력한 연도 : " + user_year);
             } else {
                 System.out.println("윤년이 아닙니다. : 0");
-                System.out.println("당신이 입력한 연도 : " + user_year);
             }
+            System.out.println("당신이 입력한 연도 : " + user_year);
 
         }
     }

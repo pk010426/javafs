@@ -2,8 +2,8 @@ package a0703;
 
 public class Ex6_2 {
     public static void main(String[] args) {
-        Tv t1 = new Tv();
-        Tv t2 = new Tv();
+        Tv1 t1 = new Tv1();
+        Tv1 t2 = new Tv1();
 
         System.out.println("t1의 channel 값은 " + t1.channel + " 입니다.");
         System.out.println("t2의 channel 값은 " + t2.channel + " 입니다.");
@@ -16,7 +16,7 @@ public class Ex6_2 {
     }
 }
 
-class Tv {
+class Tv1 {
     // Tv의 속성(멤버변수)
     String color;
     boolean power;
