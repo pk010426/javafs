@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Exam281p_20 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // ArrayList<String> acData = new ArrayList<>();
         ArrayList<String> aclist = new ArrayList<>();
         ArrayList<String> culist = new ArrayList<>();
         ArrayList<Integer> balist = new ArrayList<>();
@@ -116,7 +115,7 @@ public class Exam281p_20 {
                     balist.set(loadac, balist.get(loadac) - saveBa);
                 }
                 System.out.println("통장 잔액 : " + balist.get(loadac));
-            } else {
+            } else if (chose == 5) {
                 System.out.println("앱을 종료합니다. 이용해주셔서 감사합니다.");
                 break;
             }
