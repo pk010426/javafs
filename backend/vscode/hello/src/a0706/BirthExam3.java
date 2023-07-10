@@ -17,6 +17,7 @@ public class BirthExam3 {
         } else {
             birth_year = 2000 + number / 10000;
         }
+        
         int todayYear = time.get(Calendar.YEAR);
         int todayMonth = time.get(Calendar.MONTH) + 1;
         int todayDate = time.get(Calendar.DATE);

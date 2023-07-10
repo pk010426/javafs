@@ -7,5 +7,4 @@ public class Phone1 {
     public Phone1() {
         System.out.println("phone() 생성자 실행");
     }
-    
 }
